@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "841495623113",
+    "firebase_url": "https://moamen-app.firebaseio.com",
+    "project_id": "moamen-app",
+    "storage_bucket": "moamen-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841495623113:android:b0919bd7abae9a8c3f2418",
+        "android_client_info": {
+          "package_name": "com.picsapp.moamenapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841495623113-50rp4poffn3ui9o0tjr0p9b0hfv4k9dv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.picsapp.moamenapp",
+            "certificate_hash": "3e39d0d57254a1250db08c1fa7f88084e2c2046b"
+          }
+        },
+        {
+          "client_id": "841495623113-39s9t7jqge59q9ls8pgnneak0g7cp5h0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIcZptGjVATfmnpXNQjpC8KB7yWCzDg-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841495623113-39s9t7jqge59q9ls8pgnneak0g7cp5h0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">
+        <html><font color="#00000">تطبيق المؤمن</font></html>
+    </string>
+
+    <!--Menus-->
+    <string name="menu_home">الرئيسية</string>
+    <string name="menu_videos">فيديوهات</string>
+    <string name="menu_ebadat">عبادات</string>
+    <string name="menu_images">صور</string>
+    <string name="menu_settings">المزيد</string>
+
+    <!--Tabs-->
+    <string name="category_places">الرئيسية</string>
+    <string name="category_resturants">خلفيات</string>
+    <string name="category_photos">المزيد</string>
+
+</resources>

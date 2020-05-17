@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:scrollbars="none"
+    tools:context=".Fragment.ImagesFragmentProject.HomeImagesFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF">
+
+        <!-- Top bar -->
+        <TextView
+            android:id="@+id/top_image_text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="6dp"
+            android:text="رآئج"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!--@scrollbars to remove the line of scroll -->
+        <!--@fillViewport vit the child view to all the screen -->
+        <HorizontalScrollView
+            android:id="@+id/scrollView_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/top_image_text1"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button_nabawe"
+                    android:layout_width="150dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:background="@drawable/ramadan_image"
+                    android:paddingLeft="58dp"
+                    android:paddingTop="56dp"
+                    android:text="رمضان كريم"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/button6_morining"
+                    android:layout_width="150dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:background="@drawable/dowaa_image"
+                    android:paddingLeft="72dp"
+                    android:paddingTop="56dp"
+                    android:text="صور أدعية"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/button2_saleheen"
+                    android:layout_width="150dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:background="@drawable/aqwal_image"
+                    android:paddingLeft="44dp"
+                    android:paddingTop="56dp"
+                    android:text="أقوال الصالحين"
+                    android:textColor="#fff"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/button6_others"
+                    android:layout_width="150dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:background="@drawable/more_image"
+                    android:paddingLeft="58dp"
+                    android:paddingTop="56dp"
+                    android:text="صور منوعة"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/button3_aqsa"
+                    android:layout_width="150dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:background="@drawable/aqsa_image"
+                    android:paddingLeft="44dp"
+                    android:paddingTop="56dp"
+                    android:text="المسجد الأقصى"
+                    android:textColor="#fff"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- editor's chooses text -->
+        <TextView
+            android:id="@+id/choose_text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scrollView_image"
+            android:paddingTop="20dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="6dp"
+            android:text="إختيار المحررين"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- editor's chooses images -->
+        <HorizontalScrollView
+            android:id="@+id/tete2"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/choose_text2"
+            android:scrollbars="none">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout_gridtableLayout1"
+                    android:layout_width="900dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <GridView
+                        android:id="@+id/gridview_image_choose2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:columnWidth="127dp"
+                        android:gravity="center"
+                        android:numColumns="7"
+                        android:scrollbarAlwaysDrawHorizontalTrack="true"
+                        android:scrollbarAlwaysDrawVerticalTrack="true"
+                        android:scrollbars="horizontal"
+                        android:stretchMode="none" />
+                </LinearLayout>
+            </FrameLayout>
+        </HorizontalScrollView>
+
+        <!-- chooses images text -->
+        <TextView
+            android:id="@+id/choose_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tete2"
+            android:paddingTop="12dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="6dp"
+            android:text="مميز"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- chooses images -->
+        <HorizontalScrollView
+            android:id="@+id/tete"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/choose_text"
+            android:scrollbars="none">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout_gridtableLayout"
+                    android:layout_width="900dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <GridView
+                        android:id="@+id/gridview_image_choose1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="4dp"
+                        android:columnWidth="127dp"
+                        android:gravity="center"
+                        android:numColumns="7"
+                        android:scrollbarAlwaysDrawHorizontalTrack="true"
+                        android:scrollbarAlwaysDrawVerticalTrack="true"
+                        android:scrollbars="horizontal"
+                        android:stretchMode="none" />
+                </LinearLayout>
+            </FrameLayout>
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+</ScrollView>

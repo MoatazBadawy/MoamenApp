@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ActivityProjects.ActivityDisplayImages.ImagesSaleheenActivity">
+
+    <!-- Top bar -->
+    <Button
+        android:id="@+id/button_back6"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/ic_arrow_back" />
+
+    <TextView
+        android:id="@+id/featured_image_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:text="أقوال الصالحين"
+        android:textColor="@color/colorPrimary"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <GridView
+        android:id="@+id/gridview_image_saleheen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/featured_image_5"
+        android:layout_marginTop="8dp"
+        android:background="#fff"
+        android:fastScrollEnabled="false"
+        android:numColumns="3"
+        android:scrollbars="none" />
+
+    <!-- Loading indicator for user feedback between queries to Guardian -->
+    <ProgressBar
+        android:id="@+id/loading_indicator4"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#fff"
+        android:elevation="4dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-4010171402649915/5750190674"></com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_item"
+        android:title="@string/menu_home"
+        android:icon="@drawable/home_icon"/>
+
+    <item
+        android:id="@+id/videos_item"
+        android:title="@string/menu_videos"
+        android:icon="@drawable/videos_icon"/>
+
+    <item
+        android:id="@+id/ebadat_item"
+        android:title="@string/menu_ebadat"
+        android:icon="@drawable/ebadat_icon"/>
+
+    <item
+        android:id="@+id/images_item"
+        android:title="@string/menu_images"
+        android:icon="@drawable/images_icon"/>
+
+    <item
+        android:id="@+id/settings_item"
+        android:title="@string/menu_settings"
+        android:icon="@drawable/more_icon"/>
+</menu>
