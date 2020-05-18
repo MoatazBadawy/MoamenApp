@@ -23,6 +23,7 @@
         android:layout_alignParentBottom="true"
         android:background="#fff"
         android:paddingTop="2dp"
+        android:theme="@style/TabLayoutTextStyle"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
