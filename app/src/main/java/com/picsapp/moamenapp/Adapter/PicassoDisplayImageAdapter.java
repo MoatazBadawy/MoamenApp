@@ -19,6 +19,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -93,27 +95,26 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
                 if (checkPermission()) {
                     String url = intent.getStringExtra("imageUrl");
                     Picasso.with(PicassoDisplayImageAdapter.this).load(url).into(new Target(){
+                        @RequiresApi(api = Build.VERSION_CODES.N)
                         @Override
                         public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                             WallpaperManager wallpaperManager = WallpaperManager.getInstance(PicassoDisplayImageAdapter.this);
                             try {
                                 wallpaperManager.setBitmap(bitmap);
+                                wallpaperManager.setBitmap(bitmap, null, false, WallpaperManager.FLAG_LOCK);
                             } catch (IOException ex) {
                                 ex.printStackTrace();
                             }
-                            Log.d("TAG", "onBitmapLoaded: ");
                             Toasty.normal(PicassoDisplayImageAdapter.this, "تم تغيير الخلفية بنجاح", Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
                         public void onBitmapFailed(final Drawable errorDrawable) {
-                            Log.d("TAG", "FAILED");
                             Toasty.error(PicassoDisplayImageAdapter.this, "فشل تحميل الصورة", Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
                         public void onPrepareLoad(final Drawable placeHolderDrawable) {
-                            Log.d("TAG", "Prepare Load");
                             Toasty.normal(PicassoDisplayImageAdapter.this, "جاري التحميل", Toast.LENGTH_SHORT).show();
                         }
                     });
