@@ -64,6 +64,7 @@
         android:background="#fff"
         android:elevation="4dp"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-4010171402649915/1013655733"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-4010171402649915/1013655733">
+    </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

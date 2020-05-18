@@ -46,7 +46,7 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
 
     public static final int PERMISSION_WRITE = 0;
     FloatingActionMenu menu;
-    FloatingActionButton wallpaper_item, save_item,share;
+    FloatingActionButton wallpaper_item, save_item;
     ImageView imageView ;
     Button back_icon;
 
@@ -87,11 +87,9 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
         Zoomy.Builder builder = new Zoomy.Builder(this).target(imageView);
         builder.register();
 
-        /* find view for menu */
-        menu = findViewById(R.id.action_menu);
         /* button to change the wallpaper on home screen for the device */
-        wallpaper_item = findViewById(R.id.wallpaper_item);
-        wallpaper_item.setOnClickListener(new View.OnClickListener() {
+        Button wallpaper = findViewById(R.id.button_wallpaper);
+        wallpaper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (checkPermission()) {
@@ -126,7 +124,7 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
         });
 
         /* item to share image */
-        share = findViewById(R.id.share_item);
+        Button share = findViewById(R.id.button_share);
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -144,9 +142,9 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
         });
 
         /* item to download the image */
-        save_item = findViewById(R.id.save_item);
+        Button save = findViewById(R.id.button_download);
         checkPermission();
-        save_item.setOnClickListener(new View.OnClickListener() {
+        save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (checkPermission()) {
