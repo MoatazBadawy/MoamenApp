@@ -10,10 +10,12 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -22,8 +24,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import com.ablanco.zoomy.Zoomy;
-import com.github.clans.fab.FloatingActionButton;
-import com.github.clans.fab.FloatingActionMenu;
 import com.picsapp.moamenapp.R;
 import com.squareup.picasso.Picasso;
 import java.io.File;
@@ -45,8 +45,6 @@ import com.squareup.picasso.Target;
 public class PicassoDisplayImageAdapter extends AppCompatActivity {
 
     public static final int PERMISSION_WRITE = 0;
-    FloatingActionMenu menu;
-    FloatingActionButton wallpaper_item, save_item;
     ImageView imageView ;
     Button back_icon;
 
@@ -55,8 +53,8 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_image);
 
-        /* make the status bar white with black icons */
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        // Hide status bar
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         /* make the app support only arabic "Right to left" */
         // even if the language of the device on english or others

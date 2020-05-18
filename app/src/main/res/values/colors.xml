@@ -5,4 +5,6 @@
     <color name="colorAccent">#C1272D</color>
     <color name="colorBlack">#000</color>
     <color name="color_transparen">#00000000</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>
