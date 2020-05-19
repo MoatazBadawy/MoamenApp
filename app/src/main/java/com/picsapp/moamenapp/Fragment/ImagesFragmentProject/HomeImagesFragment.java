@@ -104,7 +104,7 @@ public class HomeImagesFragment extends Fragment {
         });
 
         /* ArrayList for chooseImages */
-        final String[] chooseImages1 = {
+        final String[] chooseImages = {
                 "https://i1.wp.com/www.newphotodownload.info/wp-content/uploads/2018/12/%D8%A8%D9%88%D8%B3%D8%AA%D8%A7%D8%AA-%D8%AF%D9%8A%D9%86%D9%8A%D8%A9-61-1.jpg",
                 "https://quotess.cc/wp-content/uploads/2020/01/4688.jpg",
                 "https://whatt.cc/wp-content/uploads/2018/07/4443.jpg",
@@ -114,7 +114,37 @@ public class HomeImagesFragment extends Fragment {
                 "https://i1.wp.com/www.newphotodownload.info/wp-content/uploads/2018/12/%D8%A8%D9%88%D8%B3%D8%AA%D8%A7%D8%AA-%D8%AF%D9%8A%D9%86%D9%8A%D8%A9-61-1.jpg"
         };
 
-        final String[] chooseImages2 = {
+        final String[] starImages = {
+                "https://www.muhtwa.com/wp-content/uploads/%D8%A8%D8%B1%D9%88%D9%81%D8%A7%D9%8A%D9%84-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A04.jpg",
+                "https://www.mexatk.com/wp-content/uploads/2015/11/%D8%B5%D9%88%D8%B1-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%85%D9%83%D8%AA%D9%88%D8%A8-%D8%B9%D9%84%D9%8A%D9%87%D8%A7-3.jpg",
+                "https://i1.wp.com/www.newphotodownload.info/wp-content/uploads/2019/08/%D8%A7%D8%AC%D9%85%D9%84-%D8%B5%D9%88%D8%B1-%D8%AF%D9%8A%D9%86%D9%8A%D8%A9-1.jpg?ssl=1",
+                "https://www.muhtwa.com/wp-content/uploads/%D8%A8%D8%B1%D9%88%D9%81%D8%A7%D9%8A%D9%84-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A04.jpg",
+                "https://www.mexatk.com/wp-content/uploads/2015/11/%D8%B5%D9%88%D8%B1-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%85%D9%83%D8%AA%D9%88%D8%A8-%D8%B9%D9%84%D9%8A%D9%87%D8%A7-3.jpg",
+                "https://www.mexatk.com/wp-content/uploads/2015/11/%D8%B5%D9%88%D8%B1-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%85%D9%83%D8%AA%D9%88%D8%A8-%D8%B9%D9%84%D9%8A%D9%87%D8%A7-3.jpg",
+                "https://i1.wp.com/www.newphotodownload.info/wp-content/uploads/2019/08/%D8%A7%D8%AC%D9%85%D9%84-%D8%B5%D9%88%D8%B1-%D8%AF%D9%8A%D9%86%D9%8A%D8%A9-1.jpg?ssl=1"
+        };
+
+        final String[] AzkarImages = {
+                "https://www.muhtwa.com/wp-content/uploads/%D8%A8%D8%B1%D9%88%D9%81%D8%A7%D9%8A%D9%84-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A04.jpg",
+                "https://www.mexatk.com/wp-content/uploads/2015/11/%D8%B5%D9%88%D8%B1-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%85%D9%83%D8%AA%D9%88%D8%A8-%D8%B9%D9%84%D9%8A%D9%87%D8%A7-3.jpg",
+                "https://i1.wp.com/www.newphotodownload.info/wp-content/uploads/2019/08/%D8%A7%D8%AC%D9%85%D9%84-%D8%B5%D9%88%D8%B1-%D8%AF%D9%8A%D9%86%D9%8A%D8%A9-1.jpg?ssl=1",
+                "https://www.muhtwa.com/wp-content/uploads/%D8%A8%D8%B1%D9%88%D9%81%D8%A7%D9%8A%D9%84-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A04.jpg",
+                "https://www.mexatk.com/wp-content/uploads/2015/11/%D8%B5%D9%88%D8%B1-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%85%D9%83%D8%AA%D9%88%D8%A8-%D8%B9%D9%84%D9%8A%D9%87%D8%A7-3.jpg",
+                "https://www.mexatk.com/wp-content/uploads/2015/11/%D8%B5%D9%88%D8%B1-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%85%D9%83%D8%AA%D9%88%D8%A8-%D8%B9%D9%84%D9%8A%D9%87%D8%A7-3.jpg",
+                "https://i1.wp.com/www.newphotodownload.info/wp-content/uploads/2019/08/%D8%A7%D8%AC%D9%85%D9%84-%D8%B5%D9%88%D8%B1-%D8%AF%D9%8A%D9%86%D9%8A%D8%A9-1.jpg?ssl=1"
+        };
+
+        final String[] MaalemImages = {
+                "https://www.muhtwa.com/wp-content/uploads/%D8%A8%D8%B1%D9%88%D9%81%D8%A7%D9%8A%D9%84-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A04.jpg",
+                "https://www.mexatk.com/wp-content/uploads/2015/11/%D8%B5%D9%88%D8%B1-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%85%D9%83%D8%AA%D9%88%D8%A8-%D8%B9%D9%84%D9%8A%D9%87%D8%A7-3.jpg",
+                "https://i1.wp.com/www.newphotodownload.info/wp-content/uploads/2019/08/%D8%A7%D8%AC%D9%85%D9%84-%D8%B5%D9%88%D8%B1-%D8%AF%D9%8A%D9%86%D9%8A%D8%A9-1.jpg?ssl=1",
+                "https://www.muhtwa.com/wp-content/uploads/%D8%A8%D8%B1%D9%88%D9%81%D8%A7%D9%8A%D9%84-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A04.jpg",
+                "https://www.mexatk.com/wp-content/uploads/2015/11/%D8%B5%D9%88%D8%B1-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%85%D9%83%D8%AA%D9%88%D8%A8-%D8%B9%D9%84%D9%8A%D9%87%D8%A7-3.jpg",
+                "https://www.mexatk.com/wp-content/uploads/2015/11/%D8%B5%D9%88%D8%B1-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%85%D9%83%D8%AA%D9%88%D8%A8-%D8%B9%D9%84%D9%8A%D9%87%D8%A7-3.jpg",
+                "https://i1.wp.com/www.newphotodownload.info/wp-content/uploads/2019/08/%D8%A7%D8%AC%D9%85%D9%84-%D8%B5%D9%88%D8%B1-%D8%AF%D9%8A%D9%86%D9%8A%D8%A9-1.jpg?ssl=1"
+        };
+
+        final String[] DowaaImages = {
                 "https://www.muhtwa.com/wp-content/uploads/%D8%A8%D8%B1%D9%88%D9%81%D8%A7%D9%8A%D9%84-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A04.jpg",
                 "https://www.mexatk.com/wp-content/uploads/2015/11/%D8%B5%D9%88%D8%B1-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%85%D9%83%D8%AA%D9%88%D8%A8-%D8%B9%D9%84%D9%8A%D9%87%D8%A7-3.jpg",
                 "https://i1.wp.com/www.newphotodownload.info/wp-content/uploads/2019/08/%D8%A7%D8%AC%D9%85%D9%84-%D8%B5%D9%88%D8%B1-%D8%AF%D9%8A%D9%86%D9%8A%D8%A9-1.jpg?ssl=1",
@@ -125,11 +155,19 @@ public class HomeImagesFragment extends Fragment {
         };
 
         /* make new object and find the view "GridView" */
-        GridView gridview1 = rootView.findViewById(R.id.gridview_image_choose1);
-        GridView gridview2 = rootView.findViewById(R.id.gridview_image_choose2);
+        GridView gridview1 = rootView.findViewById(R.id.gridview_image_choose);
+        GridView gridview2 = rootView.findViewById(R.id.gridview_image_star);
+        GridView gridview3 = rootView.findViewById(R.id.gridview_image_azkar);
+        GridView gridview4 = rootView.findViewById(R.id.gridview_image_maalem);
+        GridView gridview5 = rootView.findViewById(R.id.gridview_image_dowaa);
+
         // display all the images from Array on it
-        gridview1.setAdapter(new PicassoImagesAdapter(getActivity(), chooseImages1));
-        gridview2.setAdapter(new PicassoImagesAdapter(getActivity(), chooseImages2));
+        gridview1.setAdapter(new PicassoImagesAdapter(getActivity(), chooseImages));
+        gridview2.setAdapter(new PicassoImagesAdapter(getActivity(), starImages));
+        gridview3.setAdapter(new PicassoImagesAdapter(getActivity(), AzkarImages));
+        gridview4.setAdapter(new PicassoImagesAdapter(getActivity(), MaalemImages));
+        gridview5.setAdapter(new PicassoImagesAdapter(getActivity(), DowaaImages));
+
 
         /* display the image when click on it */
         // we made a class for this method called "PicassoDisplayImageAdapter"
@@ -137,7 +175,7 @@ public class HomeImagesFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // get the image
-                String image = chooseImages1[position];
+                String image = chooseImages[position];
                 Intent intent = new Intent(getActivity(), PicassoDisplayImageAdapter.class);
                 intent.putExtra("imageUrl", image);
                 getActivity().startActivity(intent);
@@ -148,7 +186,40 @@ public class HomeImagesFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // get the image
-                String image = chooseImages2[position];
+                String image = DowaaImages[position];
+                Intent intent = new Intent(getActivity(), PicassoDisplayImageAdapter.class);
+                intent.putExtra("imageUrl", image);
+                getActivity().startActivity(intent);
+            }
+        });
+
+        gridview3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // get the image
+                String image = DowaaImages[position];
+                Intent intent = new Intent(getActivity(), PicassoDisplayImageAdapter.class);
+                intent.putExtra("imageUrl", image);
+                getActivity().startActivity(intent);
+            }
+        });
+
+        gridview4.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // get the image
+                String image = DowaaImages[position];
+                Intent intent = new Intent(getActivity(), PicassoDisplayImageAdapter.class);
+                intent.putExtra("imageUrl", image);
+                getActivity().startActivity(intent);
+            }
+        });
+
+        gridview5.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // get the image
+                String image = DowaaImages[position];
                 Intent intent = new Intent(getActivity(), PicassoDisplayImageAdapter.class);
                 intent.putExtra("imageUrl", image);
                 getActivity().startActivity(intent);
