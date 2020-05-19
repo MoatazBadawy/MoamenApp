@@ -37,7 +37,7 @@ public class ImagesDowaaActivity extends AppCompatActivity {
         ViewCompat.setLayoutDirection(getWindow().getDecorView(),ViewCompat.LAYOUT_DIRECTION_RTL);
 
         /* button to back to last activity*/
-        Button back_icon = findViewById(R.id.button_back);
+        Button back_icon = findViewById(R.id.button_back_dowaa);
         back_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,7 +47,7 @@ public class ImagesDowaaActivity extends AppCompatActivity {
 
         /* Show the ProgressBar and then it disappears */
         final ProgressBar
-                progressBar_images = findViewById(R.id.loading_indicator50);
+                progressBar_images = findViewById(R.id.lloading_image_dowaa);
 
         new Handler().postDelayed(new Runnable() {
             @Override

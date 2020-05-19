@@ -9,33 +9,34 @@
 
     <!-- Top bar -->
     <Button
-        android:id="@+id/button_back"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:id="@+id/button_back_dowaa"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
-        android:background="@drawable/ic_arrow_back" />
+        android:background="@drawable/ic_back_black" />
 
     <TextView
-        android:id="@+id/featured_image_5"
+        android:id="@+id/text_image_dowaa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="14dp"
         android:gravity="center"
-        android:paddingLeft="10dp"
+        android:paddingLeft="16dp"
         android:text="صور أدعية"
-        android:textColor="@color/colorPrimary"
-        android:textSize="26sp"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
         android:textStyle="bold" />
 
+    <!-- GridView -->
     <GridView
         android:id="@+id/gridview_image_dowaa"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/featured_image_5"
+        android:layout_below="@id/text_image_dowaa"
         android:layout_marginTop="8dp"
         android:background="#fff"
         android:fastScrollEnabled="false"
@@ -44,7 +45,7 @@
 
     <!-- Loading indicator for user feedback between queries to Guardian -->
     <ProgressBar
-        android:id="@+id/loading_indicator50"
+        android:id="@+id/lloading_image_dowaa"
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,7 +60,8 @@
         android:background="#fff"
         android:elevation="4dp"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-4010171402649915/8911061706"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-4010171402649915/8911061706">
+    </com.google.android.gms.ads.AdView>
 
 
 </RelativeLayout>

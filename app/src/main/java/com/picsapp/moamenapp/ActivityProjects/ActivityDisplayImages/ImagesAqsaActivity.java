@@ -37,7 +37,7 @@ public class ImagesAqsaActivity extends AppCompatActivity {
         ViewCompat.setLayoutDirection(getWindow().getDecorView(),ViewCompat.LAYOUT_DIRECTION_RTL);
 
         /* back to last activity*/
-        Button back_icon = findViewById(R.id.button_back1);
+        Button back_icon = findViewById(R.id.button_back_aqsa);
         back_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,7 +47,7 @@ public class ImagesAqsaActivity extends AppCompatActivity {
 
         /* Show the ProgressBar and then it disappears */
         final ProgressBar
-                progressBar_images = findViewById(R.id.loading_indicator3);
+                progressBar_images = findViewById(R.id.loading_image_aqsa);
 
         new Handler().postDelayed(new Runnable() {
             @Override

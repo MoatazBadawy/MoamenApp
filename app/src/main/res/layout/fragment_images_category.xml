@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:fastScrollEnabled="false"
         android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@+id/button_back">
+        app:layout_constraintTop_toBottomOf="@+id/button_back_dowaa">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

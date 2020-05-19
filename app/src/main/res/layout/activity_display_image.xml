@@ -18,7 +18,7 @@
             android:layout_centerVertical="true" />
 
         <Button
-            android:id="@+id/button_back"
+            android:id="@+id/button_back_dowaa"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_alignParentBottom="true"

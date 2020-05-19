@@ -38,7 +38,7 @@ public class ImagesMoqAlaramActivity extends AppCompatActivity {
         ViewCompat.setLayoutDirection(getWindow().getDecorView(),ViewCompat.LAYOUT_DIRECTION_RTL);
 
         /* back to last activity*/
-        Button back_icon = findViewById(R.id.button_back2);
+        Button back_icon = findViewById(R.id.button_back_haram);
         back_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +48,7 @@ public class ImagesMoqAlaramActivity extends AppCompatActivity {
 
         /* Show the ProgressBar and then it disappears */
         final ProgressBar
-                progressBar_images = findViewById(R.id.loading_indicator6);
+                progressBar_images = findViewById(R.id.loading_image_haram);
 
         new Handler().postDelayed(new Runnable() {
             @Override

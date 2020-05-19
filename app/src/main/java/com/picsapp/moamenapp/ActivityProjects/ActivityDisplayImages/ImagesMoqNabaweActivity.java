@@ -39,7 +39,7 @@ public class ImagesMoqNabaweActivity extends AppCompatActivity {
         ViewCompat.setLayoutDirection(getWindow().getDecorView(),ViewCompat.LAYOUT_DIRECTION_RTL);
 
         /* back to last activity*/
-        Button back_icon = findViewById(R.id.button_back3);
+        Button back_icon = findViewById(R.id.button_back_nabawe);
         back_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +49,7 @@ public class ImagesMoqNabaweActivity extends AppCompatActivity {
 
         /* Show the ProgressBar and then it disappears */
         final ProgressBar
-                progressBar_images = findViewById(R.id.loading_indicator5);
+                progressBar_images = findViewById(R.id.loading_image_saleheen);
 
         new Handler().postDelayed(new Runnable() {
             @Override

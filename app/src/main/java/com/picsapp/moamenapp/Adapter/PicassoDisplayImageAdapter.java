@@ -13,7 +13,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -63,7 +62,7 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
         ViewCompat.setLayoutDirection(getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
 
         /* back to last activity*/
-        back_icon = findViewById(R.id.button_back);
+        back_icon = findViewById(R.id.button_back_dowaa);
         back_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,41 +6,37 @@
     android:background="#fff"
     tools:context=".ActivityProjects.ActivityDisplayImages.ImagesRamadanActivity">
 
-    <nl.dionsegijn.konfetti.KonfettiView
-        android:id="@+id/viewKonfetti"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <!-- Top bar -->
     <Button
-        android:id="@+id/button_back5"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:id="@+id/button_back_ramadan"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
-        android:background="@drawable/ic_arrow_back" />
+        android:background="@drawable/ic_back_black" />
 
     <TextView
-        android:id="@+id/featured_image_5"
+        android:id="@+id/text_image_ramadan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="14dp"
         android:gravity="center"
-        android:paddingLeft="10dp"
+        android:paddingLeft="16dp"
         android:text="رمضان كريم"
-        android:textColor="@color/colorPrimary"
-        android:textSize="26sp"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
         android:textStyle="bold" />
 
+    <!-- GridView -->
     <GridView
         android:id="@+id/gridview_image_ramadan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/featured_image_5"
-        android:layout_marginTop="8dp"
+        android:layout_below="@id/text_image_ramadan"
+        android:layout_marginTop="10dp"
         android:background="#fff"
         android:fastScrollEnabled="false"
         android:numColumns="3"
@@ -49,13 +44,14 @@
 
     <!-- Loading indicator for user feedback between queries to Guardian -->
     <ProgressBar
-        android:id="@+id/loading_indicator1"
+        android:id="@+id/loading_image_ramadan"
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
 
-    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
