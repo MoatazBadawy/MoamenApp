@@ -24,9 +24,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
+
 import com.ablanco.zoomy.Zoomy;
 import com.picsapp.moamenapp.R;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -35,9 +38,13 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+
 import es.dmoral.toasty.Toasty;
-import static android.provider.MediaStore.*;
-import com.squareup.picasso.Target;
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseView;
+import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
+
+import static android.provider.MediaStore.Images;
 
 /*
  * This class for display the image when click on it
@@ -46,8 +53,19 @@ import com.squareup.picasso.Target;
 public class PicassoDisplayImageAdapter extends AppCompatActivity {
 
     public static final int PERMISSION_WRITE = 0;
-    ImageView imageView ;
-    Button back_icon;
+    ImageView imageView;
+    Button back_icon,save,share,wallpaper;
+
+    // load Bitmap to method save image
+    private static Bitmap loadBitmap(String url) {
+        try {
+            InputStream in = new java.net.URL(url).openStream();
+            return BitmapFactory.decodeStream(in);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,18 +100,14 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
                     .into(imageView);
         }
 
-        /* To zoom in photo like instagram */
-        Zoomy.Builder builder = new Zoomy.Builder(this).target(imageView);
-        builder.register();
-
         /* button to change the wallpaper on home screen for the device */
-        Button wallpaper = findViewById(R.id.button_wallpaper);
+        wallpaper = findViewById(R.id.button_wallpaper);
         wallpaper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (checkPermission()) {
                     String url = intent.getStringExtra("imageUrl");
-                    Picasso.with(PicassoDisplayImageAdapter.this).load(url).into(new Target(){
+                    Picasso.with(PicassoDisplayImageAdapter.this).load(url).into(new Target() {
                         @RequiresApi(api = Build.VERSION_CODES.N)
                         @Override
                         public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
@@ -121,8 +135,8 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
             }
         });
 
-        /* item to share image */
-        Button share = findViewById(R.id.button_share);
+        /* Button to share image */
+        share = findViewById(R.id.button_share);
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -139,8 +153,8 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
             }
         });
 
-        /* item to download the image */
-        Button save = findViewById(R.id.button_download);
+        /* Button to download the image */
+        save = findViewById(R.id.button_download);
         checkPermission();
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,21 +181,26 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
             }
         });
 
-    }
+        /* To zoom in photo like instagram */
+        Zoomy.Builder builder = new Zoomy.Builder(this).target(imageView);
+        builder.register();
 
-    // load Bitmap to method save image
-    private static Bitmap loadBitmap(String url) {
-        try {
-            InputStream in = new java.net.URL(url).openStream();
-            return BitmapFactory.decodeStream(in);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        /* MaterialShowcaseView */
+        ShowcaseConfig config = new ShowcaseConfig();
+        config.setDelay(500); // half second between each showcase view
+        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this, "intro_card");
+        sequence.setConfig(config);
+        sequence.addSequenceItem(save,
+                "قم بحفظ الصورة في جهازك", "التالي");
+        sequence.addSequenceItem(wallpaper,
+                "يمكنك تعيين الصورة كخلفية لجهازك", "التالي");
+        sequence.addSequenceItem(share,
+                "شارك الصورة مع أصدقائك حتى بدون تنزيل", "إبدأ");
+        sequence.start();
     }
 
     /* method to save image*/
-    void saveMyImage (String appName, String imageUrl, String imageName) {
+    void saveMyImage(String appName, String imageUrl, String imageName) {
 
         Bitmap bmImg = loadBitmap(imageUrl);
         File filename;
@@ -223,7 +242,7 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
     /* runtime storage permission */
     public boolean checkPermission() {
         int READ_EXTERNAL_PERMISSION = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
-        if((READ_EXTERNAL_PERMISSION != PackageManager.PERMISSION_GRANTED)) {
+        if ((READ_EXTERNAL_PERMISSION != PackageManager.PERMISSION_GRANTED)) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_WRITE);
             return false;
         }
@@ -233,7 +252,7 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
     /* Request storage permissions result */
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode==PERMISSION_WRITE && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (requestCode == PERMISSION_WRITE && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             //do somethings
         }
     }
