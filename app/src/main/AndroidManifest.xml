@@ -15,13 +15,14 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityProjects.ActivityDisplayImages.ImagesDowaaActivity"></activity>
+        <activity android:name=".ActivityProjects.ActivityDisplayImages.ImagesMorningActivity"></activity>
+        <activity android:name=".ActivityProjects.ActivityDisplayImages.ImagesDowaaActivity" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-4010171402649915~5502252008" />
 
-        <activity android:name=".Adapter.PicassoDisplayImageAdapter"></activity>
+        <activity android:name=".Adapter.PicassoDisplayImageAdapter" />
         <activity
             android:name=".ActivityProjects.ActivityDisplayImages.ImagesMoqAlaramActivity"
             android:label="المسجد الحرام" />

@@ -15,6 +15,7 @@ import android.widget.GridView;
 
 import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesDowaaActivity;
 import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesAqsaActivity;
+import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesMorningActivity;
 import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesOthersActivity;
 import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesRamadanActivity;
 import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesSaleheenActivity;
@@ -38,7 +39,7 @@ public class HomeImagesFragment extends Fragment {
         ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(),ViewCompat.LAYOUT_DIRECTION_RTL);
 
         /* open new Activity when click in button */
-        Ramadan = rootView.findViewById(R.id.button_nabawe);
+        Ramadan = rootView.findViewById(R.id.button_dowaa_image_category);
         // Set a click listener on that View
         Ramadan.setOnClickListener(new View.OnClickListener() {
             // The code in this method will be executed when the family category is clicked on.
@@ -97,7 +98,7 @@ public class HomeImagesFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 // Create a new intent to open the {@link ImagesDowaaActivity}
-                Intent Intent = new Intent(getActivity(), ImagesDowaaActivity.class);
+                Intent Intent = new Intent(getActivity(), ImagesMorningActivity.class);
                 // Start the new activity
                 startActivity(Intent);
             }
