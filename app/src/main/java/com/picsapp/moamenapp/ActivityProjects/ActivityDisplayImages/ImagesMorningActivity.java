@@ -1,8 +1,5 @@
 package com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.ViewCompat;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +8,9 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ProgressBar;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -33,7 +33,7 @@ public class ImagesMorningActivity extends AppCompatActivity {
 
         /* make the app support only arabic "Right to left" */
         // even if the language of the device on english or others
-        ViewCompat.setLayoutDirection(getWindow().getDecorView(),ViewCompat.LAYOUT_DIRECTION_RTL);
+        ViewCompat.setLayoutDirection(getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
 
         /* back to last activity*/
         Button back_icon = findViewById(R.id.button_back_morning);

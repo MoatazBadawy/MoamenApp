@@ -1,11 +1,5 @@
 package com.picsapp.moamenapp.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.view.ViewCompat;
-import androidx.fragment.app.Fragment;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
@@ -16,6 +10,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.picsapp.moamenapp.Fragment.EbadatFragment;
 import com.picsapp.moamenapp.Fragment.HomeFragment;
@@ -23,7 +25,9 @@ import com.picsapp.moamenapp.Fragment.ImagesFragment;
 import com.picsapp.moamenapp.Fragment.MoreFragment;
 import com.picsapp.moamenapp.Fragment.VideosFragment;
 import com.picsapp.moamenapp.R;
+
 import java.util.Arrays;
+
 import es.dmoral.toasty.Toasty;
 
 /*
@@ -44,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         /* make the app support only arabic "Right to left" */
         // even if the language of the device on english or others
-        ViewCompat.setLayoutDirection(getWindow().getDecorView(),ViewCompat.LAYOUT_DIRECTION_RTL);
+        ViewCompat.setLayoutDirection(getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
 
         /* To ask the user get allow the app for storage*/
         requestPermission();

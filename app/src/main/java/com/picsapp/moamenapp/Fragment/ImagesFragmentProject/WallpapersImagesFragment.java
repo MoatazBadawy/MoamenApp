@@ -2,15 +2,14 @@ package com.picsapp.moamenapp.Fragment.ImagesFragmentProject;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.core.view.ViewCompat;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
 
 import com.picsapp.moamenapp.Adapter.PicassoDisplayImageAdapter;
 import com.picsapp.moamenapp.Adapter.PicassoImagesAdapter;
@@ -26,7 +25,7 @@ public class WallpapersImagesFragment extends Fragment {
 
         /* make the app support only arabic "Right to left" */
         // even if the language of the device on english or others
-        ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(),ViewCompat.LAYOUT_DIRECTION_RTL);
+        ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
 
         /* ArrayList for TopImages */
         final String[] TopImages = {

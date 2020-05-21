@@ -17,13 +17,16 @@ import com.picsapp.moamenapp.R;
  */
 public class ViewpagerImagesAdapter extends FragmentStatePagerAdapter {
 
-    /** Context of the app */
+    /**
+     * Context of the app
+     */
     private ImagesFragment mContext;
 
     /**
      * Create a new {@link ViewpagerImagesAdapter} object.
-     *  @param context is the context of the app
-     * @param fm is the fragment manager that will keep each fragment's state in the adapter
+     *
+     * @param context is the context of the app
+     * @param fm      is the fragment manager that will keep each fragment's state in the adapter
      */
     public ViewpagerImagesAdapter(ImagesFragment context, FragmentManager fm) {
         super(fm);
@@ -37,13 +40,9 @@ public class ViewpagerImagesAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         if (position == 0) {
             return new HomeImagesFragment();
-        }
-
-        else if (position == 1) {
+        } else if (position == 1) {
             return new WallpapersImagesFragment();
-        }
-
-        else {
+        } else {
             return new CategoryImagesFragment();
         }
     }
@@ -54,13 +53,9 @@ public class ViewpagerImagesAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
             return mContext.getString(R.string.category_places);
-        }
-
-        else if (position == 1) {
+        } else if (position == 1) {
             return mContext.getString(R.string.category_resturants);
-        }
-
-        else {
+        } else {
             return mContext.getString(R.string.category_photos);
         }
     }

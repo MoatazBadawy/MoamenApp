@@ -1,11 +1,11 @@
 package com.picsapp.moamenapp.ActivityProjects;
 
 import android.content.Intent;
-import android.os.Handler;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.picsapp.moamenapp.Activity.MainActivity;
 import com.picsapp.moamenapp.R;

@@ -2,14 +2,13 @@ package com.picsapp.moamenapp.Fragment.ImagesFragmentProject;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.core.view.ViewCompat;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
 
 import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesAqsaActivity;
 import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesDowaaActivity;
@@ -31,7 +30,7 @@ public class CategoryImagesFragment extends Fragment {
 
         /* make the app support only arabic "Right to left" */
         // even if the language of the device on english or others
-        ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(),ViewCompat.LAYOUT_DIRECTION_RTL);
+        ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
 
         /* open new Activity when click in button */
         Button Morning = rootView.findViewById(R.id.button_morrining_image_category);
@@ -67,7 +66,7 @@ public class CategoryImagesFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 // Create a new intent to open the {@link ImagesMoqNabaweActivity}
-                    Intent ImagesMoqAlaramIntent = new Intent(getActivity(), ImagesSaleheenActivity.class);
+                Intent ImagesMoqAlaramIntent = new Intent(getActivity(), ImagesSaleheenActivity.class);
                 // Start the new activity
                 startActivity(ImagesMoqAlaramIntent);
             }

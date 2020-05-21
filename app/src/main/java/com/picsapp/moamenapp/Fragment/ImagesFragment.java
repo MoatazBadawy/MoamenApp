@@ -1,11 +1,13 @@
 package com.picsapp.moamenapp.Fragment;
 
 import android.os.Bundle;
-import androidx.core.view.ViewCompat;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
+
 import com.duolingo.open.rtlviewpager.RtlViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.picsapp.moamenapp.Adapter.ViewpagerImagesAdapter;
@@ -23,7 +25,7 @@ public class ImagesFragment extends Fragment {
 
         /* make the app support only arabic "Right to left" */
         // even if the language of the device on english or others
-        ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(),ViewCompat.LAYOUT_DIRECTION_RTL);
+        ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
 
         // Find the view pager that will allow the user to swipe between fragments
         // "ViewPager with RTL support"

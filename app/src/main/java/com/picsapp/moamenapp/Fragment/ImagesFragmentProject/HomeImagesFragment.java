@@ -2,10 +2,6 @@ package com.picsapp.moamenapp.Fragment.ImagesFragmentProject;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.core.view.ViewCompat;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +9,9 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 
-import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesDowaaActivity;
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
+
 import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesAqsaActivity;
 import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesMorningActivity;
 import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesOthersActivity;
@@ -36,7 +34,7 @@ public class HomeImagesFragment extends Fragment {
 
         /* make the app support only arabic "Right to left" */
         // even if the language of the device on english or others
-        ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(),ViewCompat.LAYOUT_DIRECTION_RTL);
+        ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
 
         /* open new Activity when click in button */
         Ramadan = rootView.findViewById(R.id.button_dowaa_image_category);

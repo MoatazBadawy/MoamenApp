@@ -41,7 +41,6 @@ import java.net.URL;
 
 import es.dmoral.toasty.Toasty;
 import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
-import uk.co.deanwild.materialshowcaseview.MaterialShowcaseView;
 import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 import static android.provider.MediaStore.Images;
@@ -54,7 +53,7 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
 
     public static final int PERMISSION_WRITE = 0;
     ImageView imageView;
-    Button back_icon,save,share,wallpaper;
+    Button back_icon, save, share, wallpaper;
 
     // load Bitmap to method save image
     private static Bitmap loadBitmap(String url) {
