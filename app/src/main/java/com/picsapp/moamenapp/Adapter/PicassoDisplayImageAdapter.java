@@ -17,8 +17,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -26,6 +28,8 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 
 import com.ablanco.zoomy.Zoomy;
+import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.picsapp.moamenapp.R;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
@@ -53,7 +57,8 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
 
     public static final int PERMISSION_WRITE = 0;
     ImageView imageView;
-    Button back_icon, save, share, wallpaper;
+    Button back_icon, save, share, wallpaper,
+           item_home_image,item_lock_image,item_both_image;
 
     // load Bitmap to method save image
     private static Bitmap loadBitmap(String url) {
@@ -99,38 +104,151 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
                     .into(imageView);
         }
 
+        /*  BottomSheetBehavior to make sheet bar */
+        LinearLayout mBottomsheet = findViewById(R.id.bottom_sheet);
+        final BottomSheetBehavior mBottomSheetBehavior = BottomSheetBehavior.from(mBottomsheet);
         /* button to change the wallpaper on home screen for the device */
         wallpaper = findViewById(R.id.button_wallpaper);
         wallpaper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (checkPermission()) {
-                    String url = intent.getStringExtra("imageUrl");
-                    Picasso.with(PicassoDisplayImageAdapter.this).load(url).into(new Target() {
-                        @RequiresApi(api = Build.VERSION_CODES.N)
-                        @Override
-                        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                            WallpaperManager wallpaperManager = WallpaperManager.getInstance(PicassoDisplayImageAdapter.this);
-                            try {
-                                wallpaperManager.setBitmap(bitmap);
-                                wallpaperManager.setBitmap(bitmap, null, false, WallpaperManager.FLAG_LOCK);
-                            } catch (IOException ex) {
-                                ex.printStackTrace();
-                            }
-                            Toasty.normal(PicassoDisplayImageAdapter.this, "تم تغيير الخلفية بنجاح", Toast.LENGTH_SHORT).show();
-                        }
-
-                        @Override
-                        public void onBitmapFailed(final Drawable errorDrawable) {
-                            Toasty.error(PicassoDisplayImageAdapter.this, "فشل تحميل الصورة", Toast.LENGTH_SHORT).show();
-                        }
-
-                        @Override
-                        public void onPrepareLoad(final Drawable placeHolderDrawable) {
-                            Toasty.normal(PicassoDisplayImageAdapter.this, "جاري التحميل", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                if (mBottomSheetBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+                    mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                } else {
+                    mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+            }
+        });
+
+        // callback for do something
+        mBottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View view, int newState) {
+                switch (newState) {
+                    case BottomSheetBehavior.STATE_HIDDEN:
+                        break;
+                    case BottomSheetBehavior.STATE_EXPANDED: {
+                        // first item "Button"
+                        item_home_image = findViewById(R.id.item_home_image);
+                        item_home_image.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                if (checkPermission()) {
+                                    final Intent intent = getIntent();
+                                    String url = intent.getStringExtra("imageUrl");
+                                    Picasso.with(PicassoDisplayImageAdapter.this).load(url).into(new Target() {
+                                        @RequiresApi(api = Build.VERSION_CODES.N)
+                                        @Override
+                                        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                                            WallpaperManager wallpaperManager = WallpaperManager.getInstance(PicassoDisplayImageAdapter.this);
+                                            try {
+                                                wallpaperManager.setBitmap(bitmap);
+                                            } catch (IOException ex) {
+                                                ex.printStackTrace();
+                                            }
+                                            Toasty.normal(PicassoDisplayImageAdapter.this, "تم تغيير الخلفية بنجاح", Toast.LENGTH_SHORT).show();
+                                        }
+
+                                        @Override
+                                        public void onBitmapFailed(final Drawable errorDrawable) {
+                                            Toasty.error(PicassoDisplayImageAdapter.this, "فشل تحميل الصورة", Toast.LENGTH_SHORT).show();
+                                        }
+
+                                        @Override
+                                        public void onPrepareLoad(final Drawable placeHolderDrawable) {
+                                            Toasty.normal(PicassoDisplayImageAdapter.this, "جاري التحميل", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }
+                            }
+                        });
+
+                        // second item "Button"
+                        item_lock_image = findViewById(R.id.item_lock_image);
+                        item_lock_image.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                if (checkPermission()) {
+                                    final Intent intent = getIntent();
+                                    String url = intent.getStringExtra("imageUrl");
+                                    Picasso.with(PicassoDisplayImageAdapter.this).load(url).into(new Target() {
+                                        @RequiresApi(api = Build.VERSION_CODES.N)
+                                        @Override
+                                        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                                            WallpaperManager wallpaperManager = WallpaperManager.getInstance(PicassoDisplayImageAdapter.this);
+                                            try {
+                                                wallpaperManager.setBitmap(bitmap, null, false, WallpaperManager.FLAG_LOCK);
+                                            } catch (IOException ex) {
+                                                ex.printStackTrace();
+                                            }
+                                            Toasty.normal(PicassoDisplayImageAdapter.this, "تم تغيير الخلفية بنجاح", Toast.LENGTH_SHORT).show();
+                                        }
+
+                                        @Override
+                                        public void onBitmapFailed(final Drawable errorDrawable) {
+                                            Toasty.error(PicassoDisplayImageAdapter.this, "فشل تحميل الصورة", Toast.LENGTH_SHORT).show();
+                                        }
+
+                                        @Override
+                                        public void onPrepareLoad(final Drawable placeHolderDrawable) {
+                                            Toasty.normal(PicassoDisplayImageAdapter.this, "جاري التحميل", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }
+                            }
+                        });
+
+                        // third item "Button"
+                        item_both_image = findViewById(R.id.item_both_image);
+                        item_both_image.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                if (checkPermission()) {
+                                    final Intent intent = getIntent();
+                                    String url = intent.getStringExtra("imageUrl");
+                                    Picasso.with(PicassoDisplayImageAdapter.this).load(url).into(new Target() {
+                                        @RequiresApi(api = Build.VERSION_CODES.N)
+                                        @Override
+                                        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                                            WallpaperManager wallpaperManager = WallpaperManager.getInstance(PicassoDisplayImageAdapter.this);
+                                            try {
+                                                wallpaperManager.setBitmap(bitmap);
+                                                wallpaperManager.setBitmap(bitmap, null, false, WallpaperManager.FLAG_LOCK);
+                                            } catch (IOException ex) {
+                                                ex.printStackTrace();
+                                            }
+                                            Toasty.normal(PicassoDisplayImageAdapter.this, "تم تغيير الخلفية بنجاح", Toast.LENGTH_SHORT).show();
+                                        }
+
+                                        @Override
+                                        public void onBitmapFailed(final Drawable errorDrawable) {
+                                            Toasty.error(PicassoDisplayImageAdapter.this, "فشل تحميل الصورة", Toast.LENGTH_SHORT).show();
+                                        }
+
+                                        @Override
+                                        public void onPrepareLoad(final Drawable placeHolderDrawable) {
+                                            Toasty.normal(PicassoDisplayImageAdapter.this, "جاري التحميل", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                    }
+                    break;
+                    case BottomSheetBehavior.STATE_COLLAPSED: {
+                    }
+                    break;
+                    case BottomSheetBehavior.STATE_DRAGGING:
+                        break;
+                    case BottomSheetBehavior.STATE_SETTLING:
+                        break;
+                    case BottomSheetBehavior.STATE_HALF_EXPANDED:
+                        break;
+                }
+            }
+            @Override
+            public void onSlide(@NonNull View view, float v) {
+
             }
         });
 
@@ -196,6 +314,7 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
         sequence.addSequenceItem(share,
                 "شارك الصورة مع أصدقائك حتى بدون تنزيل", "إبدأ");
         sequence.start();
+
     }
 
     /* method to save image*/
