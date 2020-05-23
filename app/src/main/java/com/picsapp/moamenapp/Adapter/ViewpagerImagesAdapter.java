@@ -5,8 +5,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.picsapp.moamenapp.Fragment.ImagesFragment;
-import com.picsapp.moamenapp.Fragment.ImagesFragmentProject.HomeImagesFragment;
 import com.picsapp.moamenapp.Fragment.ImagesFragmentProject.CategoryImagesFragment;
+import com.picsapp.moamenapp.Fragment.ImagesFragmentProject.HomeImagesFragment;
 import com.picsapp.moamenapp.Fragment.ImagesFragmentProject.WallpapersImagesFragment;
 import com.picsapp.moamenapp.R;
 

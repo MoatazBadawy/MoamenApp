@@ -28,7 +28,6 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 
 import com.ablanco.zoomy.Zoomy;
-import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.picsapp.moamenapp.R;
 import com.squareup.picasso.Picasso;
@@ -57,8 +56,8 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
 
     public static final int PERMISSION_WRITE = 0;
     ImageView imageView;
-    Button back_icon, save, share, wallpaper,
-           item_home_image,item_lock_image,item_both_image;
+    Button back_icon, save, share, wallpaper, download_view,
+            item_home_image, item_lock_image, item_both_image;
 
     // load Bitmap to method save image
     private static Bitmap loadBitmap(String url) {
@@ -246,6 +245,7 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
                         break;
                 }
             }
+
             @Override
             public void onSlide(@NonNull View view, float v) {
 
@@ -307,12 +307,13 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
         config.setDelay(500); // half second between each showcase view
         MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this, "intro_card");
         sequence.setConfig(config);
-        sequence.addSequenceItem(save,
-                "قم بحفظ الصورة في جهازك", "التالي");
+        download_view = findViewById(R.id.download_view);
+        sequence.addSequenceItem(download_view,
+                "قم بحفظ الصورة", "التالي");
         sequence.addSequenceItem(wallpaper,
                 "يمكنك تعيين الصورة كخلفية لجهازك", "التالي");
         sequence.addSequenceItem(share,
-                "شارك الصورة مع أصدقائك حتى بدون تنزيل", "إبدأ");
+                "شارك الصورة مع أصدقائك حتى بدون تحميل", "إبدأ");
         sequence.start();
 
     }
