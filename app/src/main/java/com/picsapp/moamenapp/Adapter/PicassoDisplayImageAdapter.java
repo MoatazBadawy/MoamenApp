@@ -7,12 +7,14 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -59,6 +61,9 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
     Button back_icon, save, share, wallpaper, download_view,
             item_home_image, item_lock_image, item_both_image;
 
+    LinearLayout mBottomsheet;
+    BottomSheetBehavior mBottomSheetBehavior;
+
     // load Bitmap to method save image
     private static Bitmap loadBitmap(String url) {
         try {
@@ -104,8 +109,8 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
         }
 
         /*  BottomSheetBehavior to make sheet bar */
-        LinearLayout mBottomsheet = findViewById(R.id.bottom_sheet);
-        final BottomSheetBehavior mBottomSheetBehavior = BottomSheetBehavior.from(mBottomsheet);
+         mBottomsheet = findViewById(R.id.bottom_sheet);
+         mBottomSheetBehavior = BottomSheetBehavior.from(mBottomsheet);
         /* button to change the wallpaper on home screen for the device */
         wallpaper = findViewById(R.id.button_wallpaper);
         wallpaper.setOnClickListener(new View.OnClickListener() {
@@ -250,6 +255,7 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
             public void onSlide(@NonNull View view, float v) {
 
             }
+
         });
 
         /* Button to share image */
@@ -316,6 +322,23 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
                 "شارك الصورة مع أصدقائك حتى بدون تحميل", "إبدأ");
         sequence.start();
 
+    }
+
+    /* hide bottom sheet when click outside */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event){
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            if (mBottomSheetBehavior.getState()==BottomSheetBehavior.STATE_EXPANDED) {
+
+                Rect outRect = new Rect();
+                mBottomsheet.getGlobalVisibleRect(outRect);
+
+                if(!outRect.contains((int)event.getRawX(), (int)event.getRawY()))
+                    mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+            }
+        }
+
+        return super.dispatchTouchEvent(event);
     }
 
     /* method to save image*/
