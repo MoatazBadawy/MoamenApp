@@ -20,6 +20,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -61,7 +62,7 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
     Button back_icon, save, share, wallpaper, download_view,
             item_home_image, item_lock_image, item_both_image;
 
-    LinearLayout mBottomsheet;
+    RelativeLayout mBottomsheet;
     BottomSheetBehavior mBottomSheetBehavior;
 
     // load Bitmap to method save image

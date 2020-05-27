@@ -81,8 +81,10 @@
             android:layout_height="26dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="17dp"
-            android:layout_marginTop="16dp"
             android:background="@drawable/download"
+            app:layout_constraintBottom_toBottomOf="@+id/download_view"
+            app:layout_constraintEnd_toEndOf="@+id/download_view"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/download_view"
             app:layout_constraintTop_toTopOf="@+id/download_view" />
 

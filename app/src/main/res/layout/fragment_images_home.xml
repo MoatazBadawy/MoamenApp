@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:scrollbars="none"
+    android:overScrollMode="never"
     tools:context=".Fragment.ImagesFragmentProject.HomeImagesFragment">
 
     <RelativeLayout
@@ -13,26 +15,13 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF">
 
-        <!-- Top bar -->
-        <TextView
-            android:id="@+id/top_image_text1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="6dp"
-            android:text="رآئج"
-            android:textColor="@color/colorBlack"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
         <!--@scrollbars to remove the line of scroll -->
         <!--@fillViewport vit the child view to all the screen -->
         <HorizontalScrollView
             android:id="@+id/scrollView_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/top_image_text1"
+            android:paddingTop="8dp"
             android:fillViewport="true"
             android:scrollbars="none">
 

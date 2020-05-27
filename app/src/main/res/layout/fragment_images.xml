@@ -28,6 +28,9 @@
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tabs"></com.duolingo.open.rtlviewpager.RtlViewPager>
+        android:overScrollMode="never"
+        android:layout_below="@+id/tabs">
+
+    </com.duolingo.open.rtlviewpager.RtlViewPager>
 
 </RelativeLayout>

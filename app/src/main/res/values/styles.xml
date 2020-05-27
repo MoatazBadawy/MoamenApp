@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/color_transparen</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
     <!--add more features to the text on BottomNavigation-->
@@ -43,6 +44,5 @@
     <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
         <item name="android:background">@color/black_overlay</item>
     </style>
-
 
 </resources>
