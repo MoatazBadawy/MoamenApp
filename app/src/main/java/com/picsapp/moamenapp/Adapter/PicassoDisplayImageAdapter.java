@@ -26,6 +26,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
@@ -62,7 +63,7 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
     Button back_icon, save, share, wallpaper, download_view,
             item_home_image, item_lock_image, item_both_image;
 
-    RelativeLayout mBottomsheet;
+    ConstraintLayout mBottomsheet;
     BottomSheetBehavior mBottomSheetBehavior;
 
     // load Bitmap to method save image
@@ -271,8 +272,9 @@ public class PicassoDisplayImageAdapter extends AppCompatActivity {
                     Uri bitmapUri = Uri.parse(bitmapPath);
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("image/jpeg");
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, "حمل تطبيق المؤمن للمزيد من الصور");
                     shareIntent.putExtra(Intent.EXTRA_STREAM, bitmapUri);
-                    startActivity(Intent.createChooser(shareIntent, "شارك الصورة"));
+                    startActivity(Intent.createChooser(shareIntent, ""));
                 }
             }
         });
