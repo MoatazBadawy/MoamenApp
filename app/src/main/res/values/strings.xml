@@ -9,6 +9,8 @@
     <string name="menu_ebadat">عبادات</string>
     <string name="menu_images">صور</string>
     <string name="menu_settings">المزيد</string>
+    <string name="background">تم تغيير الخلفية بنجاح</string>
+
 
     <!--Tabs-->
     <string name="category_places">الرئيسية</string>
