@@ -39,7 +39,8 @@ public class ViewpagerImagesAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
-            return new HomeImagesFragment();
+            String[] chooseImages = new String[0];
+            return new HomeImagesFragment(chooseImages);
         } else if (position == 1) {
             return new WallpapersImagesFragment();
         } else {

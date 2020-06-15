@@ -5,11 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 
 import com.duolingo.open.rtlviewpager.RtlViewPager;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.tabs.TabLayout;
+import com.picsapp.moamenapp.Adapter.CheckNetwork;
 import com.picsapp.moamenapp.Adapter.ViewpagerImagesAdapter;
 import com.picsapp.moamenapp.R;
 
@@ -46,6 +49,21 @@ public class ImagesFragment extends Fragment {
         //   3. Set the tab layout's tab names with the view pager's adapter's titles
         //      by calling onPageTitle()
         tabLayout.setupWithViewPager(viewPager);
+
+        if (CheckNetwork.isInternetAvailable(getActivity())) //returns true if internet available
+        {
+
+        } else {
+            BottomSheetBehavior mBottomSheetBehavior;
+            ConstraintLayout mBottomsheet;
+            // BottomSheetBehavior to make sheet bar
+            mBottomsheet = rootView.findViewById(R.id.bottom_sheet_no_internet);
+            mBottomSheetBehavior = BottomSheetBehavior.from(mBottomsheet);
+
+            if (mBottomSheetBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+                mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            }
+        }
 
         return rootView;
     }

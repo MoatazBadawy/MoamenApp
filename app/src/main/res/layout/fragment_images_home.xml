@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<androidx.core.widget.NestedScrollView android:id="@+id/kosomalsese"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:scrollbars="none"
+    android:background="@color/colorBackground"
+    android:fadeScrollbars="false"
     android:overScrollMode="never"
+    android:fastScrollEnabled="false"
+    android:fillViewport="true"
+    android:scrollbars="none"
     tools:context=".Fragment.ImagesFragmentProject.HomeImagesFragment">
 
+    <!-- "descendantFocusability" to make the recyclerView not scrolls to the top itself -->
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF">
+        android:background="@color/colorBackground"
+        android:descendantFocusability="blocksDescendants">
+
+        <!-- chooses images text -->
+        <TextView
+            android:id="@+id/choose_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="3dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="6dp"
+            android:text="مميز"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <!--@scrollbars to remove the line of scroll -->
         <!--@fillViewport vit the child view to all the screen -->
@@ -21,8 +40,9 @@
             android:id="@+id/scrollView_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="8dp"
+            android:layout_below="@id/choose_text"
             android:fillViewport="true"
+            android:fadeScrollbars="false"
             android:scrollbars="none">
 
             <LinearLayout
@@ -30,39 +50,39 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:id="@+id/button_dowaa_image_category"
-                    android:layout_width="150dp"
-                    android:layout_height="95dp"
+                    android:id="@+id/button_ertugrel"
+                    android:layout_width="140dp"
+                    android:layout_height="90dp"
                     android:layout_gravity="center"
                     android:layout_marginRight="4dp"
-                    android:background="@drawable/ramadan_image"
-                    android:paddingLeft="58dp"
+                    android:background="@drawable/ertugrel"
+                    android:paddingLeft="50dp"
                     android:paddingTop="56dp"
-                    android:text="رمضان كريم"
+                    android:text="قيامة أرطغرل"
                     android:textColor="#fff"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <Button
-                    android:id="@+id/button6_morining"
-                    android:layout_width="150dp"
-                    android:layout_height="95dp"
+                    android:id="@+id/button_ma3alem_islamic"
+                    android:layout_width="140dp"
+                    android:layout_height="90dp"
                     android:layout_gravity="center"
                     android:layout_marginRight="4dp"
-                    android:background="@drawable/morning_image"
-                    android:paddingLeft="40dp"
+                    android:background="@drawable/ma3alem_islamic"
+                    android:paddingLeft="44dp"
                     android:paddingTop="56dp"
-                    android:text="الصباح والمساء"
+                    android:text="معالم إسلامية"
                     android:textColor="#fff"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/button2_saleheen"
-                    android:layout_width="150dp"
-                    android:layout_height="95dp"
+                    android:layout_width="140dp"
+                    android:layout_height="90dp"
                     android:layout_gravity="center"
                     android:layout_marginRight="4dp"
                     android:background="@drawable/aqwal_image"
-                    android:paddingLeft="44dp"
+                    android:paddingLeft="30dp"
                     android:paddingTop="56dp"
                     android:text="أقوال الصالحين"
                     android:textColor="#fff"
@@ -70,29 +90,42 @@
 
                 <Button
                     android:id="@+id/button6_others"
-                    android:layout_width="150dp"
-                    android:layout_height="95dp"
+                    android:layout_width="140dp"
+                    android:layout_height="90dp"
                     android:layout_gravity="center"
                     android:layout_marginRight="4dp"
                     android:background="@drawable/more_image"
-                    android:paddingLeft="58dp"
+                    android:paddingLeft="50dp"
                     android:paddingTop="56dp"
                     android:text="صور منوعة"
                     android:textColor="#fff"
                     android:textSize="18sp" />
 
                 <Button
-                    android:id="@+id/button3_aqsa"
-                    android:layout_width="150dp"
-                    android:layout_height="95dp"
+                    android:id="@+id/button6_morining"
+                    android:layout_width="140dp"
+                    android:layout_height="90dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
-                    android:background="@drawable/aqsa_image"
-                    android:paddingLeft="44dp"
+                    android:background="@drawable/morning_image"
+                    android:paddingLeft="26dp"
                     android:paddingTop="56dp"
-                    android:text="المسجد الأقصى"
+                    android:text="الصباح والمساء"
                     android:textColor="#fff"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/button_zahrah"
+                    android:layout_width="140dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/zahraa"
+                    android:paddingTop="56dp"
+                    android:paddingLeft="90dp"
+                    android:textColor="#fff"
+                    android:text="زهرة"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -104,249 +137,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/scrollView_image"
-            android:paddingTop="20dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="6dp"
-            android:text="إختيار المحررين"
-            android:textColor="@color/colorBlack"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <!-- editor's chooses images -->
-        <HorizontalScrollView
-            android:id="@+id/tete2"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/choose_text2"
-            android:scrollbars="none">
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout_gridtableLayout1"
-                    android:layout_width="900dp"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <GridView
-                        android:id="@+id/gridview_image_choose"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:columnWidth="127dp"
-                        android:gravity="center"
-                        android:numColumns="7"
-                        android:scrollbarAlwaysDrawHorizontalTrack="true"
-                        android:scrollbarAlwaysDrawVerticalTrack="true"
-                        android:scrollbars="horizontal"
-                        android:stretchMode="none" />
-                </LinearLayout>
-            </FrameLayout>
-        </HorizontalScrollView>
-
-        <!-- chooses images text -->
-        <TextView
-            android:id="@+id/choose_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tete"
             android:paddingTop="12dp"
             android:paddingRight="10dp"
             android:paddingBottom="6dp"
-            android:text="مميز"
+            android:text="رآئج"
             android:textColor="@color/colorBlack"
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <!-- Azkar images text -->
-        <TextView
-            android:id="@+id/azkar_text"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_image_choose"
+            android:layout_below="@+id/choose_text2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tete2"
-            android:paddingTop="12dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="6dp"
-            android:text="أذكار"
-            android:textColor="@color/colorBlack"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <!-- Azkar images -->
-        <HorizontalScrollView
-            android:id="@+id/tete"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/azkar_text"
-            android:scrollbars="none">
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout_gridtableLayout2"
-                    android:layout_width="900dp"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <GridView
-                        android:id="@+id/gridview_image_azkar"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:columnWidth="127dp"
-                        android:gravity="center"
-                        android:numColumns="7"
-                        android:scrollbarAlwaysDrawHorizontalTrack="true"
-                        android:scrollbarAlwaysDrawVerticalTrack="true"
-                        android:scrollbars="horizontal"
-                        android:stretchMode="none" />
-                </LinearLayout>
-            </FrameLayout>
-        </HorizontalScrollView>
-
-        <!-- chooses images -->
-        <HorizontalScrollView
-            android:id="@+id/tete1"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/choose_text"
-            android:scrollbars="none">
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout_gridtableLayout"
-                    android:layout_width="900dp"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <GridView
-                        android:id="@+id/gridview_image_star"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:columnWidth="127dp"
-                        android:gravity="center"
-                        android:numColumns="7"
-                        android:scrollbarAlwaysDrawHorizontalTrack="true"
-                        android:scrollbarAlwaysDrawVerticalTrack="true"
-                        android:scrollbars="horizontal"
-                        android:stretchMode="none" />
-                </LinearLayout>
-            </FrameLayout>
-        </HorizontalScrollView>
-
-        <!-- Maalem images text -->
-        <TextView
-            android:id="@+id/maalem_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tete1"
-            android:paddingTop="12dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="6dp"
-            android:text="معالم إسلامية"
-            android:textColor="@color/colorBlack"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <!-- Maalem images -->
-        <HorizontalScrollView
-            android:id="@+id/tete3"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/maalem_text"
-            android:scrollbars="none">
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout_gridtableLayout3"
-                    android:layout_width="900dp"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <GridView
-                        android:id="@+id/gridview_image_maalem"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:columnWidth="127dp"
-                        android:gravity="center"
-                        android:numColumns="7"
-                        android:scrollbarAlwaysDrawHorizontalTrack="true"
-                        android:scrollbarAlwaysDrawVerticalTrack="true"
-                        android:scrollbars="horizontal"
-                        android:stretchMode="none" />
-                </LinearLayout>
-            </FrameLayout>
-        </HorizontalScrollView>
-
-        <!-- dowaa images text -->
-        <TextView
-            android:id="@+id/dowaa_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tete3"
-            android:paddingTop="12dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="6dp"
-            android:text="دعاء"
-            android:textColor="@color/colorBlack"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <!-- Maalem images -->
-        <HorizontalScrollView
-            android:id="@+id/tete4"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/dowaa_text"
-            android:scrollbars="none">
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout_gridtableLayout4"
-                    android:layout_width="900dp"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <GridView
-                        android:id="@+id/gridview_image_dowaa"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:columnWidth="127dp"
-                        android:gravity="center"
-                        android:numColumns="7"
-                        android:scrollbarAlwaysDrawHorizontalTrack="true"
-                        android:scrollbarAlwaysDrawVerticalTrack="true"
-                        android:scrollbars="horizontal"
-                        android:stretchMode="none" />
-                </LinearLayout>
-            </FrameLayout>
-        </HorizontalScrollView>
+            android:background="@color/colorBackground"
+            android:nestedScrollingEnabled="false" />
 
     </RelativeLayout>
-</ScrollView>
+
+</androidx.core.widget.NestedScrollView>

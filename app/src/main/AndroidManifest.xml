@@ -4,8 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
-    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -16,34 +17,37 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityProjects.ActivityDisplayImages.ImagesMorningActivity"></activity>
-        <activity android:name=".ActivityProjects.ActivityDisplayImages.ImagesDowaaActivity" />
+        <activity android:name=".Activity.ActivityImages.ImagesZahrahActivity"></activity>
+        <activity android:name=".Activity.ActivityImages.ImagesErtugleActivity" />
+        <activity android:name=".Activity.ActivityImages.ImagesMorningActivity" />
+        <activity android:name=".Activity.ActivityImages.ImagesDowaaActivity" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-4010171402649915~5502252008" />
 
-        <activity android:name=".Adapter.PicassoDisplayImageAdapter" />
+        <activity android:name=".Adapter.Picasso.PicassoDisplayWallpaperImage" />
+        <activity android:name=".Adapter.Picasso.PicassoDisplayOtherImages" />
         <activity
-            android:name=".ActivityProjects.ActivityDisplayImages.ImagesMoqAlaramActivity"
+            android:name=".Activity.ActivityImages.ImagesMoqAlaramActivity"
             android:label="المسجد الحرام" />
         <activity
-            android:name=".ActivityProjects.ActivityDisplayImages.ImagesMoqNabaweActivity"
+            android:name=".Activity.ActivityImages.ImagesMoqNabaweActivity"
             android:label="المسجد النبوي" />
         <activity
-            android:name=".ActivityProjects.ActivityDisplayImages.ImagesSaleheenActivity"
+            android:name=".Activity.ActivityImages.ImagesSaleheenActivity"
             android:label="أقوال الصالحين" />
         <activity
-            android:name=".ActivityProjects.ActivityDisplayImages.ImagesAqsaActivity"
+            android:name=".Activity.ActivityImages.ImagesAqsaActivity"
             android:label="المسجد الأقصى" />
         <activity
-            android:name=".ActivityProjects.ActivityDisplayImages.ImagesOthersActivity"
+            android:name=".Activity.ActivityImages.ImagesOthersActivity"
             android:label="صور منوعة" />
         <activity
-            android:name=".ActivityProjects.ActivityDisplayImages.ImagesRamadanActivity"
+            android:name=".Activity.ActivityImages.ImagesRamadanActivity"
             android:label="رمضان كريم" />
         <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".ActivityProjects.SplashActivity">
+        <activity android:name=".Activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

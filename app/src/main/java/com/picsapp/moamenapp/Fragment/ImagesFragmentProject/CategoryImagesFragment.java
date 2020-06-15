@@ -10,14 +10,14 @@ import android.widget.Button;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 
-import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesAqsaActivity;
-import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesDowaaActivity;
-import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesMoqAlaramActivity;
-import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesMoqNabaweActivity;
-import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesMorningActivity;
-import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesOthersActivity;
-import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesRamadanActivity;
-import com.picsapp.moamenapp.ActivityProjects.ActivityDisplayImages.ImagesSaleheenActivity;
+import com.picsapp.moamenapp.Activity.ActivityImages.ImagesAqsaActivity;
+import com.picsapp.moamenapp.Activity.ActivityImages.ImagesDowaaActivity;
+import com.picsapp.moamenapp.Activity.ActivityImages.ImagesMoqAlaramActivity;
+import com.picsapp.moamenapp.Activity.ActivityImages.ImagesMoqNabaweActivity;
+import com.picsapp.moamenapp.Activity.ActivityImages.ImagesMorningActivity;
+import com.picsapp.moamenapp.Activity.ActivityImages.ImagesOthersActivity;
+import com.picsapp.moamenapp.Activity.ActivityImages.ImagesRamadanActivity;
+import com.picsapp.moamenapp.Activity.ActivityImages.ImagesSaleheenActivity;
 import com.picsapp.moamenapp.R;
 
 public class CategoryImagesFragment extends Fragment {
