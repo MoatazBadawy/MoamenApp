@@ -1,142 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#fff"
+    android:layout_height="wrap_content"
+    android:fadeScrollbars="false"
+    android:fastScrollEnabled="false"
+    android:overScrollMode="never"
+    android:scrollbars="none"
     tools:context=".Fragment.ImagesFragmentProject.CategoryImagesFragment">
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fadeScrollbars="false"
-        android:fastScrollEnabled="false"
-        android:overScrollMode="never"
-        android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <Button
+            android:id="@+id/button_dowaa_image_category"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:context=".ImagesAllActivity">
+            android:layout_height="180dp"
+            android:background="@drawable/dowaa_image"
+            android:text="صور أدعية"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button_morrining_image_category"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_gravity="center"
-                android:background="@drawable/morining_image"
-                android:text="الصباح والمساء"
-                android:textColor="#FFFFFF"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.523"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/button_aqsa_image_category"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_below="@id/button_dowaa_image_category"
+            android:background="@drawable/aqsa_image_full"
+            android:text="المسجد الأقصى"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button_dowaa_image_category"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_gravity="center"
-                android:background="@drawable/dowaa_image"
-                android:text="صور أدعية"
-                android:textColor="#FFFFFF"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.523"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_morrining_image_category" />
+        <Button
+            android:id="@+id/button_nabawe_image_category"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_below="@id/button_aqsa_image_category"
+            android:background="@drawable/nabawe_image_full"
+            android:text="المسجد النبوي"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button_saleheen_image_category"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="@drawable/saleheen_image_full"
-                android:text="أقوال الصالحين"
-                android:textColor="#FFFFFF"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.523"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_dowaa_image_category" />
+        <Button
+            android:id="@+id/button_others_image_category"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_below="@id/button_nabawe_image_category"
+            android:background="@drawable/others_images_full"
+            android:text="صور منوعة"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button_aqsa_image_category"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="@drawable/aqsa_image_full"
-                android:text="المسجد الأقصى"
-                android:textColor="#FFFFFF"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.523"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_saleheen_image_category" />
 
-            <Button
-                android:id="@+id/button_others_image_category"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="@drawable/others_images_full"
-                android:text="صور منوعة"
-                android:textColor="#FFFFFF"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.523"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_aqsa_image_category" />
+        <Button
+            android:id="@+id/button_haram_image_category"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_below="@id/button_others_image_category"
+            android:background="@drawable/haram_image_full"
+            android:text="المسجد الحرام"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button_nabawe_image_category"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="@drawable/nabawe_image_full"
-                android:text="المسجد النبوي"
-                android:textColor="#FFFFFF"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.523"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_others_image_category" />
+        <Button
+            android:id="@+id/button_ramadan_image_category"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_below="@id/button_haram_image_category"
+            android:background="@drawable/ramadan_image_full"
+            android:text="رمضان كريم"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button_haram_image_category"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="@drawable/haram_image_full"
-                android:text="المسجد الحرام"
-                android:textColor="#FFFFFF"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.523"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_nabawe_image_category" />
-
-            <Button
-                android:id="@+id/button_ramadan_image_category"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="@drawable/ramadan_image_full"
-                android:text="رمضان كريم"
-                android:textColor="#FFFFFF"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.523"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_haram_image_category" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</ScrollView>

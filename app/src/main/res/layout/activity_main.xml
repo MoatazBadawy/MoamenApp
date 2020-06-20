@@ -20,14 +20,14 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_alignParentBottom="true"
         android:background="#fff"
         android:paddingTop="2dp"
-        android:theme="@style/TabLayoutTextStyle"
+        android:layout_alignParentBottom="true"
+        android:theme="@style/BottomNavigationTextStyle"
         app:labelVisibilityMode="labeled"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/buttom_navigation_menu">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>

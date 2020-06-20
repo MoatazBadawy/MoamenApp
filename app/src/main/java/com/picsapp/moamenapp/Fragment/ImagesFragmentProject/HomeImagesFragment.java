@@ -41,14 +41,14 @@ public class HomeImagesFragment extends Fragment implements Picasso.ItemClickLis
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_images_home, container, false);
 
-        /* set new variables to Button views "the views on top bar that's will open new activity" */
+        // set new variables to Button views "the views on top bar that's will open new activity"
         Button Ramadan, Others, AQSA, Salehen, all, Ertugle, Zahrah;
 
-        /* make the app support only arabic "Right to left" */
+        // make the app support only arabic "Right to left"
         // even if the language of the device on english or others
         ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
 
-        /* open new Activity when click in button */
+        //open new Activity when click in button
         Salehen = rootView.findViewById(R.id.button2_saleheen);
         // Set a click listener on that View
         Salehen.setOnClickListener(new View.OnClickListener() {
@@ -162,6 +162,8 @@ public class HomeImagesFragment extends Fragment implements Picasso.ItemClickLis
         String image = chooseImages[position];
         Intent intent = new Intent(getActivity(), PicassoDisplayWallpaperImage.class);
         intent.putExtra("imageUrl", image);
+        // to not repeat the image when click on it many times
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         getActivity().startActivity(intent);
     }
 

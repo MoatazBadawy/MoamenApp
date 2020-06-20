@@ -29,7 +29,7 @@ public class Picasso extends RecyclerView.Adapter<Picasso.ViewHolder> {
     @Override
     @NonNull
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.images_list, parent, false);
+        View view = mInflater.inflate(R.layout.list_images, parent, false);
         return new ViewHolder(view);
     }
 

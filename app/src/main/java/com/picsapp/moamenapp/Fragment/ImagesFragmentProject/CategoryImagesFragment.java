@@ -14,10 +14,8 @@ import com.picsapp.moamenapp.Activity.ActivityImages.ImagesAqsaActivity;
 import com.picsapp.moamenapp.Activity.ActivityImages.ImagesDowaaActivity;
 import com.picsapp.moamenapp.Activity.ActivityImages.ImagesMoqAlaramActivity;
 import com.picsapp.moamenapp.Activity.ActivityImages.ImagesMoqNabaweActivity;
-import com.picsapp.moamenapp.Activity.ActivityImages.ImagesMorningActivity;
 import com.picsapp.moamenapp.Activity.ActivityImages.ImagesOthersActivity;
 import com.picsapp.moamenapp.Activity.ActivityImages.ImagesRamadanActivity;
-import com.picsapp.moamenapp.Activity.ActivityImages.ImagesSaleheenActivity;
 import com.picsapp.moamenapp.R;
 
 public class CategoryImagesFragment extends Fragment {
@@ -28,24 +26,11 @@ public class CategoryImagesFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_images_category, container, false);
 
-        /* make the app support only arabic "Right to left" */
+        // make the app support only arabic "Right to left"
         // even if the language of the device on english or others
         ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
 
-        /* open new Activity when click in button */
-        Button Morning = rootView.findViewById(R.id.button_morrining_image_category);
-        // Set a click listener on that View
-        Morning.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the family category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link ImagesMoqNabaweActivity}
-                Intent ImagesMoqAlaramIntent = new Intent(getActivity(), ImagesMorningActivity.class);
-                // Start the new activity
-                startActivity(ImagesMoqAlaramIntent);
-            }
-        });
-
+        // open new Activity when click in button
         Button Dowaa = rootView.findViewById(R.id.button_dowaa_image_category);
         // Set a click listener on that View
         Dowaa.setOnClickListener(new View.OnClickListener() {
@@ -54,19 +39,6 @@ public class CategoryImagesFragment extends Fragment {
             public void onClick(View view) {
                 // Create a new intent to open the {@link ImagesMoqNabaweActivity}
                 Intent ImagesMoqAlaramIntent = new Intent(getActivity(), ImagesDowaaActivity.class);
-                // Start the new activity
-                startActivity(ImagesMoqAlaramIntent);
-            }
-        });
-
-        Button Saleheen = rootView.findViewById(R.id.button_saleheen_image_category);
-        // Set a click listener on that View
-        Saleheen.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the family category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link ImagesMoqNabaweActivity}
-                Intent ImagesMoqAlaramIntent = new Intent(getActivity(), ImagesSaleheenActivity.class);
                 // Start the new activity
                 startActivity(ImagesMoqAlaramIntent);
             }
@@ -136,6 +108,7 @@ public class CategoryImagesFragment extends Fragment {
                 startActivity(ImagesMoqAlaramIntent);
             }
         });
+
 
         return rootView;
     }

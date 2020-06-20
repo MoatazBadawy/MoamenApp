@@ -23,10 +23,10 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splach);
 
-        /* make the status bar white with black icons */
+        // make the status bar white with black icons
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
-        /* code to start timer and take action after the timer ends */
+        // code to start timer and take action after the timer ends
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

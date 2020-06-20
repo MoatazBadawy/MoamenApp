@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <!-- application information -->
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
@@ -17,40 +18,56 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ActivityImages.ImagesZahrahActivity"></activity>
-        <activity android:name=".Activity.ActivityImages.ImagesErtugleActivity" />
-        <activity android:name=".Activity.ActivityImages.ImagesMorningActivity" />
-        <activity android:name=".Activity.ActivityImages.ImagesDowaaActivity" />
 
+        <!-- Ad data -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-4010171402649915~5502252008" />
+
+        <!-- "launchMode" to not repeat the Activity when click on it many times -->
+        <activity
+            android:name=".Activity.ActivityImages.ImagesZahrahActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.ActivityImages.ImagesErtugleActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.ActivityImages.ImagesMorningActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.ActivityImages.ImagesDowaaActivity"
+            android:launchMode="singleTop" />
 
         <activity android:name=".Adapter.Picasso.PicassoDisplayWallpaperImage" />
         <activity android:name=".Adapter.Picasso.PicassoDisplayOtherImages" />
         <activity
             android:name=".Activity.ActivityImages.ImagesMoqAlaramActivity"
-            android:label="المسجد الحرام" />
+            android:label="المسجد الحرام"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Activity.ActivityImages.ImagesMoqNabaweActivity"
-            android:label="المسجد النبوي" />
+            android:label="المسجد النبوي"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Activity.ActivityImages.ImagesSaleheenActivity"
-            android:label="أقوال الصالحين" />
+            android:label="أقوال الصالحين"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Activity.ActivityImages.ImagesAqsaActivity"
-            android:label="المسجد الأقصى" />
+            android:label="المسجد الأقصى"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Activity.ActivityImages.ImagesOthersActivity"
-            android:label="صور منوعة" />
+            android:label="صور منوعة"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Activity.ActivityImages.ImagesRamadanActivity"
-            android:label="رمضان كريم" />
+            android:label="رمضان كريم"
+            android:launchMode="singleTop" />
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

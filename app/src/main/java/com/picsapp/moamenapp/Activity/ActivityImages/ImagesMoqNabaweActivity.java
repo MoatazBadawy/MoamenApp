@@ -36,7 +36,7 @@ public class ImagesMoqNabaweActivity extends AppCompatActivity implements Picass
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.images_activity_mosq_nabawe);
+        setContentView(R.layout.activity_images_mosq_nabawe);
 
         // make the status bar white with black icons
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
@@ -211,6 +211,8 @@ public class ImagesMoqNabaweActivity extends AppCompatActivity implements Picass
         String image = MoqAlNabaweImages[position];
         Intent intent = new Intent(this, PicassoDisplayOtherImages.class);
         intent.putExtra("imageUrl", image);
+        // to not repeat the image when click on it many times
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 

@@ -63,7 +63,7 @@ public class PicassoDisplayOtherImages extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.images_activity_display_other);
+        setContentView(R.layout.activity_images_others_display);
 
         // Hide status bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);

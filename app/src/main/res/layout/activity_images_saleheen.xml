@@ -3,26 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    tools:context=".Activity.ActivityImages.ImagesAqsaActivity">
+    android:background="#FFFFFF"
+    tools:context=".Activity.ActivityImages.ImagesSaleheenActivity">
 
     <!-- Text top bar -->
     <TextView
-        android:id="@+id/text_image_Aqsa"
+        android:id="@+id/text_image_saleheen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="14dp"
         android:gravity="center"
         android:paddingLeft="16dp"
-        android:text="المسجد الأقصى"
+        android:text="أقوال الصالحين"
         android:textColor="@color/colorAccent"
         android:textSize="22sp"
         android:textStyle="bold" />
 
     <!-- Button back -->
     <Button
-        android:id="@+id/button_back_aqsa"
+        android:id="@+id/button_back_saleheen"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
@@ -33,19 +33,18 @@
 
     <!-- recyclerview for display images -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_image_aqsa"
+        android:id="@+id/recyclerview_image_saleheen"
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/text_image_Aqsa"
-        android:fastScrollEnabled="false"
-        android:background="@color/colorBackground"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/text_image_saleheen"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorBackground"
+        android:fastScrollEnabled="false"
         android:nestedScrollingEnabled="false"
         android:scrollbars="none" />
 
-    <!-- Ad -->
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adViewAqsa"
+        android:id="@+id/adViewSaleheen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -53,6 +52,6 @@
         android:background="#fff"
         android:elevation="4dp"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-4010171402649915/5734712955"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-4010171402649915/5750190674"></com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

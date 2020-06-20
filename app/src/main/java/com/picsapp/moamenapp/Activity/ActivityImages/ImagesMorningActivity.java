@@ -33,7 +33,7 @@ public class ImagesMorningActivity extends AppCompatActivity implements Picasso.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.images_activity_morning);
+        setContentView(R.layout.activity_images_morning);
 
         // make the status bar white with black icons
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
@@ -208,6 +208,8 @@ public class ImagesMorningActivity extends AppCompatActivity implements Picasso.
         String image = MorningImages[position];
         Intent intent = new Intent(this, PicassoDisplayOtherImages.class);
         intent.putExtra("imageUrl", image);
+        // to not repeat the image when click on it many times
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 

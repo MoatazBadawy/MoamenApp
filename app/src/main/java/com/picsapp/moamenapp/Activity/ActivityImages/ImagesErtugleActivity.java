@@ -166,6 +166,8 @@ public class ImagesErtugleActivity extends AppCompatActivity implements Picasso.
         String image = ErtugleImages[position];
         Intent intent = new Intent(this, PicassoDisplayWallpaperImage.class);
         intent.putExtra("imageUrl", image);
+        // to not repeat the image when click on it many times
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 

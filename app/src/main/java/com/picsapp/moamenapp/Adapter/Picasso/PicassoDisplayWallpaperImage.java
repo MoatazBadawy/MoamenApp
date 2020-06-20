@@ -45,14 +45,25 @@ import static android.provider.MediaStore.Images;
  */
 public class PicassoDisplayWallpaperImage extends AppCompatActivity {
 
+    public static final int PERMISSION_WRITE = 0;
     ImageView imageView;
     Button back_icon, save, share, wallpaper, download_view;
-    public static final int PERMISSION_WRITE = 0;
+
+    // load Bitmap to method save image
+    private static Bitmap loadBitmap(String url) {
+        try {
+            InputStream in = new java.net.URL(url).openStream();
+            return BitmapFactory.decodeStream(in);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.image_activity_display_wallpaper);
+        setContentView(R.layout.activity_images_wallpaper_display);
 
         // Hide status bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -87,7 +98,7 @@ public class PicassoDisplayWallpaperImage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (checkPermission()) {
-                    setHomeWallpaper ();
+                    setHomeWallpaper();
                 }
             }
         });
@@ -133,17 +144,6 @@ public class PicassoDisplayWallpaperImage extends AppCompatActivity {
         sequence.start();
     }
 
-    // load Bitmap to method save image
-    private static Bitmap loadBitmap(String url) {
-        try {
-            InputStream in = new java.net.URL(url).openStream();
-            return BitmapFactory.decodeStream(in);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     // Download the image
     public void setDownloadImage() {
         Intent intent = getIntent();
@@ -167,7 +167,7 @@ public class PicassoDisplayWallpaperImage extends AppCompatActivity {
     }
 
     // Share the image
-    public void setShareImage () {
+    public void setShareImage() {
         BitmapDrawable bitmapDrawable = ((BitmapDrawable) imageView.getDrawable());
         Bitmap bitmap = bitmapDrawable.getBitmap();
         String bitmapPath = Images.Media.insertImage(getContentResolver(), bitmap, "حمل تطبيق المؤمن للمزيد من هذه الصور", null);
@@ -180,15 +180,15 @@ public class PicassoDisplayWallpaperImage extends AppCompatActivity {
     }
 
     // Set Home wallpaper the image
-    public void setHomeWallpaper () {
-                    BitmapDrawable bitmapDrawable = ((BitmapDrawable) imageView.getDrawable());
-                    Bitmap bitmap = bitmapDrawable.getBitmap();
-                    String bitmapPath = Images.Media.insertImage(getContentResolver(), bitmap, "", null);
-                    Uri bitmapUri = Uri.parse(bitmapPath);
-                    Intent intent = new Intent(Intent.ACTION_ATTACH_DATA).setDataAndType(bitmapUri,  "image/jpeg")
-                            .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                            .putExtra("mimeType", "image/jpeg");
-                    startActivity(Intent.createChooser(intent, getString(R.string.background)));
+    public void setHomeWallpaper() {
+        BitmapDrawable bitmapDrawable = ((BitmapDrawable) imageView.getDrawable());
+        Bitmap bitmap = bitmapDrawable.getBitmap();
+        String bitmapPath = Images.Media.insertImage(getContentResolver(), bitmap, "", null);
+        Uri bitmapUri = Uri.parse(bitmapPath);
+        Intent intent = new Intent(Intent.ACTION_ATTACH_DATA).setDataAndType(bitmapUri, "image/jpeg")
+                .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                .putExtra("mimeType", "image/jpeg");
+        startActivity(Intent.createChooser(intent, getString(R.string.background)));
     }
 
     // method to save image

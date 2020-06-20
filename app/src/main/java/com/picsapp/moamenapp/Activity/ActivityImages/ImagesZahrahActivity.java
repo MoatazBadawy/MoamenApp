@@ -207,6 +207,8 @@ public class ImagesZahrahActivity extends AppCompatActivity implements Picasso.I
         String image = ZahrahImages[position];
         Intent intent = new Intent(this, PicassoDisplayOtherImages.class);
         intent.putExtra("imageUrl", image);
+        // to not repeat the image when click on it many times
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 

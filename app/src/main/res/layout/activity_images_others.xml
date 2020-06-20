@@ -4,25 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Activity.ActivityImages.ImagesMoqNabaweActivity">
+    tools:context=".Activity.ActivityImages.ImagesOthersActivity">
 
     <!-- Text top bar -->
     <TextView
-        android:id="@+id/text_image_nabawe"
+        android:id="@+id/text_image_others"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="14dp"
         android:gravity="center"
         android:paddingLeft="16dp"
-        android:text="المسجد النبوي"
+        android:text="صور منوعة"
         android:textColor="@color/colorAccent"
         android:textSize="22sp"
         android:textStyle="bold" />
 
     <!-- Button back -->
     <Button
-        android:id="@+id/button_back_nabawe"
+        android:id="@+id/button_back_others"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
@@ -33,18 +33,18 @@
 
     <!-- recyclerview for display images -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_image_nabawe"
+        android:id="@+id/recyclerview_image_others"
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/text_image_nabawe"
-        android:fastScrollEnabled="false"
-        android:background="@color/colorBackground"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/text_image_others"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorBackground"
+        android:fastScrollEnabled="false"
         android:nestedScrollingEnabled="false"
         android:scrollbars="none" />
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adViewNabawe"
+        android:id="@+id/adViewOthers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -52,6 +52,6 @@
         android:background="#fff"
         android:elevation="4dp"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-4010171402649915/3164389938"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-4010171402649915/8416716619"></com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

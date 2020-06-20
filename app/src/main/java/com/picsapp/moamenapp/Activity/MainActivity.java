@@ -1,5 +1,6 @@
 package com.picsapp.moamenapp.Activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
@@ -19,6 +20,7 @@ import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.picsapp.moamenapp.Adapter.IOnBackPressed;
 import com.picsapp.moamenapp.Fragment.EbadatFragment;
 import com.picsapp.moamenapp.Fragment.HomeFragment;
 import com.picsapp.moamenapp.Fragment.ImagesFragment;
@@ -37,16 +39,23 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int PERMISSION_REQUEST_CODE = 0;
 
+    //to select the right bottom navigation when press back
+    public static void setHomeItem(Activity activity) {
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                activity.findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.home_item);
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /* make the status bar white with black icons */
+        //make the status bar white with black icons
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
-        /* make the app support only arabic "Right to left" */
+        // make the app support only arabic "Right to left"
         // even if the language of the device on english or others
         ViewCompat.setLayoutDirection(getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
 
@@ -63,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         shortcutManager.setDynamicShortcuts(Arrays.asList(shortcut));
 
-        /* methods to start new fragment */
+        // methods to start new fragment
         // make new object and find the view "BottomNavigationView"
         BottomNavigationView navigationView = findViewById(R.id.bottom_navigation);
         // To make the first fragment shows when the app start.
@@ -102,13 +111,33 @@ public class MainActivity extends AppCompatActivity {
                 }
                 assert selectedFragment != null;
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, selectedFragment).commit();
+
                 return true;
             }
 
         });
     }
 
-    /* allow the app for storage */
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed(); delete this line
+        // and start your fragment:
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_layout);
+        if (!(fragment instanceof IOnBackPressed) || !((IOnBackPressed) fragment).onBackPressed()) {
+            super.onBackPressed();
+        }
+
+        //to select the right bottom navigation when press back
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        int seletedItemId = bottomNavigationView.getSelectedItemId();
+        if (R.id.home_item != seletedItemId) {
+            setHomeItem(MainActivity.this);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    // allow the app for storage
     private void requestPermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             Toasty.normal(MainActivity.this, "من فضلك قم بالسماح للتطبيق بتخزين الصور. لن يعمل التطبيق بشكل صحيح", Toast.LENGTH_LONG).show();
