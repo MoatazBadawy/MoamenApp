@@ -98,15 +98,15 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     // third fragment "ebadat"
                     case R.id.ebadat_item:
-                        selectedFragment = new EbadatFragment();
+                        selectedFragment = new MoreFragment();
                         break;
                     // fourth fragment "images"
-                    case R.id.images_item:
-                        selectedFragment = new ImagesFragment();
+                    case R.id.quran_item:
+                        selectedFragment = new EbadatFragment();
                         break;
                     // fifth fragment "more"
-                    case R.id.settings_item:
-                        selectedFragment = new MoreFragment();
+                    case R.id.image_item:
+                        selectedFragment = new ImagesFragment();
                         break;
                 }
                 assert selectedFragment != null;

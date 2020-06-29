@@ -16,8 +16,10 @@ public class VideosFragment extends Fragment implements IOnBackPressed {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_videos, container, false);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_videos, container, false);
+        return rootView;
     }
 
     //back to first fragment when press back

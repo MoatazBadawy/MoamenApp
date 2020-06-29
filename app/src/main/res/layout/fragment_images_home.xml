@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorBackground"
     android:fadeScrollbars="false"
     android:fastScrollEnabled="false"
@@ -19,6 +20,18 @@
         android:layout_height="wrap_content"
         android:background="@color/colorBackground"
         android:descendantFocusability="blocksDescendants">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_wallpaper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="top|center"
+            android:layout_margin="20dp"
+            android:src="@drawable/up_arrow"
+            android:visibility="gone"
+            app:backgroundTint="#6D353232" />
 
         <!-- chooses images text -->
         <TextView
@@ -53,17 +66,17 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:id="@+id/button_ma3alem_islamic"
+                    android:id="@+id/button6_morining"
                     android:layout_width="138dp"
                     android:layout_height="84dp"
                     android:layout_gravity="center"
                     android:layout_marginRight="4dp"
-                    android:background="@drawable/ma3alem_islamic"
-                    android:paddingLeft="44dp"
+                    android:background="@drawable/morning_image"
+                    android:paddingLeft="26dp"
                     android:paddingTop="56dp"
-                    android:text="معالم إسلامية"
+                    android:text="الصباح والمساء"
                     android:textColor="#fff"
-                    android:textSize="16sp" />
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/button2_saleheen"
@@ -92,42 +105,16 @@
                     android:textSize="18sp" />
 
                 <Button
-                    android:id="@+id/button6_morining"
+                    android:id="@+id/button_ma3alem_islamic"
                     android:layout_width="138dp"
                     android:layout_height="84dp"
                     android:layout_gravity="center"
                     android:layout_marginRight="4dp"
-                    android:background="@drawable/morning_image"
-                    android:paddingLeft="26dp"
-                    android:paddingTop="56dp"
-                    android:text="الصباح والمساء"
-                    android:textColor="#fff"
-                    android:textSize="18sp" />
-
-                <Button
-                    android:id="@+id/button_ertugrel"
-                    android:layout_width="138dp"
-                    android:layout_height="84dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="4dp"
-                    android:background="@drawable/ertugrel"
-                    android:paddingLeft="50dp"
-                    android:paddingTop="56dp"
-                    android:text="قيامة أرطغرل"
-                    android:textColor="#fff"
-                    android:textSize="16sp" />
-
-                <Button
-                    android:id="@+id/button_zahrah"
-                    android:layout_width="138dp"
-                    android:layout_height="84dp"
-                    android:layout_gravity="center"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
-                    android:background="@drawable/zahraa"
-                    android:paddingLeft="90dp"
+                    android:background="@drawable/aqsa_image"
+                    android:paddingLeft="44dp"
                     android:paddingTop="56dp"
-                    android:text="زهرة"
+                    android:text="المسجد الأقصى"
                     android:textColor="#fff"
                     android:textSize="16sp" />
 

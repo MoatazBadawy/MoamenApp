@@ -21,6 +21,7 @@ import com.picsapp.moamenapp.Adapter.Picasso.Picasso;
 import com.picsapp.moamenapp.Adapter.Picasso.PicassoDisplayOtherImages;
 import com.picsapp.moamenapp.Fragment.ImagesFragmentProject.HomeImagesFragment;
 import com.picsapp.moamenapp.R;
+import com.r0adkll.slidr.Slidr;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -39,13 +40,49 @@ public class ImagesAqsaActivity extends AppCompatActivity implements Picasso.Ite
         setContentView(R.layout.activity_images_aqsa);
 
         // make the status bar white with black icons
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        CoustomStateBar();
 
         // make the app support only arabic "Right to left"
-        // even if the language of the device on english or others
-        ViewCompat.setLayoutDirection(getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
+        SupportArabic();
 
         // back to last activity
+        BackToLastActivity();
+
+        // ArrayList for the images
+        ArrayListImages();
+
+        // make new object and find the view "recyclerView"
+        RecyclerView recyclerView = findViewById(R.id.recyclerview_image_aqsa);
+        // Calculate the items and auto-fit it on the screen
+        // please note: make the columnWidthDp like what you have in list_image.xml "the image width", to make good fill in all screen sizes
+        int mNoOfColumns = HomeImagesFragment.Utility.calculateNoOfColumns(this, 120);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, mNoOfColumns));
+        adapter = new Picasso(this, AqsaImages);
+        adapter.setClickListener(this);
+        recyclerView.setAdapter(adapter);
+        // change the adapter at random
+        Collections.shuffle(Arrays.asList(AqsaImages));
+
+        // slider the activity
+        Slider();
+
+        // Ads
+        Ads();
+    }
+
+    // make the status bar white with black icons
+    public void CoustomStateBar() {
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    }
+
+    // make the app support only arabic "Right to left"
+    public void SupportArabic() {
+        // even if the language of the device on english or others
+        ViewCompat.setLayoutDirection(getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
+    }
+
+    // back to last activity
+    public void BackToLastActivity() {
         Button back_icon = findViewById(R.id.button_back_aqsa);
         back_icon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +90,10 @@ public class ImagesAqsaActivity extends AppCompatActivity implements Picasso.Ite
                 finish();
             }
         });
+    }
 
+    // ArrayList that's have the images
+    public void ArrayListImages() {
         // ArrayList for Aqsa Images
         AqsaImages = new String[]{
                 // 1
@@ -177,31 +217,11 @@ public class ImagesAqsaActivity extends AppCompatActivity implements Picasso.Ite
                 // 60
                 "https://www.rjeem.com/wp-content/uploads/2019/06/12d81238e2caca63dda0eb2afd5e67f7.jpg",
         };
+    }
 
-        // make new object and find the view "recyclerView"
-        RecyclerView recyclerView = findViewById(R.id.recyclerview_image_aqsa);
-        // Calculate the items and auto-fit it on the screen
-        int mNoOfColumns = HomeImagesFragment.Utility.calculateNoOfColumns(this, 140);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, mNoOfColumns));
-        adapter = new Picasso(this, AqsaImages);
-        adapter.setClickListener(this);
-        recyclerView.setAdapter(adapter);
-        // change the adapter at random
-        Collections.shuffle(Arrays.asList(AqsaImages));
-
-        // Ads methods
-        // This call initializes the SDK and calls back a completion listener once
-        // initialization is complete (or after a 30-second timeout). Call this method
-        // only once and as early as possible, ideally at app launch.
-        MobileAds.initialize(this, "ca-app-pub-4010171402649915~5502252008");
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-        AdView mAdView = findViewById(R.id.adViewAqsa);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+    // Make slider on the Activity
+    public void Slider() {
+        Slidr.attach(this);
     }
 
     // OnClick listener to display the image when click on it
@@ -224,5 +244,23 @@ public class ImagesAqsaActivity extends AppCompatActivity implements Picasso.Ite
             int noOfColumns = (int) (screenWidthDp / columnWidthDp + 0.5); // +0.5 for correct rounding to int.
             return noOfColumns;
         }
+    }
+
+    // Ads method
+    public void Ads() {
+
+        // Ads methods
+        // This call initializes the SDK and calls back a completion listener once
+        // initialization is complete (or after a 30-second timeout). Call this method
+        // only once and as early as possible, ideally at app launch.
+        MobileAds.initialize(this, "ca-app-pub-4010171402649915~5502252008");
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdView mAdView = findViewById(R.id.adViewAqsa);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 }

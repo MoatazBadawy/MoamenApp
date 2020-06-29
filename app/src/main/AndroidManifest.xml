@@ -27,43 +27,53 @@
         <!-- "launchMode" to not repeat the Activity when click on it many times -->
         <activity
             android:name=".Activity.ActivityImages.ImagesZahrahActivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
             android:name=".Activity.ActivityImages.ImagesErtugleActivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
             android:name=".Activity.ActivityImages.ImagesMorningActivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
             android:name=".Activity.ActivityImages.ImagesDowaaActivity"
-            android:launchMode="singleTop" />
-
-        <activity android:name=".Adapter.Picasso.PicassoDisplayWallpaperImage" />
-        <activity android:name=".Adapter.Picasso.PicassoDisplayOtherImages" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
             android:name=".Activity.ActivityImages.ImagesMoqAlaramActivity"
             android:label="المسجد الحرام"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
             android:name=".Activity.ActivityImages.ImagesMoqNabaweActivity"
             android:label="المسجد النبوي"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
             android:name=".Activity.ActivityImages.ImagesSaleheenActivity"
             android:label="أقوال الصالحين"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
             android:name=".Activity.ActivityImages.ImagesAqsaActivity"
             android:label="المسجد الأقصى"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
             android:name=".Activity.ActivityImages.ImagesOthersActivity"
             android:label="صور منوعة"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
             android:name=".Activity.ActivityImages.ImagesRamadanActivity"
             android:label="رمضان كريم"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.SliderActivityTheme" />
+        <activity android:name=".Adapter.Picasso.PicassoDisplayWallpaperImage" />
+        <activity android:name=".Adapter.Picasso.PicassoDisplayOtherImages" />
+
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.SplashActivity">
             <intent-filter>

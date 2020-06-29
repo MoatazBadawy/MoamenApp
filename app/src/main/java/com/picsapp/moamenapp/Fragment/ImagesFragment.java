@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.duolingo.open.rtlviewpager.RtlViewPager;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
@@ -52,8 +51,7 @@ public class ImagesFragment extends Fragment implements IOnBackPressed {
         //      by calling onPageTitle()
         tabLayout.setupWithViewPager(viewPager);
 
-        if (CheckNetwork.isInternetAvailable(getActivity())) //returns true if internet available
-        {
+        if (CheckNetwork.isInternetAvailable(getActivity())) {  //returns true if internet available
 
         } else {
             BottomSheetBehavior mBottomSheetBehavior;
@@ -66,31 +64,6 @@ public class ImagesFragment extends Fragment implements IOnBackPressed {
                 mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
             }
         }
-
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition(), true);
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {//scroll to top
-                try {
-                    Fragment f = adapter.getItem(tab.getPosition());
-                    if (f != null) {
-                        View fragmentView = f.getView();
-                        RecyclerView mRecyclerView = (RecyclerView) fragmentView.findViewById(R.id.recyclerView_image_wallpapers);//mine one is RecyclerView
-                        if (mRecyclerView != null)
-                            mRecyclerView.smoothScrollToPosition(0);
-                    }
-                } catch (NullPointerException npe) {
-                }
-            }
-        });
 
         return rootView;
     }

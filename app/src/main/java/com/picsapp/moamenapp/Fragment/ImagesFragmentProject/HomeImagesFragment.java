@@ -3,22 +3,23 @@ package com.picsapp.moamenapp.Fragment.ImagesFragmentProject;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.picsapp.moamenapp.Activity.ActivityImages.ImagesErtugleActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.picsapp.moamenapp.Activity.ActivityImages.ImagesMorningActivity;
 import com.picsapp.moamenapp.Activity.ActivityImages.ImagesOthersActivity;
 import com.picsapp.moamenapp.Activity.ActivityImages.ImagesSaleheenActivity;
-import com.picsapp.moamenapp.Activity.ActivityImages.ImagesZahrahActivity;
 import com.picsapp.moamenapp.Adapter.Picasso.Picasso;
 import com.picsapp.moamenapp.Adapter.Picasso.PicassoDisplayWallpaperImage;
 import com.picsapp.moamenapp.R;
@@ -75,32 +76,6 @@ public class HomeImagesFragment extends Fragment implements Picasso.ItemClickLis
             }
         });
 
-        Zahrah = rootView.findViewById(R.id.button_zahrah);
-        // Set a click listener on that View
-        Zahrah.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the family category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link ImagesOthersActivity}
-                Intent Intent = new Intent(getActivity(), ImagesZahrahActivity.class);
-                // Start the new activity
-                startActivity(Intent);
-            }
-        });
-
-        Ertugle = rootView.findViewById(R.id.button_ertugrel);
-        // Set a click listener on that View
-        Ertugle.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the family category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link ImagesOthersActivity}
-                Intent Intent = new Intent(getActivity(), ImagesErtugleActivity.class);
-                // Start the new activity
-                startActivity(Intent);
-            }
-        });
-
         all = rootView.findViewById(R.id.button6_morining);
         // Set a click listener on that View
         all.setOnClickListener(new View.OnClickListener() {
@@ -143,15 +118,57 @@ public class HomeImagesFragment extends Fragment implements Picasso.ItemClickLis
         };
 
         /* make new object and find the view "GridView" */
-        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerview_image_choose);
+        final RecyclerView recyclerView = rootView.findViewById(R.id.recyclerview_image_choose);
         // Calculate the items and auto-fit it on the screen
-        int mNoOfColumns = Utility.calculateNoOfColumns(getActivity(), 140);
+        int mNoOfColumns = Utility.calculateNoOfColumns(getActivity(), 120);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), mNoOfColumns));
         adapter = new Picasso(getActivity(), chooseImages);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
         // change the adapter at random every specific time{
         Collections.shuffle(Arrays.asList(chooseImages));
+
+        // add floating button to go up when click on it
+        final FloatingActionButton fab = rootView.findViewById(R.id.fab_wallpaper);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recyclerView.smoothScrollToPosition(0);
+            }
+        });
+
+        // floating button Visibility and set time for that
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+
+                if (dy > 0) { // scrolling down
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            fab.setVisibility(View.GONE);
+                        }
+                    }, 2000); // delay of 2 seconds before hiding the fab
+
+                } else if (dy < 0) { // scrolling up
+
+                    fab.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) { // No scrolling
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            fab.setVisibility(View.GONE);
+                        }
+                    }, 2000); // delay of 2 seconds before hiding the fab
+                }
+
+            }
+        });
 
         return rootView;
     }

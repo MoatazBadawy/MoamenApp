@@ -209,7 +209,7 @@ public class WallpapersImagesFragment extends Fragment implements Picasso.ItemCl
         // make new object and find the view "GridView" */
         final RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView_image_wallpapers);
         // Calculate the items and auto-fit it on the screen
-        int mNoOfColumns = HomeImagesFragment.Utility.calculateNoOfColumns(getActivity(), 140);
+        int mNoOfColumns = HomeImagesFragment.Utility.calculateNoOfColumns(getActivity(), 120);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), mNoOfColumns));
         adapter = new Picasso(getActivity(), TopImages);
         adapter.setClickListener(this);

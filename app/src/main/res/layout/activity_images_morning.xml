@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="@color/background_material_light"
     tools:context=".Activity.ActivityImages.ImagesMorningActivity">
 
     <!-- Text top bar -->
@@ -34,7 +34,7 @@
     <!-- recyclerview for display images -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_image_morning"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_image_morning"
         android:layout_marginTop="10dp"
@@ -54,6 +54,5 @@
         android:elevation="4dp"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-4010171402649915/7403017847"></com.google.android.gms.ads.AdView>
-
 
 </RelativeLayout>

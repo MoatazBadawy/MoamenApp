@@ -21,6 +21,7 @@ import com.picsapp.moamenapp.Adapter.Picasso.Picasso;
 import com.picsapp.moamenapp.Adapter.Picasso.PicassoDisplayOtherImages;
 import com.picsapp.moamenapp.Fragment.ImagesFragmentProject.HomeImagesFragment;
 import com.picsapp.moamenapp.R;
+import com.r0adkll.slidr.Slidr;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -39,13 +40,49 @@ public class ImagesSaleheenActivity extends AppCompatActivity implements Picasso
         setContentView(R.layout.activity_images_saleheen);
 
         // make the status bar white with black icons
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        CoustomStateBar();
 
         // make the app support only arabic "Right to left"
-        // even if the language of the device on english or others
-        ViewCompat.setLayoutDirection(getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
+        SupportArabic();
 
         // back to last activity
+        BackToLastActivity();
+
+        // ArrayList for the images
+        ArrayListImages();
+
+        // make new object and find the view "recyclerView"
+        RecyclerView recyclerView = findViewById(R.id.recyclerview_image_saleheen);
+        // Calculate the items and auto-fit it on the screen
+        // please note: make the columnWidthDp like what you have in list_image.xml "the image width", to make good fill in all screen sizes
+        int mNoOfColumns = HomeImagesFragment.Utility.calculateNoOfColumns(this, 120);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, mNoOfColumns));
+        adapter = new Picasso(this, SaleheenImages);
+        adapter.setClickListener(this);
+        recyclerView.setAdapter(adapter);
+        // change the adapter at random
+        Collections.shuffle(Arrays.asList(SaleheenImages));
+
+        // slider the activity
+        Slider();
+
+        // Ads
+        Ads();
+    }
+
+    // make the status bar white with black icons
+    public void CoustomStateBar() {
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    }
+
+    // make the app support only arabic "Right to left"
+    public void SupportArabic() {
+        // even if the language of the device on english or others
+        ViewCompat.setLayoutDirection(getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
+    }
+
+    // back to last activity
+    public void BackToLastActivity() {
         Button back_icon = findViewById(R.id.button_back_saleheen);
         back_icon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +90,10 @@ public class ImagesSaleheenActivity extends AppCompatActivity implements Picasso
                 finish();
             }
         });
+    }
 
+    // ArrayList that's have the images
+    public void ArrayListImages() {
         // ArrayList for Saleheen Images
         SaleheenImages = new String[]{
                 // 1
@@ -177,17 +217,27 @@ public class ImagesSaleheenActivity extends AppCompatActivity implements Picasso
                 // 60
                 "https://www.rjeem.com/wp-content/uploads/2019/06/12d81238e2caca63dda0eb2afd5e67f7.jpg",
         };
+    }
 
-        // make new object and find the view "recyclerView"
-        RecyclerView recyclerView = findViewById(R.id.recyclerview_image_saleheen);
-        // Calculate the items and auto-fit it on the screen
-        int mNoOfColumns = HomeImagesFragment.Utility.calculateNoOfColumns(this, 140);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, mNoOfColumns));
-        adapter = new Picasso(this, SaleheenImages);
-        adapter.setClickListener(this);
-        recyclerView.setAdapter(adapter);
-        // change the adapter at random
-        Collections.shuffle(Arrays.asList(SaleheenImages));
+    // Make slider on the Activity
+    public void Slider() {
+        Slidr.attach(this);
+    }
+
+    // OnClick listener to display the image when click on it
+    @Override
+    public void onItemClick(View view, int position) {
+        // get the image
+        String image = SaleheenImages[position];
+        Intent intent = new Intent(this, PicassoDisplayOtherImages.class);
+        intent.putExtra("imageUrl", image);
+        // to not repeat the image when click on it many times
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent);
+    }
+
+    // Ads method
+    public void Ads() {
 
         // Ads methods
         // This call initializes the SDK and calls back a completion listener once
@@ -204,25 +254,12 @@ public class ImagesSaleheenActivity extends AppCompatActivity implements Picasso
         mAdView.loadAd(adRequest);
     }
 
-    // OnClick listener to display the image when click on it
-    @Override
-    public void onItemClick(View view, int position) {
-        // get the image
-        String image = SaleheenImages[position];
-        Intent intent = new Intent(this, PicassoDisplayOtherImages.class);
-        intent.putExtra("imageUrl", image);
-        // to not repeat the image when click on it many times
-        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        startActivity(intent);
-    }
-
     // Calculate the items and auto-fit it on the screen
     public static class Utility {
         public static int calculateNoOfColumns(Context context, float columnWidthDp) { // For example columnWidthdp=180
             DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
             float screenWidthDp = displayMetrics.widthPixels / displayMetrics.density;
-            int noOfColumns = (int) (screenWidthDp / columnWidthDp + 0.5); // +0.5 for correct rounding to int.
-            return noOfColumns;
+            return (int) (screenWidthDp / columnWidthDp + 0.5);
         }
     }
 }

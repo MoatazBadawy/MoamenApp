@@ -30,9 +30,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta6"
+    implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta7"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.firebase:firebase-messaging:20.2.0'
+    implementation 'com.google.firebase:firebase-messaging:20.2.1'
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -42,7 +42,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     // Add the Firebase SDK for Google Analytics
     implementation 'com.google.firebase:firebase-analytics:17.4.3'
-    implementation 'com.google.android.gms:play-services-ads:19.1.0'
+    implementation 'com.google.android.gms:play-services-ads:19.2.0'
     // to zoom in photo
     implementation 'com.ablanco.zoomy:zoomy:1.1.0'
     // toasty
@@ -66,5 +66,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     // swipe to refresh
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    // swipe the Activity to close
+    implementation 'com.r0adkll:slidableactivity:2.1.0'
+
 }

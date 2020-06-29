@@ -125,11 +125,15 @@ public class PicassoDisplayOtherImages extends AppCompatActivity {
             }
         });
 
-        // zoom in photo like Instagram
-        Zoomy.Builder builder = new Zoomy.Builder(this).target(imageView);
-        builder.register();
-
         // MaterialShowcaseView "intro"
+        ShowcaseView();
+
+        // zoom in photo like Instagram
+        ZoomIn();
+    }
+
+    // MaterialShowcaseView "intro"
+    public void ShowcaseView() {
         ShowcaseConfig config = new ShowcaseConfig();
         config.setDelay(500); // half second between each showcase view
         MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this, "intro_card");
@@ -142,6 +146,12 @@ public class PicassoDisplayOtherImages extends AppCompatActivity {
         sequence.addSequenceItem(share,
                 "شارك الصورة مع أصدقائك حتى بدون تحميل", "إبدأ");
         sequence.start();
+    }
+
+    // zoom in photo like Instagram
+    public void ZoomIn() {
+        Zoomy.Builder builder = new Zoomy.Builder(this).target(imageView);
+        builder.register();
     }
 
     // Download the image

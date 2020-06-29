@@ -42,9 +42,9 @@ public class ViewpagerImagesAdapter extends FragmentStatePagerAdapter {
             String[] chooseImages = new String[0];
             return new HomeImagesFragment(chooseImages);
         } else if (position == 1) {
-            return new WallpapersImagesFragment();
-        } else {
             return new CategoryImagesFragment();
+        } else {
+            return new WallpapersImagesFragment();
         }
     }
 
@@ -55,9 +55,9 @@ public class ViewpagerImagesAdapter extends FragmentStatePagerAdapter {
         if (position == 0) {
             return mContext.getString(R.string.category_places);
         } else if (position == 1) {
-            return mContext.getString(R.string.category_resturants);
-        } else {
             return mContext.getString(R.string.category_photos);
+        } else {
+            return mContext.getString(R.string.category_resturants);
         }
     }
 

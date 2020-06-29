@@ -6,19 +6,14 @@
     <!--Menus-->
     <string name="menu_home">الرئيسية</string>
     <string name="menu_videos">فيديوهات</string>
-    <string name="menu_ebadat">عبادات</string>
+    <string name="menu_ebadat">قرآن</string>
     <string name="menu_images">صور</string>
-    <string name="menu_settings">المزيد</string>
+    <string name="menu_settings">عبادات</string>
     <string name="background">قم بأختيار التطبيق المناسب</string>
-
 
     <!--Tabs-->
     <string name="category_places">الرئيسية</string>
     <string name="category_resturants">خلفيات</string>
-    <string name="category_photos">المزيد</string>
-
-    <string name="title_activity_fullscreen">FullscreenActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="category_photos">الأقسام</string>
 
 </resources>
