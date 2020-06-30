@@ -9,11 +9,11 @@
     <string name="menu_ebadat">قرآن</string>
     <string name="menu_images">صور</string>
     <string name="menu_settings">عبادات</string>
-    <string name="background">قم بأختيار التطبيق المناسب</string>
+    <string name="background">قم بإختيار التطبيق المناسب</string>
 
     <!--Tabs-->
     <string name="category_places">الرئيسية</string>
     <string name="category_resturants">خلفيات</string>
-    <string name="category_photos">الأقسام</string>
+    <string name="category_photos">المزيدتن</string>
 
 </resources>
