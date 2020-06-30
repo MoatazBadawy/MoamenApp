@@ -236,16 +236,6 @@ public class ImagesAqsaActivity extends AppCompatActivity implements Picasso.Ite
         startActivity(intent);
     }
 
-    // Calculate the items and auto-fit it on the screen
-    public static class Utility {
-        public static int calculateNoOfColumns(Context context, float columnWidthDp) { // For example columnWidthdp=180
-            DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-            float screenWidthDp = displayMetrics.widthPixels / displayMetrics.density;
-            int noOfColumns = (int) (screenWidthDp / columnWidthDp + 0.5); // +0.5 for correct rounding to int.
-            return noOfColumns;
-        }
-    }
-
     // Ads method
     public void Ads() {
 
@@ -262,5 +252,15 @@ public class ImagesAqsaActivity extends AppCompatActivity implements Picasso.Ite
         AdView mAdView = findViewById(R.id.adViewAqsa);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+    }
+
+    // Calculate the items and auto-fit it on the screen
+    public static class Utility {
+        public static int calculateNoOfColumns(Context context, float columnWidthDp) { // For example columnWidthdp=180
+            DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+            float screenWidthDp = displayMetrics.widthPixels / displayMetrics.density;
+            int noOfColumns = (int) (screenWidthDp / columnWidthDp + 0.5); // +0.5 for correct rounding to int.
+            return noOfColumns;
+        }
     }
 }

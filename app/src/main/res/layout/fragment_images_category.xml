@@ -19,7 +19,7 @@
             android:id="@+id/linear_layout_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -48,7 +48,7 @@
             android:id="@+id/linear_layout_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linear_layout_1">
@@ -61,7 +61,7 @@
                 android:layout_marginStart="8dp"
                 android:text="قيامة أرطغرل"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -69,10 +69,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginRight="92dp"
+                android:layout_marginRight="100dp"
                 android:text="معالم إسلامية"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -110,7 +110,7 @@
             android:id="@+id/linear_layout_text2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linear_layout_2">
@@ -123,7 +123,7 @@
                 android:layout_marginStart="8dp"
                 android:text="أقوال الصالحين"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -131,10 +131,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginRight="82dp"
+                android:layout_marginRight="88dp"
                 android:text="صور منوعة"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -172,7 +172,7 @@
             android:id="@+id/linear_layout_text3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linear_layout_3">
@@ -185,7 +185,7 @@
                 android:layout_marginStart="8dp"
                 android:text="الصباح والمساء"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -193,10 +193,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginRight="82dp"
+                android:layout_marginRight="88dp"
                 android:text="صور أدعية"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -234,7 +234,7 @@
             android:id="@+id/linear_layout_text4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linear_layout_4">
@@ -247,7 +247,7 @@
                 android:layout_marginStart="8dp"
                 android:text="المسجد الأقصى"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -255,10 +255,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginRight="82dp"
+                android:layout_marginRight="88dp"
                 android:text="المسجد النبوي"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -296,7 +296,7 @@
             android:id="@+id/linear_layout_text5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:layout_marginBottom="8dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -311,7 +311,7 @@
                 android:layout_marginStart="10dp"
                 android:text="زهرة"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -322,7 +322,7 @@
                 android:layout_marginRight="154dp"
                 android:text="رمضان كريم"
                 android:textColor="#000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
