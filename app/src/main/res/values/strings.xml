@@ -11,9 +11,13 @@
     <string name="menu_settings">عبادات</string>
     <string name="background">قم بإختيار التطبيق المناسب</string>
 
-    <!--Tabs-->
+    <!--Tabs Images-->
     <string name="category_places">الرئيسية</string>
     <string name="category_resturants">خلفيات</string>
-    <string name="category_photos">المزيدتن</string>
+    <string name="category_photos">المزيد</string>
+
+    <!--Tabs Quran-->
+    <string name="reading_quran_tabe">القرآن الكريم</string>
+    <string name="search_quran_tabe">بحث القرآن</string>
 
 </resources>

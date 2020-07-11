@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <!-- application information -->
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
@@ -26,58 +25,175 @@
 
         <!-- "launchMode" to not repeat the Activity when click on it many times -->
         <activity
-            android:name=".Activity.ActivityImages.ImagesZahrahActivity"
+            android:name=".Activity.ImagesActivity.ImagesZahrahActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
-            android:name=".Activity.ActivityImages.ImagesErtugleActivity"
+            android:name=".Activity.ImagesActivity.ImagesErtugleActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
-            android:name=".Activity.ActivityImages.ImagesMorningActivity"
+            android:name=".Activity.ImagesActivity.ImagesMorningActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
-            android:name=".Activity.ActivityImages.ImagesDowaaActivity"
+            android:name=".Activity.ImagesActivity.ImagesDowaaActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
-            android:name=".Activity.ActivityImages.ImagesMoqAlaramActivity"
+            android:name=".Activity.ImagesActivity.ImagesMoqAlaramActivity"
             android:label="المسجد الحرام"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
-            android:name=".Activity.ActivityImages.ImagesMoqNabaweActivity"
+            android:name=".Activity.ImagesActivity.ImagesMoqNabaweActivity"
             android:label="المسجد النبوي"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
-            android:name=".Activity.ActivityImages.ImagesSaleheenActivity"
+            android:name=".Activity.ImagesActivity.ImagesSaleheenActivity"
             android:label="أقوال الصالحين"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
-            android:name=".Activity.ActivityImages.ImagesAqsaActivity"
+            android:name=".Activity.ImagesActivity.ImagesAqsaActivity"
             android:label="المسجد الأقصى"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
-            android:name=".Activity.ActivityImages.ImagesOthersActivity"
+            android:name=".Activity.ImagesActivity.ImagesOthersActivity"
             android:label="صور منوعة"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
-            android:name=".Activity.ActivityImages.ImagesRamadanActivity"
+            android:name=".Activity.ImagesActivity.ImagesRamadanActivity"
             android:label="رمضان كريم"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.SliderActivityTheme" />
+
+        <!-- Quran surah Activity -->
+        <activity android:name=".Activity.QuranActivity.QuranSurah1" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah2" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah3" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah4" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah5" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah6" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah7" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah8" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah9" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah10" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah11" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah12" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah13" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah14" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah15" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah16" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah17" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah18" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah19" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah20" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah21" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah22" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah23" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah24" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah25" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah26" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah27" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah28" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah29" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah30" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah31" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah32" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah33" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah34" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah35" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah36" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah37" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah38" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah39" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah40" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah41" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah42" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah43" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah44" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah45" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah46" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah47" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah48" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah49" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah50" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah51" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah52" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah53" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah54" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah55" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah56" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah57" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah58" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah59" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah60" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah61" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah62" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah63" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah64" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah65" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah66" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah67" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah68" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah69" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah70" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah71" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah72" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah73" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah74" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah75" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah76" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah77" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah78" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah79" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah80" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah81" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah82" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah83" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah84" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah85" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah86" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah87" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah88" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah89" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah90" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah91" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah92" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah93" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah94" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah95" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah96" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah97" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah98" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah99" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah100" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah101" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah102" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah103" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah104" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah105" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah106" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah107" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah108" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah109" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah110" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah111" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah112" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah113" />
+        <activity android:name=".Activity.QuranActivity.QuranSurah114" />
+
         <activity android:name=".Adapter.Picasso.PicassoDisplayWallpaperImage" />
         <activity android:name=".Adapter.Picasso.PicassoDisplayOtherImages" />
-
-        <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.SplashActivity">
+        <activity android:name=".Activity.Project.MainActivity" />
+        <activity android:name=".Activity.Project.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

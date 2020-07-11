@@ -12,9 +12,9 @@ import androidx.fragment.app.Fragment;
 import com.duolingo.open.rtlviewpager.RtlViewPager;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.tabs.TabLayout;
-import com.picsapp.moamenapp.Adapter.CheckNetwork;
-import com.picsapp.moamenapp.Adapter.IOnBackPressed;
-import com.picsapp.moamenapp.Adapter.ViewpagerImagesAdapter;
+import com.picsapp.moamenapp.Adapter.Others.CheckNetwork;
+import com.picsapp.moamenapp.Adapter.Picasso.IOnBackPressed;
+import com.picsapp.moamenapp.Adapter.Picasso.ViewpagerImagesAdapter;
 import com.picsapp.moamenapp.R;
 
 /*

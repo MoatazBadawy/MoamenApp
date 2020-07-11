@@ -20,9 +20,6 @@ import com.picsapp.moamenapp.Adapter.Picasso.Picasso;
 import com.picsapp.moamenapp.Adapter.Picasso.PicassoDisplayWallpaperImage;
 import com.picsapp.moamenapp.R;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 public class WallpapersImagesFragment extends Fragment implements Picasso.ItemClickListener {
 
     String[] TopImages;
@@ -214,8 +211,6 @@ public class WallpapersImagesFragment extends Fragment implements Picasso.ItemCl
         adapter = new Picasso(getActivity(), TopImages);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
-        // change the adapter at random every specific time{
-        Collections.shuffle(Arrays.asList(TopImages));
 
         // add floating button to go up when click on it
         final FloatingActionButton fab = rootView.findViewById(R.id.fab);

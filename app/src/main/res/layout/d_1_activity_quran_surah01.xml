@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".Activity.QuranActivity.QuranSurah1">
+
+    <!--ViewPager with RTL support-->
+    <com.duolingo.open.rtlviewpager.RtlViewPager
+        android:id="@+id/view_pager_quran_fateha"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#88FAF3D4"
+        android:fadeScrollbars="false"
+        android:fastScrollEnabled="false"
+        android:overScrollMode="never"></com.duolingo.open.rtlviewpager.RtlViewPager>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

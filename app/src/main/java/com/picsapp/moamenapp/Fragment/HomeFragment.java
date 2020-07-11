@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
-import com.picsapp.moamenapp.Adapter.IOnBackPressed;
+import com.picsapp.moamenapp.Adapter.Picasso.IOnBackPressed;
 import com.picsapp.moamenapp.R;
 
 import nl.dionsegijn.konfetti.KonfettiView;
@@ -46,6 +46,7 @@ public class HomeFragment extends Fragment implements IOnBackPressed {
                         .streamFor(200, 5000L);
             }
         });
+
 
         return rootView;
     }

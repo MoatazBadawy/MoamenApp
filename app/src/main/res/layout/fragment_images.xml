@@ -12,13 +12,11 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:background="#FFFFFF"
         android:elevation="1dp"
-        app:tabGravity="fill"
         app:tabIndicatorColor="@color/colorPrimary"
-        app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/colorBlack"
         app:tabTextAppearance="@style/TabLayoutTextStyle"
         app:tabTextColor="#606165" />
 
@@ -29,7 +27,6 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/tabs"
         android:overScrollMode="never">
-
     </com.duolingo.open.rtlviewpager.RtlViewPager>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

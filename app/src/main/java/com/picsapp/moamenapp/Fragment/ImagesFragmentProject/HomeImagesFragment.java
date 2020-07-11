@@ -3,29 +3,24 @@ package com.picsapp.moamenapp.Fragment.ImagesFragmentProject;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.picsapp.moamenapp.Activity.ActivityImages.ImagesMorningActivity;
-import com.picsapp.moamenapp.Activity.ActivityImages.ImagesOthersActivity;
-import com.picsapp.moamenapp.Activity.ActivityImages.ImagesSaleheenActivity;
+import com.picsapp.moamenapp.Activity.ImagesActivity.ImagesAqsaActivity;
+import com.picsapp.moamenapp.Activity.ImagesActivity.ImagesMorningActivity;
+import com.picsapp.moamenapp.Activity.ImagesActivity.ImagesOthersActivity;
+import com.picsapp.moamenapp.Activity.ImagesActivity.ImagesSaleheenActivity;
 import com.picsapp.moamenapp.Adapter.Picasso.Picasso;
 import com.picsapp.moamenapp.Adapter.Picasso.PicassoDisplayWallpaperImage;
 import com.picsapp.moamenapp.R;
-
-import java.util.Arrays;
-import java.util.Collections;
 
 public class HomeImagesFragment extends Fragment implements Picasso.ItemClickListener {
 
@@ -58,6 +53,19 @@ public class HomeImagesFragment extends Fragment implements Picasso.ItemClickLis
             public void onClick(View view) {
                 // Create a new intent to open the {@link ImagesSaleheenActivity}
                 Intent Intent = new Intent(getActivity(), ImagesSaleheenActivity.class);
+                // Start the new activity
+                startActivity(Intent);
+            }
+        });
+
+        AQSA = rootView.findViewById(R.id.button_ma3alem_islamic);
+        // Set a click listener on that View
+        AQSA.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the family category is clicked on.
+            @Override
+            public void onClick(View view) {
+                // Create a new intent to open the {@link ImagesOthersActivity}
+                Intent Intent = new Intent(getActivity(), ImagesAqsaActivity.class);
                 // Start the new activity
                 startActivity(Intent);
             }
@@ -126,53 +134,12 @@ public class HomeImagesFragment extends Fragment implements Picasso.ItemClickLis
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
         // change the adapter at random every specific time{
-        Collections.shuffle(Arrays.asList(chooseImages));
-
-        // add floating button to go up when click on it
-        final FloatingActionButton fab = rootView.findViewById(R.id.fab_wallpaper);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                recyclerView.smoothScrollToPosition(0);
-            }
-        });
-
-        // floating button Visibility and set time for that
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-
-                if (dy > 0) { // scrolling down
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            fab.setVisibility(View.GONE);
-                        }
-                    }, 2000); // delay of 2 seconds before hiding the fab
-
-                } else if (dy < 0) { // scrolling up
-
-                    fab.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-                if (newState == RecyclerView.SCROLL_STATE_IDLE) { // No scrolling
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            fab.setVisibility(View.GONE);
-                        }
-                    }, 2000); // delay of 2 seconds before hiding the fab
-                }
-
-            }
-        });
+        //Collections.shuffle(Arrays.asList(chooseImages));
 
         return rootView;
     }
 
+    // onclick to open the image
     @Override
     public void onItemClick(View view, int position) {
         // get the image

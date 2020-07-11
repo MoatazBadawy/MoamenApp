@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-import com.picsapp.moamenapp.Adapter.IOnBackPressed;
+import com.picsapp.moamenapp.Adapter.Picasso.IOnBackPressed;
 import com.picsapp.moamenapp.R;
 
 public class MoreFragment extends Fragment implements IOnBackPressed {

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_material_light"
-    tools:context=".Activity.ActivityImages.ImagesMorningActivity">
+    tools:context=".Activity.ImagesActivity.ImagesMorningActivity">
 
     <!-- Text top bar -->
     <TextView

@@ -4,14 +4,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.picsapp.moamenapp.Adapter.IOnBackPressed;
+import com.picsapp.moamenapp.Adapter.Picasso.IOnBackPressed;
 import com.picsapp.moamenapp.R;
 
 
 public class VideosFragment extends Fragment implements IOnBackPressed {
+    int number = 0;
+    TextView test;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,7 +35,6 @@ public class VideosFragment extends Fragment implements IOnBackPressed {
                 .replace(R.id.fragment_layout, nextFrag, "findThisFragment")
                 .addToBackStack(null)
                 .commit();
-
         return true;
     }
 }
