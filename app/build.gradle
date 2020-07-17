@@ -15,6 +15,7 @@ android {
         // to fix error "cannot fit requested classes in a single dex file"
         multiDexEnabled true
 
+
     }
 
     buildTypes {
