@@ -40,7 +40,7 @@ public class ViewpagerImagesAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         if (position == 0) {
             String[] chooseImages = new String[0];
-            return new HomeImagesFragment(chooseImages);
+            return new HomeImagesFragment();
         } else if (position == 1) {
             return new CategoryImagesFragment();
         } else {

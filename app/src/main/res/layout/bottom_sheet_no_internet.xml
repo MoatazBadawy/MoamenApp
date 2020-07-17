@@ -22,7 +22,7 @@
         android:background="@color/color_transparen"
         android:padding="7dp"
         android:text="لا يوجد إتصال بالإنترنت"
-        android:textColor="@color/colorBackground"
+        android:textColor="@color/colorWhite"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

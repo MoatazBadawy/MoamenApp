@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@color/colorWhite"
     tools:context=".Activity.QuranActivity.QuranSurah2">
 
     <!--ViewPager with RTL support-->
@@ -12,9 +12,10 @@
         android:id="@+id/view_pager_quran_fateha"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#88FAF3D4"
         android:fadeScrollbars="false"
         android:fastScrollEnabled="false"
-        android:overScrollMode="never"></com.duolingo.open.rtlviewpager.RtlViewPager>
+        android:overScrollMode="never">
+
+    </com.duolingo.open.rtlviewpager.RtlViewPager>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

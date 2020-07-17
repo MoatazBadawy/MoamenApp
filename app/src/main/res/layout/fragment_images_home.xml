@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@color/colorWhite"
     android:fadeScrollbars="false"
     android:fastScrollEnabled="false"
     android:fillViewport="true"
@@ -14,10 +14,10 @@
 
     <!-- "descendantFocusability" to make the recyclerView not scrolls to the top itself -->
     <RelativeLayout
-        android:id="@+id/relativeLayout2"
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorBackground"
+        android:background="@color/colorWhite"
         android:descendantFocusability="blocksDescendants">
 
         <!-- chooses images text -->
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:id="@+id/button6_morining"
+                    android:id="@+id/button_morning_image"
                     android:layout_width="138dp"
                     android:layout_height="84dp"
                     android:layout_gravity="center"
@@ -65,7 +65,7 @@
                     android:textSize="18sp" />
 
                 <Button
-                    android:id="@+id/button2_saleheen"
+                    android:id="@+id/button_saleheen_image"
                     android:layout_width="138dp"
                     android:layout_height="84dp"
                     android:layout_gravity="center"
@@ -78,7 +78,7 @@
                     android:textSize="16sp" />
 
                 <Button
-                    android:id="@+id/button6_others"
+                    android:id="@+id/button_others_image"
                     android:layout_width="138dp"
                     android:layout_height="84dp"
                     android:layout_gravity="center"
@@ -91,7 +91,7 @@
                     android:textSize="18sp" />
 
                 <Button
-                    android:id="@+id/button_ma3alem_islamic"
+                    android:id="@+id/button_aqsa_image"
                     android:layout_width="138dp"
                     android:layout_height="84dp"
                     android:layout_gravity="center"
@@ -121,11 +121,11 @@
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_image_choose"
+            android:id="@+id/recyclerview_images_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/choose_text2"
-            android:background="@color/colorBackground"
+            android:background="@color/colorWhite"
             android:nestedScrollingEnabled="false" />
 
     </RelativeLayout>

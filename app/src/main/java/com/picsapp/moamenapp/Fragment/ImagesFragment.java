@@ -21,28 +21,53 @@ import com.picsapp.moamenapp.R;
  * This class for display images section in Fragment
  */
 public class ImagesFragment extends Fragment implements IOnBackPressed {
+
+    View rootView ;
+    RtlViewPager viewPager;
+    TabLayout tabLayout ;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_images, container, false);
+        rootView = inflater.inflate(R.layout.fragment_images, container, false);
+
+        // make the app support only arabic "Right to left"
+        supportArabic();
+        // display BottomSheet if there's no internet
+        checkInternet();
+
+        // Find the view pager that will allow the user to swipe between fragments
+        // "ViewPager with RTL support"
+        ViewPagerAdapetr();
+        // Connect the tab layout with the view pager. This will
+        tabLayoutAdapter();
+
+        return rootView;
+    }
+
+    public void supportArabic () {
 
         // make the app support only arabic "Right to left"
         // even if the language of the device on english or others
         ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
+    }
+
+    public void ViewPagerAdapetr () {
 
         // Find the view pager that will allow the user to swipe between fragments
         // "ViewPager with RTL support"
-        final RtlViewPager viewPager = rootView.findViewById(R.id.view_pager);
+        viewPager = rootView.findViewById(R.id.view_pager);
 
         // Create an adapter that knows which fragment should be shown on each page
         final ViewpagerImagesAdapter adapter = new ViewpagerImagesAdapter(this, getActivity().getSupportFragmentManager());
 
         // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
+    }
 
+    public void tabLayoutAdapter() {
         // Find the tab layout that shows the tabs
-        TabLayout tabLayout = rootView.findViewById(R.id.tabs);
+        tabLayout = rootView.findViewById(R.id.tabs);
 
         // Connect the tab layout with the view pager. This will
         //   1. Update the tab layout when the view pager is swiped
@@ -50,9 +75,11 @@ public class ImagesFragment extends Fragment implements IOnBackPressed {
         //   3. Set the tab layout's tab names with the view pager's adapter's titles
         //      by calling onPageTitle()
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    public void checkInternet() {
 
         if (CheckNetwork.isInternetAvailable(getActivity())) {  //returns true if internet available
-
         } else {
             BottomSheetBehavior mBottomSheetBehavior;
             ConstraintLayout mBottomsheet;
@@ -64,12 +91,10 @@ public class ImagesFragment extends Fragment implements IOnBackPressed {
                 mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
             }
         }
-
-        return rootView;
     }
 
-    //back to first fragment when press back
     @Override
+    //back to first fragment when press back
     public boolean onBackPressed() {
         //do what you want
         HomeFragment nextFrag = new HomeFragment();

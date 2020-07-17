@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_image_dowaa"
         android:layout_marginTop="10dp"
-        android:background="@color/colorBackground"
+        android:background="@color/colorWhite"
         android:fastScrollEnabled="false"
         android:nestedScrollingEnabled="false"
         android:scrollbars="none" />

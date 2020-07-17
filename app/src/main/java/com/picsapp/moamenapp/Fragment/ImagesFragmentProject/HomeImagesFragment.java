@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,30 +23,46 @@ import com.picsapp.moamenapp.R;
 
 public class HomeImagesFragment extends Fragment implements Picasso.ItemClickListener {
 
-    String[] chooseImages;
+    Button Morning, Saleheen, Others, AQSA;
+    RecyclerView recyclerView ;
+    String[] TopImages;
     private Picasso adapter;
-
-    public HomeImagesFragment(String[] chooseImages) {
-        this.chooseImages = chooseImages;
-    }
+    View rootView ;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_images_home, container, false);
+        rootView = inflater.inflate(R.layout.fragment_images_home, container, false);
 
-        // set new variables to Button views "the views on top bar that's will open new activity"
-        Button Ramadan, Others, AQSA, Salehen, all, Ertugle, Zahrah;
+        // Feature horizontal buttons click "Open new Activity"
+        buttonClickFeature();
 
-        // make the app support only arabic "Right to left"
-        // even if the language of the device on english or others
-        ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
+        // ArrayList for TopImages
+        arrayList();
+        // recyclerView adapter to display the images
+        recyclerViewAdapter();
 
-        //open new Activity when click in button
-        Salehen = rootView.findViewById(R.id.button2_saleheen);
+        return rootView;
+    }
+
+    // open new Activity when click in button
+    public void buttonClickFeature () {
+
+        Morning = rootView.findViewById(R.id.button_morning_image);
         // Set a click listener on that View
-        Salehen.setOnClickListener(new View.OnClickListener() {
+        Morning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create a new intent to open the {@link ImagesDowaaActivity}
+                Intent Intent = new Intent(getActivity(), ImagesMorningActivity.class);
+                // Start the new activity
+                startActivity(Intent);
+            }
+        });
+
+        Saleheen = rootView.findViewById(R.id.button_saleheen_image);
+        // Set a click listener on that View
+        Saleheen.setOnClickListener(new View.OnClickListener() {
             // The code in this method will be executed when the family category is clicked on.
             @Override
             public void onClick(View view) {
@@ -58,20 +73,7 @@ public class HomeImagesFragment extends Fragment implements Picasso.ItemClickLis
             }
         });
 
-        AQSA = rootView.findViewById(R.id.button_ma3alem_islamic);
-        // Set a click listener on that View
-        AQSA.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the family category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link ImagesOthersActivity}
-                Intent Intent = new Intent(getActivity(), ImagesAqsaActivity.class);
-                // Start the new activity
-                startActivity(Intent);
-            }
-        });
-
-        Others = rootView.findViewById(R.id.button6_others);
+        Others = rootView.findViewById(R.id.button_others_image);
         // Set a click listener on that View
         Others.setOnClickListener(new View.OnClickListener() {
             // The code in this method will be executed when the family category is clicked on.
@@ -84,21 +86,23 @@ public class HomeImagesFragment extends Fragment implements Picasso.ItemClickLis
             }
         });
 
-        all = rootView.findViewById(R.id.button6_morining);
+        AQSA = rootView.findViewById(R.id.button_aqsa_image);
         // Set a click listener on that View
-        all.setOnClickListener(new View.OnClickListener() {
+        AQSA.setOnClickListener(new View.OnClickListener() {
             // The code in this method will be executed when the family category is clicked on.
             @Override
             public void onClick(View view) {
-                // Create a new intent to open the {@link ImagesDowaaActivity}
-                Intent Intent = new Intent(getActivity(), ImagesMorningActivity.class);
+                // Create a new intent to open the {@link ImagesOthersActivity}
+                Intent Intent = new Intent(getActivity(), ImagesAqsaActivity.class);
                 // Start the new activity
                 startActivity(Intent);
             }
         });
+    }
 
-        /* ArrayList for chooseImages */
-        chooseImages = new String[]{
+    // ArrayList for TopImages
+    public void arrayList () {
+        TopImages = new String[]{
                 "https://i.ibb.co/4RLZXZg/Allah-Call-upon-me-b680792f-3870-406c-9430-014fa3ced1f2.jpg",
                 "https://fsa.zobj.net/crop.php?r=Sp8RZwckKmrOm4Hg9veqXk-fJ0ekQ6j0B-ZG8Rlwv1dtCNEQWjFD8PV5XMRFWQvogobXX7D6c5lumZUhdIyV4j3RyhpKL32ZI41eznDkqDL6UjrTSxBjWtIzEHvE5nZSNKuivFrhMVjkNUBT",
                 "https://fsa.zobj.net/crop.php?r=ZoP8ij-Swc9U_1A9sSW7Ryp1gs1hpIDZn2oqhqVPTORpz3A6HvPe0pximtFEF-7Rr228USn9hfyhuM5prOcmN8I1yHHcjg-e8EW2uwqbJpUC6JgKnJkfc8cVfY3RSS2_NeXL0oAohoxTI6n1",
@@ -124,31 +128,20 @@ public class HomeImagesFragment extends Fragment implements Picasso.ItemClickLis
                 "https://fsa.zobj.net/crop.php?r=PFcJx_skMcdCnkW4hJTrraLq0unNIL7iN8t2dsyxJoZHaRs0Xn55hng7BzvOASeilE6bV5SIIT9dNc3UfnrQ_cyZzB2chBl8HHX-NrowBp_pQlENNVr_Mj41Sdqm3qquU7XXscqndCpncYOf",
                 "https://fsb.zobj.net/crop.php?r=JxzwZxNYZTP9Y7oKJbU-Fm7gQYOMujK-bK--iKDG1jpVBQ3Au07KXlqsOBXzSgivOeMTaPDHXKWWpf0FA3shLgrAENUbmdPeHS0MsxKxj5m7-lBP7ESnugOcQDpd1ynAIotbrfDUV69gH30F",
         };
+    }
 
-        /* make new object and find the view "GridView" */
-        final RecyclerView recyclerView = rootView.findViewById(R.id.recyclerview_image_choose);
+    // recyclerView adapter to display the images
+    public void recyclerViewAdapter () {
+        // make new object and find the view "recyclerView"
+        recyclerView = rootView.findViewById(R.id.recyclerview_images_top);
         // Calculate the items and auto-fit it on the screen
         int mNoOfColumns = Utility.calculateNoOfColumns(getActivity(), 120);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), mNoOfColumns));
-        adapter = new Picasso(getActivity(), chooseImages);
+        adapter = new Picasso(getActivity(), TopImages);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
         // change the adapter at random every specific time{
         //Collections.shuffle(Arrays.asList(chooseImages));
-
-        return rootView;
-    }
-
-    // onclick to open the image
-    @Override
-    public void onItemClick(View view, int position) {
-        // get the image
-        String image = chooseImages[position];
-        Intent intent = new Intent(getActivity(), PicassoDisplayWallpaperImage.class);
-        intent.putExtra("imageUrl", image);
-        // to not repeat the image when click on it many times
-        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        getActivity().startActivity(intent);
     }
 
     // Calculate the items and auto-fit it on the screen
@@ -161,4 +154,15 @@ public class HomeImagesFragment extends Fragment implements Picasso.ItemClickLis
         }
     }
 
+    @Override
+    // onclick to open the image
+    public void onItemClick(View view, int position) {
+        // get the image
+        String image = TopImages[position];
+        Intent intent = new Intent(getActivity(), PicassoDisplayWallpaperImage.class);
+        intent.putExtra("imageUrl", image);
+        // to not repeat the image when click on it many times
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        getActivity().startActivity(intent);
+    }
 }

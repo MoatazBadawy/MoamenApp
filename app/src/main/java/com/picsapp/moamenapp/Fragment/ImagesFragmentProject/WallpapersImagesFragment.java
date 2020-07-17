@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,21 +21,18 @@ import com.picsapp.moamenapp.R;
 
 public class WallpapersImagesFragment extends Fragment implements Picasso.ItemClickListener {
 
-    String[] TopImages;
+    String[] backgroundsImages;
     private Picasso adapter;
+    RecyclerView recyclerView;
+    View rootView;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_images_wallpapers, container, false);
-
-        // make the app support only arabic "Right to left" */
-        // even if the language of the device on english or others
-        ViewCompat.setLayoutDirection(getActivity().getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
+        rootView = inflater.inflate(R.layout.fragment_images_wallpapers, container, false);
 
         // ArrayList for TopImages
-        TopImages = new String[]{
+        backgroundsImages = new String[]{
                 // 1
                 "https://i.ibb.co/GWRmtzt/AL-RZAK-0bb3940f-bd1a-458d-8377-d92fbc7aa7df.jpg",
                 // 2
@@ -203,14 +199,7 @@ public class WallpapersImagesFragment extends Fragment implements Picasso.ItemCl
                 "https://i.ibb.co/bbRVXg8/249-iphone-wallpapers-hd-725x1024.jpg",
         };
 
-        // make new object and find the view "GridView" */
-        final RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView_image_wallpapers);
-        // Calculate the items and auto-fit it on the screen
-        int mNoOfColumns = HomeImagesFragment.Utility.calculateNoOfColumns(getActivity(), 120);
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), mNoOfColumns));
-        adapter = new Picasso(getActivity(), TopImages);
-        adapter.setClickListener(this);
-        recyclerView.setAdapter(adapter);
+        recyclerViewAdapter();
 
         // add floating button to go up when click on it
         final FloatingActionButton fab = rootView.findViewById(R.id.fab);
@@ -257,15 +246,17 @@ public class WallpapersImagesFragment extends Fragment implements Picasso.ItemCl
         return rootView;
     }
 
-    @Override
-    public void onItemClick(View view, int position) {
-        // get the image
-        String image = TopImages[position];
-        Intent intent = new Intent(getActivity(), PicassoDisplayWallpaperImage.class);
-        intent.putExtra("imageUrl", image);
-        // to not repeat the image when click on it many times
-        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        getActivity().startActivity(intent);
+    // recyclerView adapter to display the images
+    public void recyclerViewAdapter () {
+
+        // make new object and find the view "GridView" */
+        recyclerView = rootView.findViewById(R.id.recyclerView_image_wallpapers);
+        // Calculate the items and auto-fit it on the screen
+        int mNoOfColumns = HomeImagesFragment.Utility.calculateNoOfColumns(getActivity(), 120);
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), mNoOfColumns));
+        adapter = new Picasso(getActivity(), backgroundsImages);
+        adapter.setClickListener(this);
+        recyclerView.setAdapter(adapter);
     }
 
     // Calculate the items and auto-fit it on the screen
@@ -276,5 +267,17 @@ public class WallpapersImagesFragment extends Fragment implements Picasso.ItemCl
             int noOfColumns = (int) (screenWidthDp / columnWidthDp + 0.5); // +0.5 for correct rounding to int.
             return noOfColumns;
         }
+    }
+
+    // onclick to open the image
+    @Override
+    public void onItemClick(View view, int position) {
+        // get the image
+        String image = backgroundsImages[position];
+        Intent intent = new Intent(getActivity(), PicassoDisplayWallpaperImage.class);
+        intent.putExtra("imageUrl", image);
+        // to not repeat the image when click on it many times
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        getActivity().startActivity(intent);
     }
 }

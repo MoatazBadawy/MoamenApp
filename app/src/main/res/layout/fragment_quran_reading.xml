@@ -9,7 +9,7 @@
         android:id="@+id/recyclerview_quran_reading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorBackground"
+        android:background="@color/colorWhite"
         android:fadeScrollbars="false"
         android:fastScrollEnabled="false"
         android:fillViewport="true"
