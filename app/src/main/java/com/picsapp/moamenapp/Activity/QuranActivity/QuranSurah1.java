@@ -12,7 +12,7 @@ import com.picsapp.moamenapp.R;
 
 public class QuranSurah1 extends AppCompatActivity {
 
-    private int[] mImageIds = new int[]{R.drawable.page001};
+    private int[] mImageIds = new int[]{R.drawable.page1};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -16,8 +16,9 @@
         android:id="@+id/surah_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="14dp"
-        android:paddingRight="16dp"
+        android:layout_toEndOf="@+id/surah_number"
+        android:paddingTop="10dp"
+        android:layout_marginRight="12dp"
         android:text="سورة الفاتحة"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#000"
@@ -28,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/surah_name"
-        android:paddingRight="16dp"
+        android:layout_alignStart="@+id/surah_name"
         android:text="مكية - ٥٥ آيه"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textSize="12sp" />
@@ -52,10 +53,10 @@
         android:id="@+id/shape2"
         android:layout_width="30dp"
         android:layout_height="34dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/islam" />
 
     <View
@@ -64,7 +65,82 @@
         android:layout_height="1px"
         android:layout_below="@+id/surah_detail"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="16dp"
         android:background="@color/black_overlay" />
 </RelativeLayout>
+
+<!-- Another desgin -->
+<!--
+    <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="#fff">
+
+<View
+    android:id="@+id/item_click"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignBottom="@+id/shape"
+    android:layout_alignParentTop="true"
+    android:background="@color/color_transparen" />
+
+<TextView
+    android:id="@+id/surah_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/surah_number"
+    android:paddingTop="14dp"
+    android:layout_marginRight="8dp"
+    android:text="سورة الفاتحة"
+    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+    android:textColor="#000"
+    android:textSize="16sp" />
+
+<TextView
+    android:id="@+id/surah_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/surah_name"
+    android:layout_alignStart="@+id/surah_name"
+    android:text="مكية - ٥٥ آيه"
+    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+    android:textSize="12sp" />
+
+<TextView
+    android:id="@+id/surah_number"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignStart="@+id/shape2"
+    android:layout_alignTop="@+id/shape2"
+    android:layout_alignEnd="@+id/shape2"
+    android:layout_alignBottom="@+id/shape2"
+    android:gravity="center"
+    android:text="١"
+    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+    android:textColor="@color/colorBlack"
+    android:textSize="14sp"
+    android:textStyle="bold" />
+
+<ImageView
+    android:id="@+id/shape2"
+    android:layout_width="30dp"
+    android:layout_height="34dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="16dp"
+    android:src="@drawable/islam" />
+
+<View
+    android:id="@+id/shape"
+    android:layout_width="match_parent"
+    android:layout_height="1px"
+    android:layout_below="@+id/surah_detail"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="14dp"
+    android:layout_marginRight="16dp"
+    android:background="@color/black_overlay" />
+</RelativeLayout>
+-->

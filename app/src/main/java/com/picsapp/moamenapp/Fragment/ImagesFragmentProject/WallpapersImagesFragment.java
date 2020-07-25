@@ -19,6 +19,9 @@ import com.picsapp.moamenapp.Adapter.Picasso.Picasso;
 import com.picsapp.moamenapp.Adapter.Picasso.PicassoDisplayWallpaperImage;
 import com.picsapp.moamenapp.R;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class WallpapersImagesFragment extends Fragment implements Picasso.ItemClickListener {
 
     String[] backgroundsImages;
@@ -257,6 +260,7 @@ public class WallpapersImagesFragment extends Fragment implements Picasso.ItemCl
         adapter = new Picasso(getActivity(), backgroundsImages);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
+        Collections.shuffle(Arrays.asList(backgroundsImages));
     }
 
     // Calculate the items and auto-fit it on the screen

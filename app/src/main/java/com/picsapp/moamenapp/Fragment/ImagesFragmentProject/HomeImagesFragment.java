@@ -21,6 +21,9 @@ import com.picsapp.moamenapp.Adapter.Picasso.Picasso;
 import com.picsapp.moamenapp.Adapter.Picasso.PicassoDisplayWallpaperImage;
 import com.picsapp.moamenapp.R;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class HomeImagesFragment extends Fragment implements Picasso.ItemClickListener {
 
     Button Morning, Saleheen, Others, AQSA;
@@ -141,7 +144,7 @@ public class HomeImagesFragment extends Fragment implements Picasso.ItemClickLis
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
         // change the adapter at random every specific time{
-        //Collections.shuffle(Arrays.asList(chooseImages));
+        Collections.shuffle(Arrays.asList(TopImages));
     }
 
     // Calculate the items and auto-fit it on the screen

@@ -17,7 +17,7 @@
     <string name="category_photos">المزيد</string>
 
     <!--Tabs Quran-->
-    <string name="reading_quran_tabe">القرآن الكريم</string>
+    <string name="reading_quran_tabe">سور القرآن</string>
     <string name="search_quran_tabe">بحث القرآن</string>
 
 </resources>

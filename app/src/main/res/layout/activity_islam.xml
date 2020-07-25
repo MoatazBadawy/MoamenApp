@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_material_light"
-    tools:context=".Activity.ImagesActivity.ImagesMoqAlaramActivity">
+    tools:context=".Activity.ImagesActivity.ImagesIslamActivity">
 
     <!-- Text top bar -->
     <TextView
@@ -15,7 +15,7 @@
         android:layout_marginTop="14dp"
         android:gravity="center"
         android:paddingLeft="16dp"
-        android:text="المسجد الحرام"
+        android:text="معالم إسلامية"
         android:textColor="@color/colorAccent"
         android:textSize="22sp"
         android:textStyle="bold" />
@@ -53,7 +53,9 @@
         android:background="#fff"
         android:elevation="4dp"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-4010171402649915/7403017847"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-4010171402649915/7403017847">
+
+    </com.google.android.gms.ads.AdView>
 
 
 </RelativeLayout>

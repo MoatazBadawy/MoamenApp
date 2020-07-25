@@ -80,7 +80,7 @@ public class ImagesErtugleActivity extends AppCompatActivity implements Picasso.
 
     // back to last activity
     public void BackToLastActivity() {
-        Button back_icon = findViewById(R.id.button_back_haram);
+        Button back_icon = findViewById(R.id.button_back_Ertugle);
         back_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -204,7 +204,7 @@ public class ImagesErtugleActivity extends AppCompatActivity implements Picasso.
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
-        AdView mAdView = findViewById(R.id.adViewzahrah);
+        AdView mAdView = findViewById(R.id.adViewErtugle);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
     }

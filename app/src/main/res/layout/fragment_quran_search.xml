@@ -12,7 +12,7 @@
         android:id="@+id/web_view_quran"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="-120dp"
+        android:layout_marginTop="-180dp"
         android:fadeScrollbars="false"
         android:fastScrollEnabled="false"
         android:overScrollMode="never"

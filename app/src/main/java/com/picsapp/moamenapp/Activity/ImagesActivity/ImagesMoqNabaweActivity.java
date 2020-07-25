@@ -249,7 +249,7 @@ public class ImagesMoqNabaweActivity extends AppCompatActivity implements Picass
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
-        AdView mAdView = findViewById(R.id.adViewzahrah);
+        AdView mAdView = findViewById(R.id.adViewNabawe);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
     }

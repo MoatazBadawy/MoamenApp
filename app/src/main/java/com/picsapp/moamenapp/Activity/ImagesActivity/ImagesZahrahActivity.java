@@ -80,7 +80,7 @@ public class ImagesZahrahActivity extends AppCompatActivity implements Picasso.I
 
     // back to last activity
     public void BackToLastActivity() {
-        Button back_icon = findViewById(R.id.button_back_others);
+        Button back_icon = findViewById(R.id.button_back_zahrah);
         back_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

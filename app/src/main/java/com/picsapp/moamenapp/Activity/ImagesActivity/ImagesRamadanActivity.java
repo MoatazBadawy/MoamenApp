@@ -83,7 +83,7 @@ public class ImagesRamadanActivity extends AppCompatActivity implements Picasso.
 
     // back to last activity
     public void BackToLastActivity() {
-        Button back_icon = findViewById(R.id.button_back_others);
+        Button back_icon = findViewById(R.id.button_back_ramadan);
         back_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -41,7 +41,7 @@
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.SliderActivityTheme" />
         <activity
-            android:name=".Activity.ImagesActivity.ImagesMoqAlaramActivity"
+            android:name=".Activity.ImagesActivity.ImagesIslamActivity"
             android:label="المسجد الحرام"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.SliderActivityTheme" />

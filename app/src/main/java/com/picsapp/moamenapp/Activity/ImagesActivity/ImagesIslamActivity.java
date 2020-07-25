@@ -29,7 +29,7 @@ import java.util.Collections;
 /*
  * This class for display the Mosque Alharam images
  */
-public class ImagesMoqAlaramActivity extends AppCompatActivity implements Picasso.ItemClickListener {
+public class ImagesIslamActivity extends AppCompatActivity implements Picasso.ItemClickListener {
 
     String[] MoqAlHaramImages;
     private Picasso adapter;
@@ -37,7 +37,7 @@ public class ImagesMoqAlaramActivity extends AppCompatActivity implements Picass
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_images_moq_al_haram);
+        setContentView(R.layout.activity_islam);
 
         // make the status bar white with black icons
         CoustomStateBar();
@@ -249,7 +249,7 @@ public class ImagesMoqAlaramActivity extends AppCompatActivity implements Picass
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
-        AdView mAdView = findViewById(R.id.adViewzahrah);
+        AdView mAdView = findViewById(R.id.adViewHaram);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
     }

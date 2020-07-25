@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/button_ertugrel"
+                android:id="@+id/button_ertugrel_category"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="4dp"
@@ -33,7 +35,7 @@
                 android:background="@drawable/ertugrel" />
 
             <Button
-                android:id="@+id/button_ma3alem_islamic"
+                android:id="@+id/button_islam_category"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="4dp"
@@ -57,23 +59,23 @@
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="42dp"
                 android:text="قيامة أرطغرل"
                 android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginRight="100dp"
+                android:layout_marginRight="106dp"
                 android:text="معالم إسلامية"
+                android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <!-- LinearLayout 2 -->
@@ -82,12 +84,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linear_layout_text">
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/button_saleheen_category"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="4dp"
@@ -95,7 +97,7 @@
                 android:background="@drawable/aqwal_image" />
 
             <Button
-                android:id="@+id/button_2"
+                android:id="@+id/button_others_category"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="4dp"
@@ -120,22 +122,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="42dp"
                 android:text="أقوال الصالحين"
+                android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginRight="88dp"
+                android:layout_marginRight="100dp"
                 android:text="صور منوعة"
+                android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <!-- LinearLayout 3 -->
@@ -144,12 +146,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linear_layout_text2">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/button_morning_category"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="4dp"
@@ -157,7 +159,7 @@
                 android:background="@drawable/morning_image" />
 
             <Button
-                android:id="@+id/button_4"
+                android:id="@+id/button_dowaa_category"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="4dp"
@@ -182,22 +184,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="42dp"
                 android:text="الصباح والمساء"
+                android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginRight="88dp"
+                android:layout_marginRight="104dp"
                 android:text="صور أدعية"
+                android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <!-- LinearLayout 4 -->
@@ -206,12 +208,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linear_layout_text3">
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/button_aqsa_category"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="4dp"
@@ -219,7 +221,7 @@
                 android:background="@drawable/aqsa_image" />
 
             <Button
-                android:id="@+id/button_5"
+                android:id="@+id/button_nabawe_category"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="4dp"
@@ -244,22 +246,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="42dp"
                 android:text="المسجد الأقصى"
+                android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginRight="88dp"
+                android:layout_marginRight="94dp"
                 android:text="المسجد النبوي"
+                android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <!-- LinearLayout 5 -->
@@ -268,12 +270,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linear_layout_text4">
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/button_zahrah_category"
                 android:layout_width="0dp"
                 android:layout_height="98dp"
                 android:layout_marginRight="4dp"
@@ -281,7 +283,7 @@
                 android:background="@drawable/zahraa2" />
 
             <Button
-                android:id="@+id/button_7"
+                android:id="@+id/button_ramadan_category"
                 android:layout_width="0dp"
                 android:layout_height="98dp"
                 android:layout_marginLeft="4dp"
@@ -308,22 +310,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="62dp"
                 android:text="زهرة"
+                android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/textView"
-                android:layout_marginRight="154dp"
+                android:layout_marginRight="140dp"
                 android:text="رمضان كريم"
+                android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

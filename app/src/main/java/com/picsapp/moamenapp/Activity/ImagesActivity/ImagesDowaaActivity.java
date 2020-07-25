@@ -249,7 +249,7 @@ public class ImagesDowaaActivity extends AppCompatActivity implements Picasso.It
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
-        AdView mAdView = findViewById(R.id.adViewzahrah);
+        AdView mAdView = findViewById(R.id.adViewDowaa);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
     }
