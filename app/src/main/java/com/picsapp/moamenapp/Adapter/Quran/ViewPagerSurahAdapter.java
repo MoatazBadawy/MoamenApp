@@ -7,6 +7,8 @@ import android.widget.ImageView;
 
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.github.chrisbanes.photoview.PhotoView;
+
 import org.jetbrains.annotations.NotNull;
 
 public class ViewPagerSurahAdapter extends PagerAdapter {
@@ -31,8 +33,10 @@ public class ViewPagerSurahAdapter extends PagerAdapter {
     @NotNull
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        ImageView imageView = new ImageView(mContext);
+        // PhotoView to zoom in the image "Instaded of ImageView"
+        PhotoView imageView = new PhotoView (mContext);
         imageView.setImageResource(mImageIds[position]);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         container.addView(imageView, 0);
         return imageView;
     }

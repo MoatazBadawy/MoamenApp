@@ -19,6 +19,7 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.picsapp.moamenapp.Adapter.Picasso.Picasso;
 import com.picsapp.moamenapp.Adapter.Picasso.PicassoDisplayOtherImages;
+import com.picsapp.moamenapp.Adapter.Picasso.PicassoDisplayWallpaperImage;
 import com.picsapp.moamenapp.Fragment.ImagesFragmentProject.HomeImagesFragment;
 import com.picsapp.moamenapp.R;
 import com.r0adkll.slidr.Slidr;
@@ -184,7 +185,7 @@ public class ImagesErtugleActivity extends AppCompatActivity implements Picasso.
     public void onItemClick(View view, int position) {
         // get the image
         String image = ErtugleImages[position];
-        Intent intent = new Intent(this, PicassoDisplayOtherImages.class);
+        Intent intent = new Intent(this, PicassoDisplayWallpaperImage.class);
         intent.putExtra("imageUrl", image);
         // to not repeat the image when click on it many times
         intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

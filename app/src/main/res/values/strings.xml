@@ -17,7 +17,10 @@
     <string name="category_photos">المزيد</string>
 
     <!--Tabs Quran-->
-    <string name="reading_quran_tabe">سور القرآن</string>
-    <string name="search_quran_tabe">بحث القرآن</string>
+    <string name="lesting_quran_tabe">إستماع</string>
+    <string name="reading_quran_tabe">سور</string>
+    <string name="search_quran_tabe">بحث</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

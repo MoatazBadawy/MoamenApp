@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:background="#FFFFFF"
-        android:elevation="1dp"
+        android:elevation="2dp"
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/colorPrimary"
         app:tabMode="fixed"
@@ -28,7 +28,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tabs_quran"
-        android:overScrollMode="never"></com.duolingo.open.rtlviewpager.RtlViewPager>
+        android:overScrollMode="never">
+
+    </com.duolingo.open.rtlviewpager.RtlViewPager>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
