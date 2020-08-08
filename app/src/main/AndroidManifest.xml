@@ -29,6 +29,7 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.SliderActivityTheme" />
+
         <activity
             android:name=".Activity.ImagesActivity.ImagesErtugleActivity"
             android:launchMode="singleTop"
@@ -309,8 +310,11 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Adapter.Picasso.PicassoDisplayOtherImages"
             android:screenOrientation="portrait"/>
+
         <activity android:name=".Activity.Project.MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
         <activity android:name=".Activity.Project.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>

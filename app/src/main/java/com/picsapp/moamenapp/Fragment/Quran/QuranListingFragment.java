@@ -1,5 +1,6 @@
 package com.picsapp.moamenapp.Fragment.Quran;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,6 +16,7 @@ import com.picsapp.moamenapp.R;
 
 public class QuranListingFragment extends Fragment {
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -22,7 +24,7 @@ public class QuranListingFragment extends Fragment {
 
         // display WebView "Quran Search"
         final WebView mWebView = rootView.findViewById(R.id.web_view_quran_listing);
-        mWebView.loadUrl("https://suratmp3.com/quran");
+        mWebView.loadUrl("https://suratmp3.com/quran/reciters/14");
         // Enable Javascript
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
