@@ -34,8 +34,8 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
         final Data surah = surahList.get(position);
 
         holder.surahName.setText(surah.getName());
-        holder.RevelationType.setText(surah.getRevelationType());
         holder.SurahNumber.setText(surah.getnumberSurah());
+        holder.RevelationType.setText(surah.getRevelationType());
 
         holder.itemView.setOnClickListener(view -> {
             Context context = holder.itemView.getContext();
@@ -57,14 +57,14 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
 
     static class SurahViewHolder extends RecyclerView.ViewHolder {
         private TextView surahName;
-        private TextView RevelationType;
         private TextView SurahNumber;
+        private TextView RevelationType;
 
         public SurahViewHolder(@NonNull View itemView) {
             super(itemView);
             surahName = itemView.findViewById(R.id.surah_name);
-            RevelationType = itemView.findViewById(R.id.surah_detail);
             SurahNumber = itemView.findViewById(R.id.surah_number);
+            RevelationType = itemView.findViewById(R.id.surah_detail);
         }
     }
 }
