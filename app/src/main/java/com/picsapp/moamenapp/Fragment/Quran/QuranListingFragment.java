@@ -24,7 +24,7 @@ public class QuranListingFragment extends Fragment {
 
         // display WebView "Quran Search"
         final WebView mWebView = rootView.findViewById(R.id.web_view_quran_listing);
-        mWebView.loadUrl("https://suratmp3.com/quran/reciters/14");
+        mWebView.loadUrl("https://suratmp3.com/quran/reciters/42");
         // Enable Javascript
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
