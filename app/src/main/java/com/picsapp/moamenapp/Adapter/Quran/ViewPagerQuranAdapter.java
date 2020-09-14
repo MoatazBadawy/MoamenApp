@@ -6,9 +6,9 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.picsapp.moamenapp.Adapter.Picasso.ViewpagerImagesAdapter;
 import com.picsapp.moamenapp.Fragment.Quran.QuranListingFragment;
-import com.picsapp.moamenapp.Fragment.Quran.QuranReadingFragment;
 import com.picsapp.moamenapp.Fragment.Quran.QuranSearchFragment;
 import com.picsapp.moamenapp.Fragment.QuranFragment;
+import com.picsapp.moamenapp.Quran.ui.main.QuranReadingFragment;
 import com.picsapp.moamenapp.R;
 
 public class ViewPagerQuranAdapter extends FragmentStatePagerAdapter {
