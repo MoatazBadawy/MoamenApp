@@ -77,6 +77,8 @@
             android:theme="@style/AppTheme.SliderActivityTheme" />
 
         <!-- Quran surah Activity -->
+        <activity android:name=".Quran.ui.quran.QuranActivity"
+            android:screenOrientation="portrait"/>
 
         <activity android:name=".Adapter.Picasso.PicassoDisplayWallpaperImage"
             android:screenOrientation="portrait"/>

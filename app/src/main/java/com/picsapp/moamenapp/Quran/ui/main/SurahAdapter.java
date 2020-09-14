@@ -29,7 +29,6 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
         return new SurahViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_quran, parent, false));
     }
 
-
     @Override
     public void onBindViewHolder(@NonNull final SurahViewHolder holder, int position) {
         final Data surah = surahList.get(position);
@@ -38,16 +37,12 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
         holder.RevelationType.setText(surah.getRevelationType());
         holder.SurahNumber.setText(surah.getnumberSurah());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Context context = holder.itemView.getContext();
-                Intent intent = new Intent(context, QuranActivity.class);
-                intent.putExtra(SURAH_NUMBER, surah.getPage());
-                context.startActivity(intent);
-            }
+        holder.itemView.setOnClickListener(view -> {
+            Context context = holder.itemView.getContext();
+            Intent intent = new Intent(context, QuranActivity.class);
+            intent.putExtra(SURAH_NUMBER, surah.getPage());
+            context.startActivity(intent);
         });
-
     }
 
     @Override

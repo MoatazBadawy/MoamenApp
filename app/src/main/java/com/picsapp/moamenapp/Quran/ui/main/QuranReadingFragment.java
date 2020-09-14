@@ -39,15 +39,11 @@ public class QuranReadingFragment extends Fragment {
         recyclerView.setAdapter(surahAdapter);
 
         initViewModel();
-        mainViewModel.getSurahList().observe(Objects.requireNonNull(getActivity()), new Observer<Resource<List<Data>>>() {
-            @Override
-            public void onChanged(Resource<List<Data>> response) {
-                surahAdapter.submitList(response.data);
-            }
+        mainViewModel.getSurahList().observe(getActivity(), response -> {
+            surahAdapter.submitList(response.data);
         });
 
         return rootview;
-
     }
 
     private void initViewModel() {
