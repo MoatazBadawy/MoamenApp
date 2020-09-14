@@ -12,6 +12,7 @@
         android:id="@+id/view_pager_quran"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="-29dp"
         android:fadeScrollbars="false"
         android:fastScrollEnabled="false"
         android:overScrollMode="never">
