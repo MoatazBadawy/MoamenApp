@@ -19,6 +19,8 @@ import com.picsapp.moamenapp.R;
 
 public class QuranFragment extends Fragment implements IOnBackPressed {
 
+    int limitNumberOfPages = 2;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,6 +36,8 @@ public class QuranFragment extends Fragment implements IOnBackPressed {
 
         // Create an adapter that knows which fragment should be shown on each page
         final ViewPagerQuranAdapter adapter = new ViewPagerQuranAdapter(this, getActivity().getSupportFragmentManager());
+        // to make the viewPager not Reload when scroll "see this https://stackoverflow.com/questions/36517035/android-stop-tablayout-reload-refresh-my-fragments"
+        viewPager.setOffscreenPageLimit(limitNumberOfPages); //before setAdapter
 
         // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
