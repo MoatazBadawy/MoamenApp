@@ -63,7 +63,7 @@ public class PicassoDisplayOtherImages extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_images_others_display);
+        setContentView(R.layout.activity_images_display_other_images);
 
         // Hide status bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -88,7 +88,7 @@ public class PicassoDisplayOtherImages extends AppCompatActivity {
             Picasso
                     .with(this)
                     .load(url)
-                    .placeholder(R.drawable.loading_image) // load image
+                    .placeholder(R.drawable.folder_loading_image) // load image
                     .into(imageView);
         }
 

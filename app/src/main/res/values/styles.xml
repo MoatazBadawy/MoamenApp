@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/color_transparen</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/folder_splach_image</item>
     </style>
 
     <!--Custom the text on Bottom Navigation-->
@@ -30,6 +31,17 @@
     <style name="AppTheme.SliderActivityTheme">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!-- To change the color for icons and title in toolbar -->
+    <style name="ToolbarColor" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/colorBlack</item>
+        <item name="titleTextColor">@color/colorBlack</item>
+    </style>
+
+    <style name="NavigationView"  parent="AppTheme">
+        <!-- don't forget to change it to alpha 14 -->
+        <item name="android:listDivider">@color/colorBlack</item>
     </style>
 
     <style name="FullscreenTheme" parent="AppTheme">

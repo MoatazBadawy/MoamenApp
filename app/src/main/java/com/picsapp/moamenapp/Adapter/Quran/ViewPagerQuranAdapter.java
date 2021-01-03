@@ -16,7 +16,7 @@ public class ViewPagerQuranAdapter extends FragmentStatePagerAdapter {
     /**
      * Context of the app
      */
-    private QuranFragment mContext;
+    private final QuranFragment mContext;
 
     /**
      * Create a new {@link ViewpagerImagesAdapter} object.
@@ -36,12 +36,11 @@ public class ViewPagerQuranAdapter extends FragmentStatePagerAdapter {
      */
     public Fragment getItem(int position) {
         if (position == 0) {
-            return new QuranReadingFragment();
+            return new QuranListingFragment();
         }
 
         else if (position == 1) {
-            return new QuranListingFragment();
-
+            return new QuranReadingFragment();
         }
 
         else {
@@ -54,15 +53,16 @@ public class ViewPagerQuranAdapter extends FragmentStatePagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
-            return mContext.getString(R.string.reading_quran_tabe);
+            return mContext.getString(R.string.lesting_quran_tabe);
         }
 
         else if (position == 1) {
-            return mContext.getString(R.string.lesting_quran_tabe);
+            return mContext.getString(R.string.reading_quran_tabe);
         }
 
         else {
             return mContext.getString(R.string.search_quran_tabe);
+
         }
     }
 

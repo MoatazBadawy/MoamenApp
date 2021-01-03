@@ -41,7 +41,7 @@ public class Picasso extends RecyclerView.Adapter<Picasso.ViewHolder> {
                 .with(context)
                 .load(mData[position])
                 .fit() // to resize the image to imageView
-                .placeholder(R.drawable.loading_image) // load image
+                .placeholder(R.drawable.folder_loading_image) // load image
                 .transform(new PicassoRoundedTransformation(20, 0)) // Add radius to the images
                 .noFade()
                 .into(holder.mimageView);

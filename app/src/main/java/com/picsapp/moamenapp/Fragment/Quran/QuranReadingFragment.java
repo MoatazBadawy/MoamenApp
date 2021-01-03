@@ -152,7 +152,7 @@ public class QuranReadingFragment extends Fragment {
         // 53
         QuranListDetails.add(new QuranListDetail("سورة النجم", "مكية - ٦٢ آية", "٥٣"));
         // 54
-        QuranListDetails.add(new QuranListDetail("سورة القر", "مكية - ٥٥ آية", "٥٤"));
+        QuranListDetails.add(new QuranListDetail("سورة القمر", "مكية - ٥٥ آية", "٥٤"));
         // 55
         QuranListDetails.add(new QuranListDetail("سورة الرحمن", "مدنية - ٧٨ آية", "٥٥"));
         // 56

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:id="@+id/group" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_premium"
+            android:icon="@drawable/ic_diamond"
+            android:title="العضوية الذهبية" />
+    </group>
+
+    <group android:id="@+id/group2" android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_pray"
+            android:icon="@drawable/ic_mosque"
+            android:title="مواقيت الصلاة" />
+
+        <item
+            android:id="@+id/nav_zekr"
+            android:icon="@drawable/ic_dua_hands"
+            android:title="تنبيه الأذكار" />
+
+        <item
+            android:id="@+id/nav_ebadaa"
+            android:icon="@drawable/ic_islamic_pray"
+            android:title="طاعات وعبادات" />
+    </group>
+
+    <group android:id="@+id/group9" android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_waee"
+            android:icon="@drawable/ic_muslim"
+            android:title="واعي" />
+
+        <item
+            android:id="@+id/nav_woman"
+            android:icon="@drawable/ic_woman"
+            android:title="حافظ عليها" />
+
+        <item
+            android:id="@+id/nav_hadeeth"
+            android:icon="@drawable/ic_bismillah"
+            android:title="أحاديث نبوية" />
+    </group>
+
+    <group android:id="@+id/group3" android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_messenger"
+            android:icon="@drawable/ic_messenger"
+            android:title="بوت الماسنجر" />
+
+        <item
+            android:id="@+id/nav_telegram"
+            android:icon="@drawable/ic_telegram"
+            android:title="قناة التليجرام" />
+    </group>
+
+    <group android:id="@+id/group5" android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_theme"
+            android:title="المظهر"/>
+
+        <item
+            android:id="@+id/nav_share"
+            android:title="شارك التطبيق"/>
+
+        <item
+            android:id="@+id/nav_help"
+            android:title="حول ومساعدة"/>
+    </group>
+</menu>

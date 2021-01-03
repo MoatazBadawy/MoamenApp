@@ -10,7 +10,7 @@
     android:fillViewport="true"
     android:overScrollMode="never"
     android:scrollbars="none"
-    tools:context=".Fragment.ImagesFragmentProject.HomeImagesFragment">
+    tools:context=".Fragment.Images.HomeImagesFragment">
 
     <!-- "descendantFocusability" to make the recyclerView not scrolls to the top itself -->
     <RelativeLayout
@@ -57,7 +57,7 @@
                     android:layout_height="84dp"
                     android:layout_gravity="center"
                     android:layout_marginRight="4dp"
-                    android:background="@drawable/morning_image"
+                    android:background="@drawable/folder_morning_image"
                     android:paddingLeft="26dp"
                     android:paddingTop="56dp"
                     android:text="الصباح والمساء"
@@ -70,7 +70,7 @@
                     android:layout_height="84dp"
                     android:layout_gravity="center"
                     android:layout_marginRight="4dp"
-                    android:background="@drawable/aqwal_image"
+                    android:background="@drawable/folder_aqwal_image"
                     android:paddingLeft="30dp"
                     android:paddingTop="56dp"
                     android:text="أقوال الصالحين"
@@ -83,7 +83,7 @@
                     android:layout_height="84dp"
                     android:layout_gravity="center"
                     android:layout_marginRight="4dp"
-                    android:background="@drawable/more_image"
+                    android:background="@drawable/folder_more_image"
                     android:paddingLeft="50dp"
                     android:paddingTop="56dp"
                     android:text="صور منوعة"
@@ -97,7 +97,7 @@
                     android:layout_gravity="center"
                     android:layout_marginRight="4dp"
                     android:layout_marginLeft="4dp"
-                    android:background="@drawable/aqsa_image"
+                    android:background="@drawable/folder_aqsa_image"
                     android:paddingLeft="44dp"
                     android:paddingTop="56dp"
                     android:text="المسجد الأقصى"

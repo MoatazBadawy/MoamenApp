@@ -13,5 +13,5 @@
         android:background="@color/colorWhite"
         android:padding="1.2dp"
         android:scaleType="fitXY"
-        tools:src="@drawable/kabba_image" />
+        tools:src="@drawable/folder_kabba_image" />
 </RelativeLayout>

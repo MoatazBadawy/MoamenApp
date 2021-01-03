@@ -17,6 +17,8 @@ import com.picsapp.moamenapp.Adapter.Picasso.IOnBackPressed;
 import com.picsapp.moamenapp.Adapter.Picasso.ViewpagerImagesAdapter;
 import com.picsapp.moamenapp.R;
 
+import java.util.Objects;
+
 /*
  * This class for display images section in Fragment
  */
@@ -42,9 +44,16 @@ public class ImagesFragment extends Fragment implements IOnBackPressed {
         // Connect the tab layout with the view pager. This will
         tabLayoutAdapter();
 
+        Toolbar();
+        // Inflate the layout for this fragment
         return rootView;
+
     }
 
+    private void Toolbar () {
+        //Set the name in toolbar "change from app name to our name that we want"
+        Objects.requireNonNull(getActivity()).setTitle("خلفيات");
+    }
     public void supportArabic () {
 
         // make the app support only arabic "Right to left"
@@ -54,14 +63,11 @@ public class ImagesFragment extends Fragment implements IOnBackPressed {
 
     public void ViewPagerAdapetr () {
 
-        // Find the view pager that will allow the user to swipe between fragments
-        // "ViewPager with RTL support"
         viewPager = rootView.findViewById(R.id.view_pager);
-
+        // make the viewPager not update the data when swipe
+        viewPager.setOffscreenPageLimit(2);
         // Create an adapter that knows which fragment should be shown on each page
         final ViewpagerImagesAdapter adapter = new ViewpagerImagesAdapter(this, getActivity().getSupportFragmentManager());
-
-        // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
     }
 

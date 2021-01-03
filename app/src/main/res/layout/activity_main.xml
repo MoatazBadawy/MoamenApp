@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
     tools:context=".Activity.Project.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <!--To display all in "fragment_home" here-->
     <FrameLayout
@@ -31,7 +39,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-</RelativeLayout>
+        <!-- theme "to change the color for icons in toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/colorWhite"
+            app:popupTheme="@color/colorBlack"
+            android:elevation="0dp"
+            android:paddingRight="@dimen/_10sdp"
+            android:visibility="visible"
+            app:theme="@style/ToolbarColor" />
+
+        <TextView
+            android:id="@+id/screen_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/toolbar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            tools:text="أسعد اللَّه صباحك"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="" />
+
+        <!--<Button
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_alignBottom="@+id/toolbar"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_9sdp"
+            android:background="@drawable/messenger" />-->
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="@dimen/_224sdp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/tools_nav_header"
+        app:menu="@menu/drawer_menu"
+        android:background="@color/colorWhite"
+        app:itemIconPadding="@dimen/_22sdp"
+        app:itemIconTint="@color/drawer_item"
+        app:itemTextColor="@color/drawer_item" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

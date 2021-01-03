@@ -10,4 +10,11 @@
     <color name="color_transparen">#00000000</color>
     <color name="black_overlay">#66000000</color>
 
+    <!--white alpha-->
+    <color name="white_alpha_31">#4FFFFFFF</color>
+    <color name="white_alpha_11">#1BFFFFFF</color>
+    <color name="white_alpha_15">#26FFFFFF</color>
+    <color name="white_alpha_14">#24FFFFFF</color>
+    <color name="white_alpha_8">#14FFFFFF</color>
+
 </resources>

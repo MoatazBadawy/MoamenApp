@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.picsapp.moamenapp.Activity.QuranActivity.*;
+import com.picsapp.moamenapp.Activity.Surah.*;
 import com.picsapp.moamenapp.R;
 
 import java.util.ArrayList;

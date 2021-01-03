@@ -10,7 +10,7 @@
     android:fastScrollEnabled="false"
     android:overScrollMode="never"
     android:scrollbars="none"
-    tools:context=".Fragment.ImagesFragmentProject.CategoryImagesFragment">
+    tools:context=".Fragment.Images.CategoryImagesFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:layout_height="100dp"
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/ertugrel" />
+                android:background="@drawable/folder_ertugrel" />
 
             <Button
                 android:id="@+id/button_islam_category"
@@ -41,7 +41,7 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/ma3alem_islamic" />
+                android:background="@drawable/folder_ma3alem_islamic" />
 
         </LinearLayout>
 
@@ -94,7 +94,7 @@
                 android:layout_height="100dp"
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/aqwal_image" />
+                android:background="@drawable/folder_aqwal_image" />
 
             <Button
                 android:id="@+id/button_others_category"
@@ -103,7 +103,7 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/more_image" />
+                android:background="@drawable/folder_more_image" />
 
         </LinearLayout>
 
@@ -156,7 +156,7 @@
                 android:layout_height="100dp"
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/morning_image" />
+                android:background="@drawable/folder_morning_image" />
 
             <Button
                 android:id="@+id/button_dowaa_category"
@@ -165,7 +165,7 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/dowaa_rounder" />
+                android:background="@drawable/folder_dowaa_rounder" />
 
         </LinearLayout>
 
@@ -218,7 +218,7 @@
                 android:layout_height="100dp"
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/aqsa_image" />
+                android:background="@drawable/folder_aqsa_image" />
 
             <Button
                 android:id="@+id/button_nabawe_category"
@@ -227,7 +227,7 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/madena_image" />
+                android:background="@drawable/folder_madena_image" />
 
         </LinearLayout>
 
@@ -280,7 +280,7 @@
                 android:layout_height="98dp"
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/zahraa2" />
+                android:background="@drawable/folder_zahraa2" />
 
             <Button
                 android:id="@+id/button_ramadan_category"
@@ -289,7 +289,7 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/ramadan_image" />
+                android:background="@drawable/folder_ramadan_image" />
 
         </LinearLayout>
 

@@ -36,7 +36,7 @@
         android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <include layout="@layout/bottom_sheet_no_internet" />
+        <include layout="@layout/tools_bottom_sheet_no_internet" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </RelativeLayout>

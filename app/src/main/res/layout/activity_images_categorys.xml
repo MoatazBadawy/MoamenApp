@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_material_light">
+
+    <!-- Text top bar -->
+    <TextView
+        android:id="@+id/text_image_Aqsa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:paddingLeft="16dp"
+        android:text="المسجد الأقصى"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <!-- Button back -->
+    <Button
+        android:id="@+id/button_back_aqsa"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/ic_back_black" />
+
+    <!-- recyclerview for display images -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_image_aqsa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_image_Aqsa"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorWhite"
+        android:fastScrollEnabled="false"
+        android:nestedScrollingEnabled="false"
+        android:scrollbars="none" />
+</RelativeLayout>

@@ -54,7 +54,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="16dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/islam" />
+        android:src="@drawable/ic_islam" />
 
     <View
         android:id="@+id/shape"

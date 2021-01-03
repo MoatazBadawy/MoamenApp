@@ -29,24 +29,28 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation "androidx.constraintlayout:constraintlayout:2.0.0-rc1"
+    implementation "androidx.constraintlayout:constraintlayout:2.0.4"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    // kotlin
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.20'
     // firebase message
-    implementation 'com.google.firebase:firebase-messaging:20.2.4'
+    implementation 'com.google.firebase:firebase-messaging:21.0.1'
+    implementation 'androidx.navigation:navigation-fragment:2.3.2'
+    implementation 'androidx.navigation:navigation-ui:2.3.2'
     // test
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    testImplementation 'junit:junit:4.13.1'
     // material desgin
-    implementation 'com.google.android.material:material:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
     // recyclerview
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     // picasso
     implementation 'com.squareup.picasso:picasso:2.5.2'
     // Add the Firebase SDK for Google Analytics
-    implementation 'com.google.firebase:firebase-analytics:17.4.4'
-    implementation 'com.google.android.gms:play-services-ads:19.3.0'
+    implementation 'com.google.firebase:firebase-analytics:18.0.0'
+    implementation 'com.google.android.gms:play-services-ads:19.6.0'
     // to zoom in photo like instegram "Images"
     implementation 'com.ablanco.zoomy:zoomy:1.1.0'
     // toasty
@@ -74,7 +78,10 @@ dependencies {
     implementation 'com.r0adkll:slidableactivity:2.1.0'
     // zoom in photo quran
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
-    // kotlin
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72'
-
+    // sdp library for support all sizes on the screen
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    // ssp library for support all sizes on the screen
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    // zoom
+    implementation 'com.jsibbold:zoomage:1.3.1'
 }

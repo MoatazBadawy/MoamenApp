@@ -10,16 +10,21 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.view.ViewCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.picsapp.moamenapp.Adapter.Picasso.IOnBackPressed;
 import com.picsapp.moamenapp.Fragment.HomeFragment;
 import com.picsapp.moamenapp.Fragment.ImagesFragment;
@@ -29,6 +34,7 @@ import com.picsapp.moamenapp.Fragment.VideosFragment;
 import com.picsapp.moamenapp.R;
 
 import java.util.Arrays;
+import java.util.Calendar;
 
 import es.dmoral.toasty.Toasty;
 
@@ -37,6 +43,9 @@ import es.dmoral.toasty.Toasty;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private DrawerLayout drawer;
+    private Toolbar toolbar;
+    private TextView screenText;
     private static final int PERMISSION_REQUEST_CODE = 0;
 
     //to select the right bottom navigation when press back
@@ -67,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         ShortcutInfo shortcut = new ShortcutInfo.Builder(MainActivity.this, "id1")
                 .setShortLabel("بوت المؤمن")
                 .setLongLabel("التطبيق على الماسنجر")
-                .setIcon(Icon.createWithResource(MainActivity.this, R.drawable.messenger))
+                .setIcon(Icon.createWithResource(MainActivity.this, R.drawable.ic_messenger))
                 .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.me/MoamenApp/")))
                 .build();
         shortcutManager.setDynamicShortcuts(Arrays.asList(shortcut));
@@ -87,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment selectedFragment = null;
+                toolbar.setVisibility(View.VISIBLE);
+                screenText.setVisibility(View.VISIBLE);
                 switch (item.getItemId()) {
                     // first fragment "home"
                     case R.id.home_item:
@@ -94,18 +105,30 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     // second fragment "videos"
                     case R.id.videos_item:
+                        // invisible toolbar in this frag
+                        toolbar.setVisibility(View.INVISIBLE);
+                        screenText.setVisibility(View.INVISIBLE);
                         selectedFragment = new VideosFragment();
                         break;
                     // third fragment "ebadat"
                     case R.id.ebadat_item:
+                        // invisible toolbar in this frag
+                        toolbar.setVisibility(View.INVISIBLE);
+                        screenText.setVisibility(View.INVISIBLE);
                         selectedFragment = new MoreFragment();
                         break;
                     // fourth fragment "images"
                     case R.id.quran_item:
+                        // invisible toolbar in this frag
+                        toolbar.setVisibility(View.INVISIBLE);
+                        screenText.setVisibility(View.INVISIBLE);
                         selectedFragment = new QuranFragment();
                         break;
                     // fifth fragment "more"
                     case R.id.image_item:
+                        // invisible toolbar in this frag
+                        toolbar.setVisibility(View.INVISIBLE);
+                        screenText.setVisibility(View.INVISIBLE);
                         selectedFragment = new ImagesFragment();
                         break;
                 }
@@ -116,6 +139,49 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        screenText = findViewById(R.id.screen_text);
+        ScreenText();
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView2 = findViewById(R.id.nav_view);
+        //navigationView2.setNavigationItemSelectedListener(this);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        //drawer.openDrawer(Gravity.LEFT);
+        toggle.syncState();
+        // Change burger icon
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
+    }
+
+    private void ScreenText () {
+
+        Calendar c = Calendar.getInstance();
+        int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
+
+        if(timeOfDay >= 6 && timeOfDay < 12){
+            screenText.setText("أسعد اللَّه صباحك");
+        }
+        else if(timeOfDay >= 12 && timeOfDay < 16){
+            screenText.setText("صلاتك حياتك");
+        }
+        else if(timeOfDay >= 16 && timeOfDay < 21){
+            screenText.setText("لا تنسى أذكار المساء");
+        }
+        else if(timeOfDay >= 21){
+            screenText.setText("لا تنسى قيام الليل");
+        }
+        else if(timeOfDay >= 1 && timeOfDay < 4){
+            screenText.setText("لا تنسى قيام الليل");
+        }
+        else if(timeOfDay >= 4){
+            screenText.setText("لا تنسى أذكار الصباح");
+        }
     }
 
     @Override
@@ -123,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
         //super.onBackPressed(); delete this line
         // and start your fragment:
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_layout);
-        if (!(fragment instanceof IOnBackPressed) || !((IOnBackPressed) fragment).onBackPressed()) {
+        if (!(fragment instanceof IOnBackPressed)) {
             super.onBackPressed();
         }
 
