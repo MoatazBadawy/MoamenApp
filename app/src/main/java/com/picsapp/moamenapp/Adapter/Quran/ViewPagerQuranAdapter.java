@@ -6,9 +6,9 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.picsapp.moamenapp.Adapter.Picasso.ViewpagerImagesAdapter;
 import com.picsapp.moamenapp.Fragment.Quran.QuranListingFragment;
+import com.picsapp.moamenapp.Fragment.Quran.QuranReadingFragment;
 import com.picsapp.moamenapp.Fragment.Quran.QuranSearchFragment;
 import com.picsapp.moamenapp.Fragment.QuranFragment;
-import com.picsapp.moamenapp.Quran.ui.main.QuranReadingFragment;
 import com.picsapp.moamenapp.R;
 
 public class ViewPagerQuranAdapter extends FragmentStatePagerAdapter {
@@ -36,15 +36,15 @@ public class ViewPagerQuranAdapter extends FragmentStatePagerAdapter {
      */
     public Fragment getItem(int position) {
         if (position == 0) {
-            return new QuranListingFragment();
-        }
-
-        else if (position == 1) {
             return new QuranReadingFragment();
         }
 
-        else {
+        else if (position == 1) {
             return new QuranSearchFragment();
+        }
+
+        else {
+            return new QuranListingFragment();
         }
     }
 
@@ -53,16 +53,15 @@ public class ViewPagerQuranAdapter extends FragmentStatePagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
-            return mContext.getString(R.string.lesting_quran_tabe);
-        }
-
-        else if (position == 1) {
             return mContext.getString(R.string.reading_quran_tabe);
         }
 
-        else {
+        else if (position == 1) {
             return mContext.getString(R.string.search_quran_tabe);
+        }
 
+        else {
+            return mContext.getString(R.string.lesting_quran_tabe);
         }
     }
 
