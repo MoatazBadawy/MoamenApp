@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.picsapp.moamenapp.Adapter.Picasso.IOnBackPressed;
@@ -38,8 +41,18 @@ import es.dmoral.toasty.Toasty;
 
 public class MainActivity extends AppCompatActivity {
 
+    final Fragment fragment1 = new HomeFragment();
+    final Fragment fragment2 = new VideosFragment();
+    final Fragment fragment3 = new MoreFragment();
+    final Fragment fragment4 = new QuranFragment();
+    final Fragment fragment5 = new ImagesFragment();
+
+    final FragmentManager fm = getSupportFragmentManager();
+    Fragment active = fragment1;
+
     private Toolbar toolbar;
     private TextView screenText;
+    private Button toolBarMessenger;
     private static final int PERMISSION_REQUEST_CODE = 0;
 
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
@@ -47,19 +60,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTools();
+        initializeView();
         setShortcut();
         setScreenText();
-        displayBottomNavigation();
+        initializeBottomNavigation();
         requestPermission();
     }
 
-    private void setTools() {
+    private void initializeView() {
         //make the status bar white with black icons
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-
-        // make the app support only arabic "Right to left"
-        // even if the language of the device on english or others
+        // make the app support only arabic "Right to left", even if the language of the device on english or others
         ViewCompat.setLayoutDirection(getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
     }
 
@@ -102,63 +113,73 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("NonConstantResourceId")
-    private void displayBottomNavigation() {
-        // methods to start new fragment
-        // make new object and find the view "BottomNavigationView"
-        BottomNavigationView navigationView = findViewById(R.id.bottom_navigation);
-        // To make the first fragment shows when the app start.
-        // We will ignore the "activity_main" and we will make new activity(fragment) called "fragment_home"
-        // and we will add all views we want to display them on it.
-        // (fragment_layout) it is a fragment have id was defined in "activity_main"
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout,
-                new HomeFragment()).commit();
-        // make Listener to call the fragments on buttons
-        // to start new fragment
-        navigationView.setOnNavigationItemSelectedListener(item -> {
-            Fragment selectedFragment = null;
-            toolbar.setVisibility(View.VISIBLE);
-            screenText.setVisibility(View.VISIBLE);
-            switch (item.getItemId()) {
-                // first fragment "home"
-                case R.id.home_item:
-                    selectedFragment = new HomeFragment();
-                    break;
-                // second fragment "videos"
-                case R.id.videos_item:
-                    // invisible toolbar in this frag
-                    toolbar.setVisibility(View.INVISIBLE);
-                    screenText.setVisibility(View.INVISIBLE);
-                    selectedFragment = new VideosFragment();
-                    break;
-                // third fragment "ebadat"
-                case R.id.ebadat_item:
-                    // invisible toolbar in this frag
-                    toolbar.setVisibility(View.INVISIBLE);
-                    screenText.setVisibility(View.INVISIBLE);
-                    selectedFragment = new MoreFragment();
-                    break;
-                // fourth fragment "images"
-                case R.id.quran_item:
-                    // invisible toolbar in this frag
-                    toolbar.setVisibility(View.INVISIBLE);
-                    screenText.setVisibility(View.INVISIBLE);
-                    selectedFragment = new QuranFragment();
-                    break;
-                // fifth fragment "more"
-                case R.id.image_item:
-                    // invisible toolbar in this frag
-                    toolbar.setVisibility(View.INVISIBLE);
-                    screenText.setVisibility(View.INVISIBLE);
-                    selectedFragment = new ImagesFragment();
-                    break;
-            }
-            assert selectedFragment != null;
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, selectedFragment).commit();
+    private void initializeBottomNavigation() {
+        // first one transaction to add each Fragment
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.fragment_layout, fragment5, "5").hide(fragment5);
+        ft.add(R.id.fragment_layout, fragment4, "4").hide(fragment4);
+        ft.add(R.id.fragment_layout, fragment3, "3").hide(fragment3);
+        ft.add(R.id.fragment_layout, fragment2, "2").hide(fragment2);
+        ft.add(R.id.fragment_layout, fragment1, "1");
+        // commit once! to finish the transaction
+        ft.commit();
 
-            return true;
+        // show and hide them when click on BottomNav items
+        BottomNavigationView navigationView = findViewById(R.id.bottom_navigation);
+        navigationView.setOnNavigationItemSelectedListener(item -> {
+            // start a new transaction
+            FragmentTransaction ft1 = fm.beginTransaction();
+            // animations
+            switch (item.getItemId()) {
+                case R.id.home_item:
+                    ft1.hide(active).show(fragment1).commit();
+                    toolbar.setVisibility(View.VISIBLE);
+                    screenText.setVisibility(View.VISIBLE);
+                    toolBarMessenger.setVisibility(View.VISIBLE);
+                    active = fragment1;
+                    return true;
+
+                case R.id.videos_item:
+                    ft1.hide(active).show(fragment2).commit();
+                    // invisible toolbar in this frag
+                    toolbar.setVisibility(View.INVISIBLE);
+                    screenText.setVisibility(View.INVISIBLE);
+                    toolBarMessenger.setVisibility(View.INVISIBLE);
+                    active = fragment2;
+                    return true;
+
+                case R.id.ebadat_item:
+                    ft1.hide(active).show(fragment3).commit();
+                    // invisible toolbar in this frag
+                    toolbar.setVisibility(View.INVISIBLE);
+                    screenText.setVisibility(View.INVISIBLE);
+                    toolBarMessenger.setVisibility(View.INVISIBLE);
+                    active = fragment3;
+                    return true;
+
+                case R.id.quran_item:
+                    ft1.hide(active).show(fragment4).commit();
+                    // invisible toolbar in this frag
+                    toolbar.setVisibility(View.INVISIBLE);
+                    screenText.setVisibility(View.INVISIBLE);
+                    toolBarMessenger.setVisibility(View.INVISIBLE);
+                    active = fragment4;
+                    return true;
+
+                case R.id.image_item:
+                    ft1.hide(active).show(fragment5).commit();
+                    // invisible toolbar in this frag
+                    toolbar.setVisibility(View.INVISIBLE);
+                    screenText.setVisibility(View.INVISIBLE);
+                    toolBarMessenger.setVisibility(View.INVISIBLE);
+                    active = fragment5;
+                    return true;
+            }
+            return false;
         });
 
         toolbar = findViewById(R.id.toolbar);
+        toolBarMessenger = findViewById(R.id.toolbar_messenger);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         //NavigationView navigationView2 = findViewById(R.id.nav_view);

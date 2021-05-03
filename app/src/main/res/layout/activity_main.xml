@@ -67,6 +67,7 @@
             android:textSize="@dimen/_16ssp" />
 
         <Button
+            android:id="@+id/toolbar_messenger"
             android:layout_width="@dimen/_18sdp"
             android:layout_height="@dimen/_18sdp"
             android:layout_alignBottom="@+id/toolbar"
