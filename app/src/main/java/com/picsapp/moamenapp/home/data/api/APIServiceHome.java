@@ -1,8 +1,6 @@
-package com.picsapp.moamenapp.home.request;
+package com.picsapp.moamenapp.home.data.api;
 
-import com.picsapp.moamenapp.home.model.HomeResponse;
-
-import java.util.List;
+import com.picsapp.moamenapp.home.data.model.HomeResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

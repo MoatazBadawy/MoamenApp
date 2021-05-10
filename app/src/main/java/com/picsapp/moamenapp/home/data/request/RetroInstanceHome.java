@@ -1,4 +1,4 @@
-package com.picsapp.moamenapp.home.request;
+package com.picsapp.moamenapp.home.data.request;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

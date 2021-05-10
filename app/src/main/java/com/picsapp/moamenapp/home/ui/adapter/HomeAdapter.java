@@ -1,4 +1,4 @@
-package com.picsapp.moamenapp.home.adapter;
+package com.picsapp.moamenapp.home.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,13 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.picsapp.moamenapp.R;
-import com.picsapp.moamenapp.home.model.DailyFadelModel;
-import com.picsapp.moamenapp.home.model.DailyImageModel;
-import com.picsapp.moamenapp.home.model.FirstImageModel;
-import com.picsapp.moamenapp.home.model.HomeResponse;
-import com.picsapp.moamenapp.home.model.LiveModel;
-import com.picsapp.moamenapp.home.model.SaleheenSaidModel;
-
+import com.picsapp.moamenapp.home.data.model.DailyFadelModel;
+import com.picsapp.moamenapp.home.data.model.DailyImageModel;
+import com.picsapp.moamenapp.home.data.model.FirstImageModel;
+import com.picsapp.moamenapp.home.data.model.HomeResponse;
+import com.picsapp.moamenapp.home.data.model.LiveModel;
+import com.picsapp.moamenapp.home.data.model.SaleheenSaidModel;
 
 public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -125,44 +124,6 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
         return R.id.image_home_firstImage;
     }
-
-    /*
-        @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-        if (getItemViewType(position) == R.id.image_home_firstImage) {
-            FirstImageModel firstImageModel = items.getFirstImage().get(position);
-            ((FirstImageViewHolder) holder).setFirstImageData(firstImageModel);
-
-        } else if (getItemViewType(position) == R.id.image_home_dailyImage) {
-            DailyImageModel liveModel = items.getDailyImage().get(position - items.getFirstImage().size());
-            ((DailyImageViewHolder) holder).setDailyImageData(liveModel);
-
-        } else if (getItemViewType(position) == R.id.image_home_liveImage) {
-            LiveModel dailyImageModel = items.getLive().get(position - (items.getFirstImage().size() + items.getDailyImage().size()));
-            ((LiveViewHolder) holder).set(dailyImageModel);
-        }
-    }
-
-    @Override
-    public int getItemCount() {
-        if (items ==null) return 0;
-        return items.getFirstImage().size() + items.getDailyImage().size() + items.getLive().size();
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        if (position == 0 && position < items.getFirstImage().size()) {
-            return R.id.image_home_firstImage;
-        } else if (position == items.getFirstImage().size() && position < items.getFirstImage().size() + items.getDailyImage().size()) {
-            return R.id.image_home_dailyImage;
-        } else if (position == items.getFirstImage().size()
-                + items.getDailyImage().size() && position < items.getFirstImage().size()
-                + items.getDailyImage().size()
-                + items.getLive().size()) {
-            return R.id.image_home_liveImage;
-        }
-     */
 
     /* firstImage Adapter */
     static class FirstImageViewHolder extends RecyclerView.ViewHolder {

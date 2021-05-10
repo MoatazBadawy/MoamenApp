@@ -1,4 +1,4 @@
-package com.picsapp.moamenapp.home.viewmodel;
+package com.picsapp.moamenapp.home.ui.viewmodel;
 
 
 import androidx.lifecycle.LiveData;
@@ -6,9 +6,10 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 
-import com.picsapp.moamenapp.home.model.HomeResponse;
-import com.picsapp.moamenapp.home.request.APIServiceHome;
-import com.picsapp.moamenapp.home.request.RetroInstanceHome;
+import com.picsapp.moamenapp.home.data.model.HomeResponse;
+import com.picsapp.moamenapp.home.data.api.APIServiceHome;
+import com.picsapp.moamenapp.home.data.request.RetroInstanceHome;
+import com.picsapp.moamenapp.home.utils.Resource;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -18,19 +19,22 @@ import retrofit2.Response;
 
 public class HomeViewModel extends ViewModel {
 
-    public LiveData<HomeResponse> makeApiCallHome() {
-        MutableLiveData<HomeResponse> homeObjectsList = new MutableLiveData<>();
+    public LiveData<Resource<HomeResponse>> makeApiCallHome() {
+        final MutableLiveData<Resource<HomeResponse>> homeObjectsList = new MutableLiveData<>();
+
+        homeObjectsList.setValue(Resource.loading());
         APIServiceHome apiServiceHome = RetroInstanceHome.getRetroClientHome().create(APIServiceHome.class);
         Call<HomeResponse> call = apiServiceHome.getHomeObjectsList();
         call.enqueue(new Callback<HomeResponse>() {
             @Override
             public void onResponse(@NotNull Call<HomeResponse> call, @NotNull Response<HomeResponse> response) {
-                homeObjectsList.postValue(response.body());
+                homeObjectsList.postValue(Resource.success(response.body()));
+
             }
 
             @Override
             public void onFailure(@NotNull Call<HomeResponse> call, @NotNull Throwable t) {
-                homeObjectsList.postValue(null);
+                homeObjectsList.setValue(Resource.error(t.getMessage() != null ? t.getMessage() : "Unknown Error"));
             }
         });
 

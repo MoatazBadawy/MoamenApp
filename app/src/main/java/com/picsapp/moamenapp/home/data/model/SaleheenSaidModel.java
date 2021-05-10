@@ -1,4 +1,4 @@
-package com.picsapp.moamenapp.home.model;
+package com.picsapp.moamenapp.home.data.model;
 
 public class SaleheenSaidModel {
 

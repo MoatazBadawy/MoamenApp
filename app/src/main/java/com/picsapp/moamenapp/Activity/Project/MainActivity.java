@@ -32,7 +32,7 @@ import com.picsapp.moamenapp.Fragment.MoreFragment;
 import com.picsapp.moamenapp.Fragment.QuranFragment;
 import com.picsapp.moamenapp.Fragment.VideosFragment;
 import com.picsapp.moamenapp.R;
-import com.picsapp.moamenapp.home.ui.fragment.HomeFragment;
+import com.picsapp.moamenapp.home.ui.view.fragment.HomeFragment;
 
 import java.util.Calendar;
 import java.util.Collections;
