@@ -10,6 +10,8 @@ import com.picsapp.moamenapp.home.model.HomeResponse;
 import com.picsapp.moamenapp.home.request.APIServiceHome;
 import com.picsapp.moamenapp.home.request.RetroInstanceHome;
 
+import org.jetbrains.annotations.NotNull;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,12 +24,12 @@ public class HomeViewModel extends ViewModel {
         Call<HomeResponse> call = apiServiceHome.getHomeObjectsList();
         call.enqueue(new Callback<HomeResponse>() {
             @Override
-            public void onResponse(Call<HomeResponse> call, Response<HomeResponse> response) {
+            public void onResponse(@NotNull Call<HomeResponse> call, @NotNull Response<HomeResponse> response) {
                 homeObjectsList.postValue(response.body());
             }
 
             @Override
-            public void onFailure(Call<HomeResponse> call, Throwable t) {
+            public void onFailure(@NotNull Call<HomeResponse> call, @NotNull Throwable t) {
                 homeObjectsList.postValue(null);
             }
         });

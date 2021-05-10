@@ -5,12 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 import com.picsapp.moamenapp.Adapter.Picasso.IOnBackPressed;
 import com.picsapp.moamenapp.home.adapter.HomeAdapter;
 import com.picsapp.moamenapp.home.viewmodel.HomeViewModel;
@@ -20,17 +18,13 @@ public class HomeFragment extends Fragment implements IOnBackPressed {
 
     View rootView;
     RecyclerView recyclerView;
-    private HomeViewModel viewModel;
     private HomeAdapter adapter;
-
-    private static final String TAG = "HomeFragment";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
-        Log.d(TAG, "onCreateView: ");
         requireActivity().setTitle("");
         initializeContent();
         initializeViewModel();
@@ -47,7 +41,7 @@ public class HomeFragment extends Fragment implements IOnBackPressed {
 
     private void initializeViewModel() {
         ProgressBar progressBar = rootView.findViewById(R.id.progress_bar_home);
-        viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        HomeViewModel viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         viewModel.makeApiCallHome().observe(getActivity(), homeResponses -> {
             if (homeResponses != null) {
                 progressBar.setVisibility(View.GONE);

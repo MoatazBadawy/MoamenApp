@@ -36,6 +36,7 @@ import com.picsapp.moamenapp.home.ui.fragment.HomeFragment;
 
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Objects;
 
 import es.dmoral.toasty.Toasty;
 
@@ -96,15 +97,18 @@ public class MainActivity extends AppCompatActivity {
             screenText.setText("لا تنسى أذكار الصباح");
         }
         else if(timeOfDay >= 12 && timeOfDay < 14){
-            screenText.setText("سبحان الله وبحمده");
-        }
-        else if(timeOfDay >= 14 && timeOfDay < 16){
             screenText.setText("صلاتك حياتك");
         }
-        else if(timeOfDay >= 16 && timeOfDay < 21){
+        else if(timeOfDay >= 14 && timeOfDay < 17){
+            screenText.setText("سبحان الله وبحمده");
+        }
+        else if(timeOfDay >= 17 && timeOfDay < 21){
             screenText.setText("لا تنسى أذكار المساء");
         }
-        else if(timeOfDay >= 21){
+        else if(timeOfDay >= 21 && timeOfDay < 24){
+            screenText.setText("لا تنسى قيام الليل");
+        }
+        else if(timeOfDay >= 1 && timeOfDay < 4){
             screenText.setText("لا تنسى قيام الليل");
         }
         else if(timeOfDay >= 4 && timeOfDay < 7){
@@ -190,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
         //drawer.openDrawer(Gravity.LEFT);
         toggle.syncState();
         // Change burger icon
-        getSupportActionBar().setHomeButtonEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
     }
@@ -228,5 +232,4 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
-
 }
