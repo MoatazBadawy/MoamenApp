@@ -42,25 +42,26 @@ import es.dmoral.toasty.Toasty;
 
 public class MainActivity extends AppCompatActivity {
 
-    final Fragment fragment1 = new HomeFragment();
-    final Fragment fragment2 = new VideosFragment();
-    final Fragment fragment3 = new MoreFragment();
-    final Fragment fragment4 = new QuranFragment();
-    final Fragment fragment5 = new ImagesFragment();
-
-    final FragmentManager fm = getSupportFragmentManager();
-    Fragment active = fragment1;
-
     private Toolbar toolbar;
     private TextView screenText;
     private Button toolBarMessenger;
     private static final int PERMISSION_REQUEST_CODE = 0;
+
+    final Fragment homeFragment = new HomeFragment();
+    final Fragment videosFragment = new VideosFragment();
+    final Fragment moreFragment = new MoreFragment();
+    final Fragment quranFragment = new QuranFragment();
+    final Fragment imagesFragment = new ImagesFragment();
+
+    final FragmentManager fm = getSupportFragmentManager();
+    Fragment active = homeFragment;
 
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initializeView();
         setShortcut();
         setScreenText();
@@ -71,13 +72,14 @@ public class MainActivity extends AppCompatActivity {
     private void initializeView() {
         //make the status bar white with black icons
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        // make the app support only arabic "Right to left", even if the language of the device on english or others
+        // make the app support only arabic "Right to left",
+        // even if the language of the device on english or others
         ViewCompat.setLayoutDirection(getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     private void setShortcut() {
-        /* To create and display menu options after Long press on app icon */
+        // display menu options after Long press on app icon
         ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
         ShortcutInfo shortcut = new ShortcutInfo.Builder(MainActivity.this, "id1")
                 .setShortLabel("بوت المؤمن")
@@ -120,11 +122,11 @@ public class MainActivity extends AppCompatActivity {
     private void initializeBottomNavigation() {
         // first one transaction to add each Fragment
         FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.fragment_layout, fragment5, "5").hide(fragment5);
-        ft.add(R.id.fragment_layout, fragment4, "4").hide(fragment4);
-        ft.add(R.id.fragment_layout, fragment3, "3").hide(fragment3);
-        ft.add(R.id.fragment_layout, fragment2, "2").hide(fragment2);
-        ft.add(R.id.fragment_layout, fragment1, "1");
+        ft.add(R.id.fragment_layout, imagesFragment, "5").hide(imagesFragment);
+        ft.add(R.id.fragment_layout, quranFragment, "4").hide(quranFragment);
+        ft.add(R.id.fragment_layout, moreFragment, "3").hide(moreFragment);
+        ft.add(R.id.fragment_layout, videosFragment, "2").hide(videosFragment);
+        ft.add(R.id.fragment_layout, homeFragment, "1");
         // commit once! to finish the transaction
         ft.commit();
 
@@ -133,55 +135,52 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setOnNavigationItemSelectedListener(item -> {
             // start a new transaction
             FragmentTransaction ft1 = fm.beginTransaction();
-            // animations
+            // TODO: ADD Animations
             switch (item.getItemId()) {
                 case R.id.home_item:
-                    ft1.hide(active).show(fragment1).commit();
+                    ft1.hide(active).show(homeFragment).commit();
                     toolbar.setVisibility(View.VISIBLE);
                     screenText.setVisibility(View.VISIBLE);
                     toolBarMessenger.setVisibility(View.VISIBLE);
-                    active = fragment1;
+                    active = homeFragment;
                     return true;
 
                 case R.id.videos_item:
-                    ft1.hide(active).show(fragment2).commit();
-                    // invisible toolbar in this frag
+                    ft1.hide(active).show(videosFragment).commit();
                     toolbar.setVisibility(View.INVISIBLE);
                     screenText.setVisibility(View.INVISIBLE);
                     toolBarMessenger.setVisibility(View.INVISIBLE);
-                    active = fragment2;
+                    active = videosFragment;
                     return true;
 
                 case R.id.ebadat_item:
-                    ft1.hide(active).show(fragment3).commit();
-                    // invisible toolbar in this frag
+                    ft1.hide(active).show(moreFragment).commit();
                     toolbar.setVisibility(View.INVISIBLE);
                     screenText.setVisibility(View.INVISIBLE);
                     toolBarMessenger.setVisibility(View.INVISIBLE);
-                    active = fragment3;
+                    active = moreFragment;
                     return true;
 
                 case R.id.quran_item:
-                    ft1.hide(active).show(fragment4).commit();
-                    // invisible toolbar in this frag
+                    ft1.hide(active).show(quranFragment).commit();
                     toolbar.setVisibility(View.INVISIBLE);
                     screenText.setVisibility(View.INVISIBLE);
                     toolBarMessenger.setVisibility(View.INVISIBLE);
-                    active = fragment4;
+                    active = quranFragment;
                     return true;
 
                 case R.id.image_item:
-                    ft1.hide(active).show(fragment5).commit();
-                    // invisible toolbar in this frag
+                    ft1.hide(active).show(imagesFragment).commit();
                     toolbar.setVisibility(View.INVISIBLE);
                     screenText.setVisibility(View.INVISIBLE);
                     toolBarMessenger.setVisibility(View.INVISIBLE);
-                    active = fragment5;
+                    active = imagesFragment;
                     return true;
             }
             return false;
         });
 
+        /* toolbar and NavigationDrawer */
         toolbar = findViewById(R.id.toolbar);
         toolBarMessenger = findViewById(R.id.toolbar_messenger);
         setSupportActionBar(toolbar);

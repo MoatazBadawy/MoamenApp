@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment implements IOnBackPressed {
     private void initializeViewModel() {
         ProgressBar progressBar = rootView.findViewById(R.id.progress_bar_home);
         HomeViewModel viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
-        viewModel.makeApiCallHome().observe(getActivity(), homeResponses -> {
+        viewModel.makeApiCallHome().observe(requireActivity(), homeResponses -> {
             if (homeResponses != null) {
                 progressBar.setVisibility(View.GONE);
                 adapter.setHomeList(homeResponses);
@@ -53,8 +53,8 @@ public class HomeFragment extends Fragment implements IOnBackPressed {
     @Override
     public boolean onBackPressed() {
         //exit the app when press back
-        getActivity().moveTaskToBack(true);
-        getActivity().finish();
+        requireActivity().moveTaskToBack(true);
+        requireActivity().finish();
         return true;
     }
 }
