@@ -1,5 +1,8 @@
 package com.picsapp.moamenapp.home.ui.adapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.picsapp.moamenapp.R;
-import com.picsapp.moamenapp.home.data.model.DailyFadelModel;
-import com.picsapp.moamenapp.home.data.model.DailyImageModel;
-import com.picsapp.moamenapp.home.data.model.FirstImageModel;
-import com.picsapp.moamenapp.home.data.model.HomeResponse;
-import com.picsapp.moamenapp.home.data.model.LiveModel;
-import com.picsapp.moamenapp.home.data.model.SaleheenSaidModel;
+import com.picsapp.moamenapp.home.data.model.models.DailyFadelModel;
+import com.picsapp.moamenapp.home.data.model.models.DailyImageModel;
+import com.picsapp.moamenapp.home.data.model.models.FirstImageModel;
+import com.picsapp.moamenapp.home.data.model.response.HomeResponse;
+import com.picsapp.moamenapp.home.data.model.models.LiveModel;
+import com.picsapp.moamenapp.home.data.model.models.SaleheenSaidModel;
 
 public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -84,6 +87,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         } else if (getItemViewType(position) == R.id.image_home_liveImage) {
             LiveModel liveModel = items.getLive().get(position - items.getFirstImage().size());
             ((LiveViewHolder) holder).setLiveImageData(liveModel);
+            ((LiveViewHolder) holder).setOnClick(liveModel);
 
         } else if (getItemViewType(position) == R.id.image_home_dailyImage) {
             DailyImageModel dailyImageModel = items.getDailyImage().get(position - (items.getFirstImage().size() + items.getLive().size()));
@@ -144,6 +148,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     /* Live Adapter */
     static class LiveViewHolder extends RecyclerView.ViewHolder {
         private final ImageView liveImage;
+        private Context context;
 
         LiveViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -154,6 +159,13 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             Glide.with(itemView.getContext())
                     .load(liveModel.getImageLiveInfoUrl())
                     .into(liveImage);
+        }
+
+        void setOnClick(LiveModel liveModel) {
+            itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(liveModel.getLiveUrl()));
+                itemView.getContext().startActivity(intent);
+            });
         }
     }
 

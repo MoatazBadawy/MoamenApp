@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 .setShortLabel("بوت المؤمن")
                 .setLongLabel("مليون مشترك")
                 .setIcon(Icon.createWithResource(MainActivity.this, R.drawable.telegram))
-                .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.me/MoamenApp/")))
+                .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.me/100106872303223/")))
                 .build();
         shortcutManager.setDynamicShortcuts(Collections.singletonList(shortcut));
     }

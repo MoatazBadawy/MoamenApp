@@ -1,4 +1,4 @@
-package com.picsapp.moamenapp.home.data.model;
+package com.picsapp.moamenapp.home.data.model.models;
 
 public class LiveModel {
 

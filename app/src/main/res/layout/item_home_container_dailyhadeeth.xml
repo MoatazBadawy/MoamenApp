@@ -62,11 +62,8 @@
             android:id="@+id/shape"
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:layout_below="@+id/surah_detail"
             android:background="@color/black_overlay"
             app:layout_constraintBottom_toTopOf="@+id/image_home_textFadel" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </androidx.cardview.widget.CardView>

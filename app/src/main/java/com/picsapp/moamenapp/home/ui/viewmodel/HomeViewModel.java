@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 
-import com.picsapp.moamenapp.home.data.model.HomeResponse;
+import com.picsapp.moamenapp.home.data.model.response.HomeResponse;
 import com.picsapp.moamenapp.home.data.api.APIServiceHome;
 import com.picsapp.moamenapp.home.data.request.RetroInstanceHome;
 import com.picsapp.moamenapp.home.utils.Resource;

@@ -1,4 +1,10 @@
-package com.picsapp.moamenapp.home.data.model;
+package com.picsapp.moamenapp.home.data.model.response;
+
+import com.picsapp.moamenapp.home.data.model.models.DailyFadelModel;
+import com.picsapp.moamenapp.home.data.model.models.DailyImageModel;
+import com.picsapp.moamenapp.home.data.model.models.FirstImageModel;
+import com.picsapp.moamenapp.home.data.model.models.LiveModel;
+import com.picsapp.moamenapp.home.data.model.models.SaleheenSaidModel;
 
 import java.util.List;
 
@@ -6,7 +12,7 @@ public class HomeResponse {
 
     private final List<DailyImageModel> dailyImage;
     private final List<FirstImageModel> firstImage;
-    private List<LiveModel> live;
+    private final List<LiveModel> live;
     private final List<DailyFadelModel> dailyFadel;
     private final List<SaleheenSaidModel> saleheenSaid;
 
@@ -25,6 +31,7 @@ public class HomeResponse {
     public List<SaleheenSaidModel> getSaleheenSaid() {
         return saleheenSaid;
     }
+
     public List<DailyImageModel> getDailyImage() {
         return dailyImage;
     }
@@ -37,7 +44,4 @@ public class HomeResponse {
         return live;
     }
 
-    public void setLive(List<LiveModel> live) {
-        this.live = live;
-    }
 }

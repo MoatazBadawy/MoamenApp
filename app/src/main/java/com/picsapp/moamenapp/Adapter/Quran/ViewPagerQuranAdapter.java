@@ -69,6 +69,4 @@ public class ViewPagerQuranAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return 3;
     }
-
-
 }

@@ -8,8 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start"
-    tools:context=".Activity.Project.MainActivity">
+    tools:openDrawer="start">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -61,7 +60,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:gravity="center"
-            tools:text="أسعد اللَّه صباحك"
+            android:text="لا تنسى قيام الليل"
             android:elevation="@dimen/_2sdp"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_16ssp" />

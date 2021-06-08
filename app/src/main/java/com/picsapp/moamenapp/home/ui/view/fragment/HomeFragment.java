@@ -4,59 +4,56 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import com.picsapp.moamenapp.Adapter.Picasso.IOnBackPressed;
+import com.picsapp.moamenapp.databinding.FragmentHomeBinding;
 import com.picsapp.moamenapp.home.ui.adapter.HomeAdapter;
 import com.picsapp.moamenapp.home.ui.viewmodel.HomeViewModel;
-import com.picsapp.moamenapp.R;
-
-import static com.picsapp.moamenapp.home.utils.Status.ERROR;
-import static com.picsapp.moamenapp.home.utils.Status.LOADING;
-import static com.picsapp.moamenapp.home.utils.Status.SUCCESS;
+import org.jetbrains.annotations.NotNull;
 
 public class HomeFragment extends Fragment implements IOnBackPressed {
 
-    View rootView;
-    RecyclerView recyclerView;
     private HomeAdapter adapter;
-    ProgressBar progressBar;
-    HomeViewModel viewModel;
-
+    private HomeViewModel viewModel;
+    private FragmentHomeBinding binding;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        binding = FragmentHomeBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
 
-        requireActivity().setTitle("");
-        initializeViews();
-        initializeViewModel();
+        initializeView();
         getHomeList();
-        return rootView;
+        initializeViewModel();
+        return view;
     }
 
-    private void initializeViews() {
+    private void initializeView() {
         adapter = new HomeAdapter();
-        progressBar = rootView.findViewById(R.id.progress_bar_home);
-        recyclerView = rootView.findViewById(R.id.recyclerView_home);
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(adapter);
+        binding.recyclerViewHome.setLayoutManager(new LinearLayoutManager(requireContext()));
+        binding.recyclerViewHome.setHasFixedSize(true);
+        binding.recyclerViewHome.setAdapter(adapter);
+        requireActivity().setTitle("");
     }
 
     private void getHomeList() {
         viewModel.makeApiCallHome().observe(requireActivity(), response -> {
             switch (response.status){
-                case ERROR:
+                case ERROR: {
+                    binding.errorBold.setVisibility(View.VISIBLE);
+                    binding.errorMessage1.setVisibility(View.VISIBLE);
+                    binding.errorMessage2.setVisibility(View.VISIBLE);
+                    binding.progressBarHome.setVisibility(View.GONE);
+                    break;
+                }
                 case LOADING: {
-                    progressBar.setVisibility(View.VISIBLE);
+                    binding.progressBarHome.setVisibility(View.VISIBLE);
                     break;
                 }
                 case SUCCESS:{
-                    progressBar.setVisibility(View.GONE);
+                    binding.progressBarHome.setVisibility(View.GONE);
                     adapter.setHomeList(response.data);
                     break;
                 }
@@ -70,8 +67,7 @@ public class HomeFragment extends Fragment implements IOnBackPressed {
 
     @Override
     public boolean onBackPressed() {
-        //exit the app when press back
-        requireActivity().moveTaskToBack(true);
+        requireActivity().moveTaskToBack(true); //exit the app when press back
         requireActivity().finish();
         return true;
     }
