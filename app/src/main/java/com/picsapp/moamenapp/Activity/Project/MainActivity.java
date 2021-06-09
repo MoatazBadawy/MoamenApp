@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initializeView();
+        openTelegram();
         setShortcut();
         setScreenText();
         initializeBottomNavigation();
@@ -75,6 +76,14 @@ public class MainActivity extends AppCompatActivity {
         // make the app support only arabic "Right to left",
         // even if the language of the device on english or others
         ViewCompat.setLayoutDirection(getWindow().getDecorView(), ViewCompat.LAYOUT_DIRECTION_RTL);
+    }
+
+    private void openTelegram() {
+        Button button2 = findViewById(R.id.toolbar_messenger);
+        button2.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/MoammenApp/"));
+            startActivity(intent);
+        });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)

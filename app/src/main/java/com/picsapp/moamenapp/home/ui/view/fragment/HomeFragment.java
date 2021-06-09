@@ -1,16 +1,24 @@
 package com.picsapp.moamenapp.home.ui.view.fragment;
 
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
 import com.picsapp.moamenapp.Adapter.Picasso.IOnBackPressed;
 import com.picsapp.moamenapp.databinding.FragmentHomeBinding;
 import com.picsapp.moamenapp.home.ui.adapter.HomeAdapter;
 import com.picsapp.moamenapp.home.ui.viewmodel.HomeViewModel;
+import com.picsapp.moamenapp.R;
+
 import org.jetbrains.annotations.NotNull;
 
 public class HomeFragment extends Fragment implements IOnBackPressed {
@@ -23,19 +31,18 @@ public class HomeFragment extends Fragment implements IOnBackPressed {
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
-
-        initializeView();
-        getHomeList();
+        requireActivity().setTitle("");
+        initializeViews();
         initializeViewModel();
+        getHomeList();
         return view;
     }
 
-    private void initializeView() {
+    private void initializeViews() {
         adapter = new HomeAdapter();
         binding.recyclerViewHome.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.recyclerViewHome.setHasFixedSize(true);
         binding.recyclerViewHome.setAdapter(adapter);
-        requireActivity().setTitle("");
     }
 
     private void getHomeList() {

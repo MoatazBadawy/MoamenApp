@@ -20,6 +20,7 @@ import com.picsapp.moamenapp.home.data.model.models.FirstImageModel;
 import com.picsapp.moamenapp.home.data.model.response.HomeResponse;
 import com.picsapp.moamenapp.home.data.model.models.LiveModel;
 import com.picsapp.moamenapp.home.data.model.models.SaleheenSaidModel;
+import com.picsapp.moamenapp.home.ui.view.activity.YoutubePlayerActivity;
 
 public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -163,7 +164,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         void setOnClick(LiveModel liveModel) {
             itemView.setOnClickListener(v -> {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(liveModel.getLiveUrl()));
+                Intent intent = new Intent(itemView.getContext(), YoutubePlayerActivity.class);
+                intent.putExtra("url",liveModel.getLiveUrl());
                 itemView.getContext().startActivity(intent);
             });
         }
