@@ -5,19 +5,15 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.picsapp.moamenapp.Adapter.Picasso.IOnBackPressed;
 import com.picsapp.moamenapp.databinding.FragmentHomeBinding;
 import com.picsapp.moamenapp.home.ui.adapter.HomeAdapter;
 import com.picsapp.moamenapp.home.ui.viewmodel.HomeViewModel;
-import com.picsapp.moamenapp.R;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -35,6 +31,7 @@ public class HomeFragment extends Fragment implements IOnBackPressed {
         initializeViews();
         initializeViewModel();
         getHomeList();
+        onSwipeRefresh();
         return view;
     }
 
@@ -66,6 +63,28 @@ public class HomeFragment extends Fragment implements IOnBackPressed {
                 }
             }
         });
+    }
+
+    private void onSwipeRefresh() {
+        binding.swipeToRefreshHomeData.setOnRefreshListener(() -> viewModel.makeApiCallHome().observe(requireActivity(), response -> {
+            switch (response.status){
+                case ERROR: {
+                    binding.swipeToRefreshHomeData.setRefreshing(false);
+                    binding.errorBold.setVisibility(View.VISIBLE);
+                    binding.errorMessage1.setVisibility(View.VISIBLE);
+                    binding.errorMessage2.setVisibility(View.VISIBLE);
+                    break;
+                }
+                case SUCCESS:{
+                    binding.swipeToRefreshHomeData.setRefreshing(false);
+                    binding.errorBold.setVisibility(View.INVISIBLE);
+                    binding.errorMessage1.setVisibility(View.INVISIBLE);
+                    binding.errorMessage2.setVisibility(View.INVISIBLE);
+                    adapter.setHomeList(response.data);
+                    break;
+                }
+            }
+        }));
     }
 
     private void initializeViewModel() {
