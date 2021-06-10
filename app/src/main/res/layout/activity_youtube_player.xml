@@ -8,16 +8,13 @@
     android:background="@color/colorWhite"
     tools:context=".home.ui.view.activity.YoutubePlayerActivity">
 
-    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+    <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/youtube_player_view_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:autoPlay="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:showFullScreenButton="false"
-        app:videoId="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
